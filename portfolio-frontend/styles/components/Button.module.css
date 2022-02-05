@@ -1,0 +1,21 @@
+.button {
+  height: 48px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 30px;
+  /* border-radius: var(--border-radius-1); */
+  /* background-color: var(--maximeheckel-colors-brand); */
+  background-color: rgb(34, 150, 204);
+  border-radius: 10px;
+  /* color: hsla(var(--palette-gray-00), 100%); */
+  min-width: 150px;
+}
+
+.isHollow {
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgb(34, 150, 204);
+}
