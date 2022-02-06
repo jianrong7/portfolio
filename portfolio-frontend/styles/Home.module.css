@@ -41,12 +41,8 @@
 
 .about {
   background-color: rgb(34, 150, 204);
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .about > div {
@@ -71,6 +67,9 @@
 }
 
 @media (min-width: 768px) {
+  .about {
+    grid-column: 2;
+  }
   .twitter {
     margin: 0;
   }
