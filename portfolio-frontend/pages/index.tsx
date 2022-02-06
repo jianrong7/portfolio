@@ -79,7 +79,12 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}>
+        <div>&#169; {new Date().getFullYear()} Jian Rong —— SG</div>
+        <div>
+          <Image src="/icon.svg" alt="logo" width={40} height={40} />
+        </div>
+      </footer>
     </div>
   );
 };
