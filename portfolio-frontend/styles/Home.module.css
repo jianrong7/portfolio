@@ -39,6 +39,21 @@
   margin-top: 1rem;
 }
 
+.about {
+  background-color: rgb(34, 150, 204);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.about > div {
+  padding: 0 1rem;
+  color: black;
+}
+
 .footer {
   display: flex;
   flex: 1;
