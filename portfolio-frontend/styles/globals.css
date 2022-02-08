@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--backgroundColor_dark);
 }
 
 a {
@@ -13,4 +14,11 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --backgroundColor_dark: rgb(15, 15, 31);
+  --fontColor_dark: #ffffff;
+  --accentColor_dark: rgb(5, 5, 32);
+  --accentColor2_dark: rgb(245, 226, 60);
 }
