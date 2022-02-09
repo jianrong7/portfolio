@@ -41,6 +41,12 @@
 
 .twitter {
   margin-top: 1rem;
+  color: var(--accentColor2_dark);
+  font-weight: 600;
+}
+
+.twitter > div {
+  border: 1px solid var(--accentColor2_dark);
 }
 
 .about {
