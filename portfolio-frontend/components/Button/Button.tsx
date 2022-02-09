@@ -4,8 +4,7 @@ import cx from "classnames";
 
 import styles from "./Button.module.css";
 
-interface ButtonProps {
-  children: string | JSX.Element;
+interface ButtonProps extends React.HTMLAttributes<HTMLHeadingElement> {
   isHollow?: boolean;
   isToggle?: boolean;
 }

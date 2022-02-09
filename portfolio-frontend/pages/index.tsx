@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
+import Heading from "../components/Heading/Heading";
 import Button from "../components/Button/Button";
 
 import styles from "../styles/Home.module.css";
@@ -20,13 +21,13 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.header}>
-          <h1>
+          <Heading level="h1">
             Hello!{" "}
             <span>
               I&#39;m Jian Rong, a Singapore based tech enthusiast and frontend
               engineer working with React.
             </span>
-          </h1>
+          </Heading>
           <div className={styles.headerDetails}>
             <div className={styles.headerDetailsButtons}>
               <a href="#about">
@@ -44,7 +45,7 @@ const Home: NextPage = () => {
         </div>
         <section id="about" className={styles.about}>
           <div>
-            <h2>About me</h2>
+            <Heading level="h2">About me</Heading>
             <p>
               I am a full-stack developer based in Singapore with a passion for
               building digital services. I started my journey on web development
@@ -62,17 +63,17 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section id="work">
-          <h2>Work</h2>
+          <Heading level="h2">Work</Heading>
           <div>99.co</div>
           <div>DriveSG</div>
           <div>Traceify</div>
           <div>Where&#39;s Waldo</div>
         </section>
         <section id="contact">
-          <h2>Contact</h2>
+          <Heading level="h2">Contact</Heading>
           <p>Want to get in touch?</p>
           <p>
-            Write me at
+            Write me at{" "}
             <a href="mailto:lohjianrong7@gmail.com">lohjianrong7@gmail.com</a>.
           </p>
         </section>
