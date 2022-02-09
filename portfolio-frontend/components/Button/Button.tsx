@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import cx from "classnames";
 
 import styles from "./Button.module.css";
@@ -10,14 +11,19 @@ interface ButtonProps {
 }
 
 const Button = ({ isHollow, isToggle, children }: ButtonProps) => (
-  <button
+  <motion.button
     className={cx(styles.button, {
       [styles.isHollow]: isHollow,
       [styles.isToggle]: isToggle,
     })}
+    whileHover={{
+      scale: 1.05,
+      transition: { duration: 0.3 },
+    }}
+    whileTap={{ scale: 0.9 }}
   >
     {children}
-  </button>
+  </motion.button>
 );
 
 export default Button;
