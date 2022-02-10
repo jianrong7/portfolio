@@ -1,6 +1,7 @@
 .container {
   overflow: hidden;
   height: 815px;
+  width: 100%;
   border-radius: 32px;
   object-fit: cover;
   padding: 2rem 2.5rem;
