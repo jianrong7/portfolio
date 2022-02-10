@@ -2,11 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
-import Heading from "../components/Heading/Heading";
-import Button from "../components/Button/Button";
-import CallToAction from "../components/CallToAction/CallToAction";
+import Heading from "../components/shared/Heading/Heading";
+import Button from "../components/shared/Button/Button";
+import CallToAction from "../components/home/CallToAction/CallToAction";
+import Footer from "../components/home/Footer/Footer";
 
 import styles from "../styles/Home.module.css";
 
@@ -156,12 +156,7 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <footer className={styles.footer}>
-        <div>&#169; {new Date().getFullYear()} Jian Rong —— SG</div>
-        <div>
-          <Image src="/icon.svg" alt="logo" width={40} height={40} />
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

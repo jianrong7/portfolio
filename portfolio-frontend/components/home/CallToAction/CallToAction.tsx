@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import cx from "classnames";
 
-import Heading from "../Heading/Heading";
-import Arrow from "../Arrow/Arrow";
+import Heading from "../../shared/Heading/Heading";
+import Arrow from "../../shared/Arrow/Arrow";
 
 import styles from "./CallToAction.module.css";
 
@@ -38,10 +38,10 @@ const CallToAction = ({
   children,
 }: CallToActionProps) => {
   const dragConstraints = {
-    top: -10,
-    left: -10,
-    right: 10,
-    bottom: 10,
+    top: -5,
+    left: -5,
+    right: 5,
+    bottom: 5,
   };
   return (
     <motion.div

@@ -1,0 +1,15 @@
+.footer {
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 3rem 0;
+  margin: 1rem 1rem 0 1rem;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}

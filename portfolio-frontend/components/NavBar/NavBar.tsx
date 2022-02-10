@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import Button from "../Button/Button";
+import Button from "../shared/Button/Button";
 
 import styles from "./NavBar.module.css";
 

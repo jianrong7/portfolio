@@ -1,6 +1,7 @@
 .container {
   overflow: hidden;
-  height: 815px;
+  height: 600px;
+
   width: 100%;
   border-radius: 32px;
   object-fit: cover;
@@ -10,8 +11,12 @@
   margin-bottom: 3rem;
 }
 
+.container:last-of-type {
+  margin-bottom: 0;
+}
+
 .isSmall {
-  height: 400px;
+  height: 600px;
 }
 
 .title {
@@ -20,4 +25,11 @@
 
 .subtitle {
   margin-bottom: 2.5rem;
+  color: var(--fontColor2_dark);
+}
+
+@media screen and (min-width: 768px) {
+  .isSmall {
+    height: 420px;
+  }
 }
