@@ -1,0 +1,21 @@
+.work {
+  display: grid;
+  /* justify-content: space-between; */
+
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  column-gap: 60px;
+  margin-top: 2rem;
+  row-gap: 0;
+}
+
+.lastItem {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 990px) {
+  .work {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 16px;
+  }
+}

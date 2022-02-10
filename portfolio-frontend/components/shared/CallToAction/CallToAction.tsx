@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import cx from "classnames";
 
-import Heading from "../../shared/Heading/Heading";
-import Arrow from "../../shared/Arrow/Arrow";
+import Heading from "../Heading/Heading";
+import Arrow from "../Arrow/Arrow";
 
 import styles from "./CallToAction.module.css";
 
@@ -35,6 +35,7 @@ const CallToAction = ({
   isSmall = false,
   title,
   subtitle,
+  className,
   children,
 }: CallToActionProps) => {
   const dragConstraints = {
@@ -45,7 +46,7 @@ const CallToAction = ({
   };
   return (
     <motion.div
-      className={cx(styles.container, { [styles.isSmall]: isSmall })}
+      className={cx(styles.container, className, { [styles.isSmall]: isSmall })}
       drag
       dragConstraints={dragConstraints}
       dragElastic={0.2}

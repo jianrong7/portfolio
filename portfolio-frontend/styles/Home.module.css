@@ -18,78 +18,8 @@
   grid-column: 2;
 }
 
-.header {
-  display: flex;
-
-  flex-direction: column;
-}
-
-.headerDetails {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.headerDetailsButtons {
-  display: flex;
-}
-
-.headerDetailsButtons > a {
-  margin-right: 16px;
-}
-
-.about {
-  background-color: var(--backgroundColor2_dark);
-  grid-column-start: 1;
-  grid-column-end: 4;
-  padding: 1rem 0;
-}
-
-.about > div {
-  padding: 0 1rem;
-}
-
-.twitter {
-  margin-top: 1rem;
-  color: var(--accentColor2_dark);
-  font-weight: 600;
-}
-
-.twitter > div {
-  border: 1px solid var(--accentColor2_dark);
-}
-
-.work {
-  display: grid;
-  /* justify-content: space-between; */
-
-  grid-template-rows: auto;
-  grid-template-columns: 1fr;
-  column-gap: 60px;
-  row-gap: 16px;
-  margin-top: 2rem;
-}
-
-/* 
-@media screen and (max-width: 990px) {
-  .work {
-    display: block;
-  }
-} */
-
 @media screen and (min-width: 768px) {
   .main {
     row-gap: 100px;
-  }
-  .about {
-    grid-column: 2;
-    border-radius: 32px;
-  }
-  .work {
-    grid-template-columns: 1fr 1fr;
-  }
-  .twitter {
-    margin: 0;
   }
 }

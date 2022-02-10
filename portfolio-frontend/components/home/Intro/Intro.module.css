@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.headerDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerDetailsButtons {
+  display: flex;
+}
+
+.headerDetailsButtons > a {
+  margin-right: 16px;
+}
+
+.twitter {
+  margin-top: 1rem;
+  color: var(--accentColor2_dark);
+  font-weight: 600;
+}
+
+.twitter > div {
+  border: 1px solid var(--accentColor2_dark);
+}
+
+@media screen and (min-width: 768px) {
+  .twitter {
+    margin: 0;
+  }
+}

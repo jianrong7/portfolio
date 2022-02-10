@@ -11,10 +11,6 @@
   margin-bottom: 3rem;
 }
 
-.container:last-of-type {
-  margin-bottom: 0;
-}
-
 .isSmall {
   height: 600px;
 }
@@ -28,7 +24,7 @@
   color: var(--fontColor2_dark);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 990px) {
   .isSmall {
     height: 420px;
   }
