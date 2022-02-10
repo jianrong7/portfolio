@@ -9,7 +9,7 @@
   background-color: var(--accentColor2_dark);
   border-radius: 10px;
   /* color: hsla(var(--palette-gray-00), 100%); */
-  color: var(--accentColor_dark);
+  color: var(--backgroundColor2_dark);
 }
 
 .isHollow {
