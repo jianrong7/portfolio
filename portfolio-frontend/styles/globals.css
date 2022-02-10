@@ -21,8 +21,8 @@ a {
 
 :root {
   --backgroundColor_dark: rgb(15, 15, 31);
+  --backgroundColor2_dark: rgb(5, 5, 32);
   --fontColor_dark: #ffffff;
-  --accentColor_dark: rgb(5, 5, 32);
   --accentColor2_dark: #f5e23c;
   --accentColor3_dark: #c7b830;
 }

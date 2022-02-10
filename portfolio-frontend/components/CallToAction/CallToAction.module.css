@@ -1,0 +1,8 @@
+.container {
+  overflow: hidden;
+  height: 815px;
+  border-radius: 32px;
+  object-fit: cover;
+  padding: 2rem 2.5rem;
+  background-color: var(--backgroundColor2_dark);
+}

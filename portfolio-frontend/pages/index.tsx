@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import Heading from "../components/Heading/Heading";
 import Button from "../components/Button/Button";
+import CallToAction from "../components/CallToAction/CallToAction";
 
 import styles from "../styles/Home.module.css";
 
@@ -120,10 +121,12 @@ const Home: NextPage = () => {
         </section>
         <section id="work">
           <Heading level="h2">Work</Heading>
-          <div>99.co</div>
-          <div>DriveSG</div>
-          <div>Traceify</div>
-          <div>Where&#39;s Waldo</div>
+          <div className={styles.work}>
+            <CallToAction />
+            <div>DriveSG</div>
+            <div>Traceify</div>
+            <div>Where&#39;s Waldo</div>
+          </div>
         </section>
         <section id="contact">
           <Heading level="h2">Contact</Heading>

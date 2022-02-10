@@ -49,8 +49,16 @@
   border: 1px solid var(--accentColor2_dark);
 }
 
+.work {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 60px;
+  row-gap: 16px;
+}
+
 .about {
-  background-color: var(--accentColor_dark);
+  background-color: var(--backgroundColor2_dark);
   grid-column-start: 1;
   grid-column-end: 4;
 }

@@ -1,0 +1,13 @@
+.container {
+  border: 2px solid var(--accentColor2_dark);
+  border-radius: 50vw;
+  width: 111px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  fill: var(--accentColor2_dark);
+}
