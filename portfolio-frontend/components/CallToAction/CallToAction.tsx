@@ -24,10 +24,19 @@ const arrowVariant = {
     scale: 1.2,
   },
 };
-interface CallToActionProps extends React.HTMLAttributes<HTMLHeadingElement> {}
+interface CallToActionProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  isSmall?: boolean;
+  title: string;
+  subtitle: string;
+}
 //remember to wrap everything with Link
 
-const CallToAction = ({ children }: CallToActionProps) => {
+const CallToAction = ({
+  isSmall = false,
+  title,
+  subtitle,
+  children,
+}: CallToActionProps) => {
   const dragConstraints = {
     top: -10,
     left: -10,
@@ -36,7 +45,7 @@ const CallToAction = ({ children }: CallToActionProps) => {
   };
   return (
     <motion.div
-      className={cx(styles.container)}
+      className={cx(styles.container, { [styles.isSmall]: isSmall })}
       drag
       dragConstraints={dragConstraints}
       dragElastic={0.2}
@@ -51,9 +60,9 @@ const CallToAction = ({ children }: CallToActionProps) => {
       variants={containerVariant}
     >
       <Heading level="h3" className={styles.title}>
-        99.co
+        {title}
       </Heading>
-      <p className={styles.subtitle}>Helping the 99% find their way home.</p>
+      <p className={styles.subtitle}>{subtitle}</p>
       <Arrow width="40" variants={arrowVariant} />
     </motion.div>
   );

@@ -50,11 +50,18 @@
 }
 
 .work {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  /* grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   column-gap: 60px;
-  row-gap: 16px;
+  row-gap: 16px; */
+}
+
+.cta_left {
+}
+
+.cta_right {
 }
 
 .about {
