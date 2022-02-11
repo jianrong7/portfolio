@@ -28,6 +28,10 @@ const arrowVariant = {
 const coverVariant = {
   hover: {
     opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
   },
 };
 interface CallToActionProps extends React.HTMLAttributes<HTMLHeadingElement> {
