@@ -20,9 +20,14 @@ const containerVariant = {
 
 const arrowVariant = {
   hover: {
-    fill: "red",
-    stroke: "red",
-    scale: 1.2,
+    fill: "#050520",
+    backgroundColor: "#f5e23c",
+  },
+};
+
+const coverVariant = {
+  hover: {
+    opacity: 0,
   },
 };
 interface CallToActionProps extends React.HTMLAttributes<HTMLHeadingElement> {
@@ -55,17 +60,17 @@ const CallToAction = ({
       whileTap={{
         scale: 0.95,
       }}
-      // whileDrag={{
-      //   scale: 1.1,
-      // }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
       variants={containerVariant}
     >
-      <Heading level="h3" className={styles.title}>
-        {title}
-      </Heading>
-      <p className={styles.subtitle}>{subtitle}</p>
-      <Arrow width="40" variants={arrowVariant} />
+      <div className={styles.text}>
+        <Heading level="h3" className={styles.title}>
+          {title}
+        </Heading>
+        <p className={styles.subtitle}>{subtitle}</p>
+        <Arrow variants={arrowVariant} />
+      </div>
+      <motion.div className={styles.cover} variants={coverVariant}></motion.div>
     </motion.div>
   );
 };

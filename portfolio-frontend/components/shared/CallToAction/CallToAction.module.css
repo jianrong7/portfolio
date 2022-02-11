@@ -5,10 +5,17 @@
   width: 100%;
   border-radius: 32px;
   object-fit: cover;
-  padding: 2rem 2.5rem;
+
   background-color: var(--backgroundColor2_dark);
   cursor: pointer;
   margin-bottom: 3rem;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
 }
 
 .isSmall {
@@ -21,7 +28,6 @@
 
 .subtitle {
   margin-bottom: 2.5rem;
-  color: #ffffff7a;
   line-height: 1.7rem;
   font-weight: 300;
 }
@@ -29,5 +35,17 @@
 @media screen and (min-width: 990px) {
   .isSmall {
     height: 420px;
+  }
+
+  .cover {
+    padding: 2rem 2.5rem;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
   }
 }
