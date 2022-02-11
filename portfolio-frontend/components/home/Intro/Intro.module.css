@@ -4,11 +4,35 @@
   padding-top: 4rem;
 }
 
+.intro > span {
+  font-size: 3rem;
+}
+
+.introHello {
+  font-size: 3rem;
+  color: #ffffff7a;
+}
+
+.wave {
+  font-size: 3rem;
+  margin-bottom: -20px;
+  margin-right: -45px;
+  padding-bottom: 20px;
+  padding-right: 45px;
+  display: inline-block;
+}
+
+.description {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .headerDetails {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .headerDetailsButtons {

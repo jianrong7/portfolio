@@ -27,8 +27,24 @@ const underline = {
 
 const Intro = () => (
   <div className={styles.header}>
-    <Heading level="h1">Hello! I&#39;m Jian Rong.</Heading>
-    <Heading level="h2">
+    <Heading level="h1" className={styles.intro}>
+      <span className={styles.introHello}>Hello! 你好!</span>
+      <motion.div
+        animate={{ rotate: 20 }}
+        transition={{
+          yoyo: Infinity,
+          from: 0,
+          duration: 0.2,
+          ease: "easeInOut",
+          type: "tween",
+        }}
+        className={styles.wave}
+      >
+        👋
+      </motion.div>
+      <span> I&#39;m Jian Rong.</span>
+    </Heading>
+    <Heading level="h2" className={styles.description}>
       A Singapore based tech enthusiast and frontend engineer working with
       React.
     </Heading>
