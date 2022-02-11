@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import Heading from "../../shared/Heading/Heading";
 
@@ -11,7 +12,15 @@ const Contact = () => {
       <p className={styles.text}>Want to get in touch?</p>
       <p className={styles.text}>
         Write me at{" "}
-        <a href="mailto:lohjianrong7@gmail.com">lohjianrong7@gmail.com</a>.
+        <motion.a
+          href="mailto:lohjianrong7@gmail.com"
+          className={styles.email}
+          whileHover={{ color: "#f5e23c" }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+        >
+          lohjianrong7@gmail.com
+        </motion.a>
+        .
       </p>
     </section>
   );
