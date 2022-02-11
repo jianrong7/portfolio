@@ -2,20 +2,21 @@
   margin: 0;
   border: none;
   cursor: pointer;
-  font-weight: 700;
-  padding: 0.8rem 2rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding: 0.7rem 1.5rem;
   /* border-radius: var(--border-radius-1); */
   /* background-color: var(--maximeheckel-colors-brand); */
   background-color: var(--accentColor2_dark);
   border-radius: 10px;
   /* color: hsla(var(--palette-gray-00), 100%); */
+  border: 2px solid var(--accentColor2_dark);
   color: var(--backgroundColor2_dark);
 }
 
 .isHollow {
   background-color: transparent;
   color: var(--accentColor2_dark);
-  border: 2px solid var(--accentColor2_dark);
 }
 
 .isToggle {

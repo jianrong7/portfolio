@@ -5,16 +5,16 @@
 }
 
 .intro > span {
-  font-size: 3rem;
+  font-size: 2.6rem;
 }
 
 .introHello {
-  font-size: 3rem;
+  font-size: 2.6rem;
   color: #ffffff7a;
 }
 
 .wave {
-  font-size: 3rem;
+  font-size: 2.6rem;
   margin-bottom: -20px;
   margin-right: -45px;
   padding-bottom: 20px;
@@ -23,15 +23,28 @@
 }
 
 .description {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.emoji {
+  display: inline-block;
+  font-size: 1.3rem;
+}
+
+.singapore {
+  /* margin-bottom: -20px;
+  margin-right: -45px;
+  padding-bottom: 20px;
+  padding-right: 45px; */
 }
 
 .headerDetails {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 1rem;
 }
 
@@ -54,6 +67,32 @@
 }
 
 @media screen and (min-width: 768px) {
+  .intro > span {
+    font-size: 3rem;
+  }
+
+  .introHello {
+    font-size: 3rem;
+  }
+
+  .wave {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .emoji {
+    font-size: 1.5rem;
+  }
+
+  .headerDetails {
+    flex-direction: row;
+    align-items: center;
+  }
+
   .twitter {
     margin: 0;
   }

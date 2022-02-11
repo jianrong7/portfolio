@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import cx from "classnames";
 
 import Heading from "../../shared/Heading/Heading";
 import Button from "../../shared/Button/Button";
@@ -32,7 +34,7 @@ const Intro = () => (
       <motion.div
         animate={{ rotate: 20 }}
         transition={{
-          yoyo: Infinity,
+          yoyo: 9,
           from: 0,
           duration: 0.2,
           ease: "easeInOut",
@@ -45,8 +47,11 @@ const Intro = () => (
       <span> I&#39;m Jian Rong.</span>
     </Heading>
     <Heading level="h2" className={styles.description}>
-      A Singapore based tech enthusiast and frontend engineer working with
-      React.
+      A Singapore <span className={cx(styles.singapore, styles.emoji)}>🇸🇬</span>{" "}
+      based tech enthusiast{" "}
+      <span className={cx(styles.computer, styles.emoji)}>💻</span> and frontend
+      engineer working with React{" "}
+      <span className={cx(styles.react, styles.emoji)}>⚛️</span>.
     </Heading>
     <div className={styles.headerDetails}>
       <div className={styles.headerDetailsButtons}>
