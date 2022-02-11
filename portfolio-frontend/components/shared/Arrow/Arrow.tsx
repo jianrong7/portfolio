@@ -3,7 +3,6 @@ import { motion, Variants } from "framer-motion";
 import cx from "classnames";
 
 import styles from "./Arrow.module.css";
-import Heading from "../Heading/Heading";
 
 interface ArrowProps extends React.HTMLAttributes<HTMLHeadingElement> {
   width?: string;

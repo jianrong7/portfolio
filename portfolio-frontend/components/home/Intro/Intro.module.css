@@ -1,7 +1,7 @@
 .header {
   display: flex;
-
   flex-direction: column;
+  padding-top: 4rem;
 }
 
 .headerDetails {
