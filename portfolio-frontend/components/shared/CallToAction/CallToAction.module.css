@@ -22,6 +22,8 @@
 .subtitle {
   margin-bottom: 2.5rem;
   color: #ffffff7a;
+  line-height: 1.7rem;
+  font-weight: 300;
 }
 
 @media screen and (min-width: 990px) {

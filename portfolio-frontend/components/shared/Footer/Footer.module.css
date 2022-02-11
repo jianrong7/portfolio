@@ -16,3 +16,8 @@
   align-items: center;
   padding: 1rem 0 2rem 0;
 }
+
+.footer > div {
+  line-height: 1.7rem;
+  font-weight: 300;
+}
