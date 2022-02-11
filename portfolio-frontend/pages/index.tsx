@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import Footer from "../components/home/Footer/Footer";
+import Footer from "../components/shared/Footer/Footer";
 import styles from "../styles/Home.module.css";
 import About from "../components/home/About/About";
 import Intro from "../components/home/Intro/Intro";
@@ -45,8 +45,6 @@ const Home: NextPage = () => {
         <Work />
         <Contact />
       </main>
-
-      <Footer />
     </div>
   );
 };

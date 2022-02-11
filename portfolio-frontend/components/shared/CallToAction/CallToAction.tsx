@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import cx from "classnames";
+import { isMobile } from "react-device-detect";
 
 import Heading from "../Heading/Heading";
 import Arrow from "../Arrow/Arrow";
@@ -47,7 +48,7 @@ const CallToAction = ({
   return (
     <motion.div
       className={cx(styles.container, className, { [styles.isSmall]: isSmall })}
-      drag
+      drag={!isMobile}
       dragConstraints={dragConstraints}
       dragElastic={0.2}
       whileHover="hover"
