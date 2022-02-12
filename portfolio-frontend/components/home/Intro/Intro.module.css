@@ -10,7 +10,7 @@
 
 .introHello {
   font-size: 2.6rem;
-  color: #ffffff7a;
+  color: var(--accentColor_dark);
 }
 
 .wave {

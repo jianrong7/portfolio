@@ -22,11 +22,13 @@ a {
 
 :root {
   --backgroundColor_dark: #ffffff;
-  --backgroundColor2_dark: #f3ecb7c0;
+  --backgroundColor2_dark: #fff7b3;
   --fontColor_dark: #0f0f1f;
   --fontColor2_dark: #050520;
-  --accentColor2_dark: #f5e23c;
+  --accentColor_dark: #00000096;
+  --accentColor2_dark: #0f0f1f;
   --accentColor3_dark: #c7b830;
+  --cta-cover: #c4c4c4;
 }
 
 [data-theme="dark"] {
@@ -34,6 +36,8 @@ a {
   --backgroundColor2_dark: #050520;
   --fontColor_dark: #ffffff;
   --fontColor2_dark: #d1d1bef1;
+  --accentColor_dark: #ffffff7a;
   --accentColor2_dark: #f5e23c;
   --accentColor3_dark: #c7b830;
+  --cta-cover: #000000;
 }

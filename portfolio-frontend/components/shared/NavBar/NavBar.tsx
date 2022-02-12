@@ -9,15 +9,8 @@ import styles from "./NavBar.module.css";
 const NavBar = () => {
   const { theme, setTheme } = useTheme();
 
-  const themeChangeHandler = () => {
-    console.log(theme);
-
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+  const themeChangeHandler = () =>
+    theme === "light" ? setTheme("dark") : setTheme("light");
   return (
     <div className={styles.container}>
       <div className={styles.navBar}>

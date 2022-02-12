@@ -44,7 +44,7 @@
     width: 100%;
     height: 100%;
     z-index: 999999;
-    background-color: black;
+    background-color: var(--cta-cover);
     position: absolute;
     top: 0;
     left: 0;
