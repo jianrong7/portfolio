@@ -1,19 +1,33 @@
 import React from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 import Button from "../Button/Button";
 
 import styles from "./NavBar.module.css";
 
-const NavBar = () => (
-  <div className={styles.container}>
-    <div className={styles.navBar}>
-      <Image src="/icon.svg" alt="logo" width={40} height={40} />
-      <Button isToggle isHollow>
-        <Image src="/darkmode.svg" alt="logo" width={40} height={40} />
-      </Button>
+const NavBar = () => {
+  const { theme, setTheme } = useTheme();
+
+  const themeChangeHandler = () => {
+    console.log(theme);
+
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+  return (
+    <div className={styles.container}>
+      <div className={styles.navBar}>
+        <Image src="/icon.svg" alt="logo" width={40} height={40} />
+        <Button isToggle isHollow onClick={themeChangeHandler}>
+          <Image src="/moon.png" alt="logo" width={40} height={40} />
+        </Button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default NavBar;

@@ -21,7 +21,16 @@ a {
 }
 
 :root {
-  --backgroundColor_dark: rgb(15, 15, 31);
+  --backgroundColor_dark: #ffffff;
+  --backgroundColor2_dark: #f3ecb7c0;
+  --fontColor_dark: #0f0f1f;
+  --fontColor2_dark: #050520;
+  --accentColor2_dark: #f5e23c;
+  --accentColor3_dark: #c7b830;
+}
+
+[data-theme="dark"] {
+  --backgroundColor_dark: #0f0f1f;
   --backgroundColor2_dark: #050520;
   --fontColor_dark: #ffffff;
   --fontColor2_dark: #d1d1bef1;
