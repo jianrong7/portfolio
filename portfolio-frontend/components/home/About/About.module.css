@@ -22,7 +22,7 @@
 
 .description > p {
   line-height: 1.7rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @media screen and (min-width: 768px) {

@@ -39,8 +39,11 @@ const CallToAction = ({
 
   const arrowVariant = {
     hover: {
-      fill: theme === "light" ? "#fff386" : "#050520",
+      fill: theme === "light" ? "#fff7b3" : "#050520",
       backgroundColor: theme === "light" ? "#0f0f1f" : "#f5e23c",
+    },
+    initial: {
+      fill: theme === "light" ? "#0f0f1f" : "#f5e23c",
     },
   };
 
@@ -70,6 +73,7 @@ const CallToAction = ({
         drag={!isMobile}
         dragConstraints={dragConstraints}
         dragElastic={0.2}
+        initial="initial"
         whileHover="hover"
         whileTap={{
           scale: 0.95,
