@@ -10,10 +10,16 @@ interface ButtonProps extends React.HTMLAttributes<HTMLHeadingElement> {
   onClick?: React.MouseEventHandler;
 }
 
-const Button = ({ isHollow, isToggle, onClick, children }: ButtonProps) => {
+const Button = ({
+  isHollow,
+  isToggle,
+  onClick,
+  className,
+  children,
+}: ButtonProps) => {
   return (
     <motion.button
-      className={cx(styles.button, {
+      className={cx(styles.button, className, {
         [styles.isHollow]: isHollow,
         [styles.isToggle]: isToggle,
       })}

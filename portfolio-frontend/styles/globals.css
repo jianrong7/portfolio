@@ -29,6 +29,7 @@ a {
   --accentColor2_dark: #0f0f1f;
   --accentColor3_dark: #c7b830;
   --cta-cover: #f5e23c;
+  --about: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -40,4 +41,5 @@ a {
   --accentColor2_dark: #f5e23c;
   --accentColor3_dark: #c7b830;
   --cta-cover: #000000;
+  --about: #050520;
 }
