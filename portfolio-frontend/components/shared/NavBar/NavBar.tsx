@@ -16,7 +16,12 @@ const NavBar = () => {
       <div className={styles.navBar}>
         <Image src="/icon.svg" alt="logo" width={40} height={40} />
         <Button isToggle isHollow onClick={themeChangeHandler}>
-          <Image src="/moon.png" alt="logo" width={40} height={40} />
+          <Image
+            src={theme === "light" ? "/sun.png" : "/moon.png"}
+            alt="logo"
+            width={40}
+            height={40}
+          />
         </Button>
       </div>
     </div>

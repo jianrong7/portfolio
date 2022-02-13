@@ -1,7 +1,6 @@
 .about {
   background-color: var(--backgroundColor2_dark);
-  grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column: 1/4 !important;
   padding: 2rem 0;
 
   display: grid;
@@ -28,7 +27,6 @@
 @media screen and (min-width: 768px) {
   .description {
     display: grid;
-    /* grid-column-gap: 20px; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: none;
     grid-column-gap: 60px;

@@ -10,6 +10,11 @@
   cursor: pointer;
   margin-bottom: 3rem;
   position: relative;
+
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .text {

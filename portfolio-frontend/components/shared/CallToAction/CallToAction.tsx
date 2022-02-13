@@ -14,6 +14,7 @@ interface CallToActionProps extends React.HTMLAttributes<HTMLHeadingElement> {
   title: string;
   subtitle: string;
   link: string;
+  background: string;
 }
 //remember to wrap everything with Link
 
@@ -22,6 +23,7 @@ const CallToAction = ({
   title,
   subtitle,
   link,
+  background,
   className,
   children,
 }: CallToActionProps) => {
@@ -80,6 +82,7 @@ const CallToAction = ({
         }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
         variants={containerVariant}
+        style={{ backgroundImage: `url(${background})` }}
       >
         <div className={styles.text}>
           <Heading level="h3" className={styles.title}>
