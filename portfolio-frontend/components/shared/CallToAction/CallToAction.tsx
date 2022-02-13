@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, Variants } from "framer-motion";
 import cx from "classnames";
 import { isMobile } from "react-device-detect";
 import { useTheme } from "next-themes";
@@ -28,6 +28,36 @@ const CallToAction = ({
   children,
 }: CallToActionProps) => {
   const { theme } = useTheme();
+  const [arrowVariant, setArrowVariant] = useState<Variants | undefined>(
+    undefined
+  );
+
+  useEffect(() => {
+    if (theme === "light") {
+      setArrowVariant({
+        initial: {
+          fill: "#0f0f1f",
+          backgroundColor: "#fff7b3",
+        },
+        hover: {
+          fill: "#fff7b3",
+          backgroundColor: "#0f0f1f",
+        },
+      });
+    } else {
+      setArrowVariant({
+        initial: {
+          fill: "#f5e23c",
+          backgroundColor: "#050520",
+        },
+        hover: {
+          fill: "#050520",
+          backgroundColor: "#f5e23c",
+        },
+      });
+    }
+    console.log(arrowVariant);
+  });
 
   const containerVariant = {
     hover: {
@@ -39,15 +69,19 @@ const CallToAction = ({
     },
   };
 
-  const arrowVariant = {
-    hover: {
-      fill: theme === "light" ? "#fff7b3" : "#050520",
-      backgroundColor: theme === "light" ? "#0f0f1f" : "#f5e23c",
-    },
-    initial: {
-      fill: theme === "light" ? "#0f0f1f" : "#f5e23c",
-    },
-  };
+  // const arrowVariant = {
+  //   initial: {
+  //     fill: theme === "light" ? "#0f0f1f" : "#f5e23c",
+  //     backgroundColor: theme === "light" ? "#fff7b3" : "#050520",
+  //   },
+  //   hover: {
+  //     fill: theme === "light" ? "#fff7b3" : "#050520",
+  //     backgroundColor: theme === "light" ? "#0f0f1f" : "#f5e23c",
+  //   },
+  //   // exit: {
+  //   //   fill: theme === "light" ? "#0f0f1f" : "#f5e23c",
+  //   // },
+  // };
 
   const coverVariant = {
     hover: {
@@ -72,9 +106,10 @@ const CallToAction = ({
         className={cx(styles.container, className, {
           [styles.isSmall]: isSmall,
         })}
-        drag={!isMobile}
-        dragConstraints={dragConstraints}
-        dragElastic={0.2}
+        key={`cta_${link}`}
+        // drag={!isMobile}
+        // dragConstraints={dragConstraints}
+        // dragElastic={0.2}
         initial="initial"
         whileHover="hover"
         whileTap={{
@@ -89,10 +124,7 @@ const CallToAction = ({
             {title}
           </Heading>
           <p className={styles.subtitle}>{subtitle}</p>
-          <Arrow
-            variants={arrowVariant}
-            color={theme === "light" ? "#0f0f1f" : "#f5e23c"}
-          />
+          <Arrow variants={arrowVariant} />
         </div>
         <motion.div
           className={styles.cover}

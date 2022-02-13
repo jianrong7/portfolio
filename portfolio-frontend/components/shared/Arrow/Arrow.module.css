@@ -8,6 +8,6 @@
   justify-content: center;
 }
 
-.arrowPath {
+.arrow {
   fill: var(--accentColor2_dark);
 }
