@@ -1,13 +1,15 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import styles from "../styles/99.module.css";
+import Heading from "../components/shared/Heading/Heading";
+
+import styles from "../styles/traceify.module.css";
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>99.co | Work</title>
+        <title>Traceify | Work</title>
         <meta
           name="description"
           content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
@@ -16,10 +18,40 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        {/* <Intro />
-        <About />
-        <Work />
-        <Contact /> */}
+        <div>
+          <Heading level="h1">Traceify</Heading>
+          <Heading level="h2">
+            Check out your Spotify history with a TraceTogether style.
+          </Heading>
+        </div>
+        <div>
+          <Heading level="h3">The Project</Heading>
+          <p>
+            Inspired by Receiptify, I built this project given that almost all
+            Singaporeans had to download the TraceTogether app. Being familiar
+            with the layout, I thought it would be fun for me to add a twist and
+            let people view their Spotify history.
+          </p>
+        </div>
+        <div>
+          <Heading level="h3">Technical details</Heading>
+          <p>
+            The frontend is built using React and Tailwind while the backend is
+            built on Express and hosted on Heroku.
+          </p>
+        </div>
+        <div>
+          <Heading level="h3">Personal growth</Heading>
+          <p>
+            This project allowed me to learn about the OAuth2 protocol in depth.
+            I learnt how to retrieve access tokens and refresh tokens from the
+            Spotify OAuth flow to utilise the Spotify API.
+          </p>
+        </div>
+        <div>
+          <Heading level="h3">Challenges</Heading>
+          <p>Learning the OAuth flow.</p>
+        </div>
       </main>
     </div>
   );

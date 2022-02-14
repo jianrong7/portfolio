@@ -1,5 +1,5 @@
 - fix arrows animation
-- create staggering animation for work modules
+- create staggering animation for work modules (?)
 - create transition animation to another page
 - create content for the 4 pages
 - create progress bar for the 4 pages

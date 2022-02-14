@@ -8,7 +8,6 @@ import styles from "./Work.module.css";
 
 const Work = () => {
   const { theme } = useTheme();
-  console.log(theme);
 
   return (
     <section id="work">

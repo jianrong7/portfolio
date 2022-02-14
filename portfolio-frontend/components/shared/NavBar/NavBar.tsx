@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTheme } from "next-themes";
 
 import Button from "../Button/Button";
@@ -14,7 +15,9 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.navBar}>
-        <Image src="/icon.svg" alt="logo" width={40} height={40} />
+        <Link href={"/"} passHref>
+          <Image src="/icon.svg" alt="logo" width={40} height={40} />
+        </Link>
         <Button isToggle isHollow onClick={themeChangeHandler}>
           <Image
             src={theme === "light" ? "/sun.png" : "/moon.png"}
