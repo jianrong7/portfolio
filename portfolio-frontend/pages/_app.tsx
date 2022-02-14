@@ -14,8 +14,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   if (!mounted) return null;
 
-  console.log(router);
-
   return (
     <AnimatePresence exitBeforeEnter>
       <ThemeProvider defaultTheme="system">

@@ -1,6 +1,6 @@
 - fix arrows animation
-- create staggering animation for work modules (?)
-- create transition animation to another page
+- create transition animation to another page for all pages
+- styling for pages
 - create progress bar for the 4 pages
 
 - create blog
