@@ -1,5 +1,4 @@
 - fix arrows animation
-- change scrollbar
 - create staggering animation for work modules
 - create transition animation to another page
 - create content for the 4 pages
