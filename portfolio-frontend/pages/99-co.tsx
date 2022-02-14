@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -5,9 +6,14 @@ import Heading from "../components/shared/Heading/Heading";
 
 import styles from "../styles/99-co.module.css";
 
-const Home: NextPage = () => {
+const NinetyNineCo: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+    >
       <Head>
         <title>99.co | Work</title>
         <meta
@@ -85,8 +91,8 @@ const Home: NextPage = () => {
           </p>
         </div>
       </main>
-    </div>
+    </motion.div>
   );
 };
 
-export default Home;
+export default NinetyNineCo;

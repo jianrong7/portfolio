@@ -8,17 +8,19 @@ import Footer from "../components/shared/Footer/Footer";
 
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
+  console.log(router);
+
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       <ThemeProvider defaultTheme="system">
         <NavBar />
-        <Component {...pageProps} />
+        <Component {...pageProps} key={router.route} />
         <Footer />
       </ThemeProvider>
     </AnimatePresence>

@@ -16,7 +16,6 @@ interface CallToActionProps extends React.HTMLAttributes<HTMLHeadingElement> {
   link: string;
   background: string;
 }
-//remember to wrap everything with Link
 
 const CallToAction = ({
   isSmall = false,
@@ -32,32 +31,32 @@ const CallToAction = ({
     undefined
   );
 
-  useEffect(() => {
-    if (theme === "light") {
-      setArrowVariant({
-        initial: {
-          fill: "#0f0f1f",
-          backgroundColor: "#fff7b3",
-        },
-        hover: {
-          fill: "#fff7b3",
-          backgroundColor: "#0f0f1f",
-        },
-      });
-    } else {
-      setArrowVariant({
-        initial: {
-          fill: "#f5e23c",
-          backgroundColor: "#050520",
-        },
-        hover: {
-          fill: "#050520",
-          backgroundColor: "#f5e23c",
-        },
-      });
-    }
-    console.log(arrowVariant);
-  });
+  // useEffect(() => {
+  //   if (theme === "light") {
+  //     setArrowVariant({
+  //       initial: {
+  //         fill: "#0f0f1f",
+  //         backgroundColor: "#fff7b3",
+  //       },
+  //       hover: {
+  //         fill: "#fff7b3",
+  //         backgroundColor: "#0f0f1f",
+  //       },
+  //     });
+  //   } else {
+  //     setArrowVariant({
+  //       initial: {
+  //         fill: "#f5e23c",
+  //         backgroundColor: "#050520",
+  //       },
+  //       hover: {
+  //         fill: "#050520",
+  //         backgroundColor: "#f5e23c",
+  //       },
+  //     });
+  //   }
+  //   console.log(arrowVariant);
+  // });
 
   const containerVariant = {
     hover: {
@@ -66,6 +65,21 @@ const CallToAction = ({
         duration: 0.5,
         ease: "easeInOut",
       },
+    },
+    tap: {
+      scale: 0.95,
+      transition: { duration: 0.2, ease: "easeInOut" },
+    },
+    initial: {
+      opacity: 0,
+      y: 200,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: {
+      y: 200,
     },
   };
 
@@ -107,15 +121,12 @@ const CallToAction = ({
           [styles.isSmall]: isSmall,
         })}
         key={`cta_${link}`}
-        // drag={!isMobile}
-        // dragConstraints={dragConstraints}
-        // dragElastic={0.2}
-        initial="initial"
         whileHover="hover"
-        whileTap={{
-          scale: 0.95,
-        }}
-        transition={{ duration: 0.2, ease: "easeInOut" }}
+        initial="initial"
+        whileInView="animate"
+        exit="exit"
+        whileTap="tap"
+        viewport={{ once: true }}
         variants={containerVariant}
         style={{ backgroundImage: `url(${background})` }}
       >

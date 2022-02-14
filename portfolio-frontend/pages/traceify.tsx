@@ -5,7 +5,7 @@ import Heading from "../components/shared/Heading/Heading";
 
 import styles from "../styles/traceify.module.css";
 
-const Home: NextPage = () => {
+const Traceify: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -57,4 +57,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Traceify;
