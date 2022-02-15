@@ -1,13 +1,30 @@
-import { motion } from "framer-motion";
+import { motion, useViewportScroll, get } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
+import cx from "classnames";
 
 import Heading from "../components/shared/Heading/Heading";
 import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
 import styles from "../styles/99-co.module.css";
+import { useEffect, useState } from "react";
 
 const NinetyNineCo: NextPage = () => {
+  const [isHidden, setIsHidden] = useState<boolean>(true);
+  const { scrollYProgress } = useViewportScroll();
+
+  useEffect(() => {
+    scrollYProgress.onChange((latest) =>
+      latest === 0
+        ? setIsHidden(true)
+        : latest === 1
+        ? setIsHidden(true)
+        : setIsHidden(false)
+    );
+    // console.log(scrollY.get());
+    // scrollY.get() !== 0 ? setIsHidden(false) : setIsHidden(true);
+  }, [scrollYProgress]);
+
   return (
     <motion.div
       className={styles.container}
@@ -24,11 +41,9 @@ const NinetyNineCo: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StickyHeader title="99.co" />
+
       <main className={styles.main}>
         <div>
-          {/* <Heading level="h1" className={styles.title}>
-            99.co
-          </Heading> */}
           <Heading level="h2" className={styles.subtitle}>
             To build the simplest and most trusted platform to help
             un-complicate the property journey and help the 99% find their way
@@ -94,6 +109,18 @@ const NinetyNineCo: NextPage = () => {
           </p>
         </div>
       </main>
+      <aside className={styles.aside}>
+        <motion.div
+          className={cx(styles.progressBarDiv, {
+            [styles.hide]: isHidden,
+          })}
+        >
+          <motion.div
+            className={styles.progressBar}
+            style={{ scaleY: scrollYProgress }}
+          ></motion.div>
+        </motion.div>
+      </aside>
     </motion.div>
   );
 };

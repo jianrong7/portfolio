@@ -5,7 +5,7 @@
   grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
   grid-template-rows: none;
   grid-auto-flow: row;
-  padding: 1rem 0;
+  padding: 2rem 0 1rem;
   background-color: var(--backgroundColor_dark);
   box-shadow: 0 0px 20px -6px rgba(0, 0, 0, 0.7);
 }
