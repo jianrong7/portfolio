@@ -9,13 +9,20 @@ const ProgressBar = () => {
   const { scrollYProgress } = useViewportScroll();
 
   useEffect(() => {
-    scrollYProgress.onChange((latest) =>
-      latest === 0
-        ? setIsHidden(true)
-        : latest === 1
-        ? setIsHidden(true)
-        : setIsHidden(false)
+    function updateState(latest: number) {
+      if (latest === 0 || latest === 1) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+    }
+    const unsubscribeY = scrollYProgress.onChange((latest) =>
+      updateState(latest)
     );
+
+    return () => {
+      unsubscribeY();
+    };
   }, [scrollYProgress]);
 
   return (

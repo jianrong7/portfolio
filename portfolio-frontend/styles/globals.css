@@ -35,6 +35,13 @@ a {
   color: var(--fontColor_dark);
 }
 
+*::selection {
+  /* Change highlight background color to black */
+  background: var(--backgroundColor2_dark);
+  /* Change highlight text color to red */
+  color: var(--fontColor2_dark);
+}
+
 :root {
   --backgroundColor_dark: #ffffff;
   --backgroundColor2_dark: #fff7b3;

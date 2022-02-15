@@ -1,7 +1,6 @@
 - fix arrows animation
 - create transition animation to another page for all pages
 - styling for pages
-- create progress bar for the 4 pages
 
 - create blog
 - create blog system for MDX
