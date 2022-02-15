@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
 
-import NavBar from "../components/shared/NavBar/NavBar";
-import About from "../components/home/About/About";
-import Intro from "../components/home/Intro/Intro";
-import Work from "../components/home/Work/Work";
-import Contact from "../components/home/Contact/Contact";
+import NavBar from "../../components/shared/NavBar/NavBar";
 
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Blog.module.css";
 
-const Home: NextPage = () => {
+const components = { NavBar };
+
+const Blog: NextPage = ({ source }) => {
   return (
     <motion.div
       className={styles.container}
@@ -26,14 +26,22 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
+      <MDXRemote {...source} components={components} />
       <main className={styles.main}>
-        <Intro />
+        Hello
+        {/* <Intro />
         <About />
         <Work />
-        <Contact />
+        <Contact /> */}
       </main>
     </motion.div>
   );
 };
 
-export default Home;
+export default Blog;
+
+export async function getStaticProps() {
+  const source = "some ndx text with a component <NavBar />";
+  const mdxSource = await serialize(source);
+  return { props: { source: mdxSource } };
+}

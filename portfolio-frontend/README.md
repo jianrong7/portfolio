@@ -1,4 +1,3 @@
-- fix arrows animation
 - create transition animation to another page for all pages
 - styling for pages
 
@@ -6,6 +5,7 @@
 - create blog system for MDX
 
 - add three.js animation
+- arrow animations (done before but was very buggy so removed)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
