@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import NavBar from "../components/shared/NavBar/NavBar";
 import About from "../components/home/About/About";
 import Intro from "../components/home/Intro/Intro";
 import Work from "../components/home/Work/Work";
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <NavBar />
       <main className={styles.main}>
         <Intro />
         <About />

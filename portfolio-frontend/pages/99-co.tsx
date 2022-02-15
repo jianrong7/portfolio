@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import Heading from "../components/shared/Heading/Heading";
+import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
 import styles from "../styles/99-co.module.css";
 
@@ -22,11 +23,13 @@ const NinetyNineCo: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <StickyHeader title="99.co" />
       <main className={styles.main}>
         <div>
-          <Heading level="h1">99.co</Heading>
-          <Heading level="h2">
+          {/* <Heading level="h1" className={styles.title}>
+            99.co
+          </Heading> */}
+          <Heading level="h2" className={styles.subtitle}>
             To build the simplest and most trusted platform to help
             un-complicate the property journey and help the 99% find their way
             home.

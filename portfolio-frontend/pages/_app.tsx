@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AnimatePresence exitBeforeEnter>
       <ThemeProvider defaultTheme="system">
-        <NavBar />
         <Component {...pageProps} key={router.route} />
         <Footer />
       </ThemeProvider>
