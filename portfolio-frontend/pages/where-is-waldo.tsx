@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import Heading from "../components/shared/Heading/Heading";
+import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
+import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
 import styles from "../styles/where-is-waldo.module.css";
 
@@ -16,10 +18,9 @@ const WhereIsWaldo: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <StickyHeader title="Where is Waldo" />
       <main className={styles.main}>
         <div>
-          <Heading level="h1">Where is Waldo</Heading>
           <Heading level="h2">Find Waldo - Desktop Game.</Heading>
         </div>
         <div>
@@ -53,6 +54,7 @@ const WhereIsWaldo: NextPage = () => {
           </p>
         </div>
       </main>
+      <ProgressBar />
     </div>
   );
 };

@@ -1,30 +1,14 @@
-import { motion, useViewportScroll, get } from "framer-motion";
+import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
-import cx from "classnames";
 
 import Heading from "../components/shared/Heading/Heading";
 import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
+import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
 
 import styles from "../styles/99-co.module.css";
-import { useEffect, useState } from "react";
 
 const NinetyNineCo: NextPage = () => {
-  const [isHidden, setIsHidden] = useState<boolean>(true);
-  const { scrollYProgress } = useViewportScroll();
-
-  useEffect(() => {
-    scrollYProgress.onChange((latest) =>
-      latest === 0
-        ? setIsHidden(true)
-        : latest === 1
-        ? setIsHidden(true)
-        : setIsHidden(false)
-    );
-    // console.log(scrollY.get());
-    // scrollY.get() !== 0 ? setIsHidden(false) : setIsHidden(true);
-  }, [scrollYProgress]);
-
   return (
     <motion.div
       className={styles.container}
@@ -109,18 +93,7 @@ const NinetyNineCo: NextPage = () => {
           </p>
         </div>
       </main>
-      <aside className={styles.aside}>
-        <motion.div
-          className={cx(styles.progressBarDiv, {
-            [styles.hide]: isHidden,
-          })}
-        >
-          <motion.div
-            className={styles.progressBar}
-            style={{ scaleY: scrollYProgress }}
-          ></motion.div>
-        </motion.div>
-      </aside>
+      <ProgressBar />
     </motion.div>
   );
 };

@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import Heading from "../components/shared/Heading/Heading";
+import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
+import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
 import styles from "../styles/drivesg.module.css";
 
@@ -16,10 +18,9 @@ const DriveSg: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <StickyHeader title="DriveSG" />
       <main className={styles.main}>
         <div>
-          <Heading level="h1">DriveSG</Heading>
           <Heading level="h2">
             Your best bet in passing your driving theory tests.
           </Heading>
@@ -71,6 +72,7 @@ const DriveSg: NextPage = () => {
           </p>
         </div>
       </main>
+      <ProgressBar />
     </div>
   );
 };

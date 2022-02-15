@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import Heading from "../components/shared/Heading/Heading";
+import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
+import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
 import styles from "../styles/traceify.module.css";
 
@@ -16,10 +18,9 @@ const Traceify: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <StickyHeader title="Traceify" />
       <main className={styles.main}>
         <div>
-          <Heading level="h1">Traceify</Heading>
           <Heading level="h2">
             Check out your Spotify history with a TraceTogether style.
           </Heading>
@@ -53,6 +54,7 @@ const Traceify: NextPage = () => {
           <p>Learning the OAuth flow.</p>
         </div>
       </main>
+      <ProgressBar />
     </div>
   );
 };

@@ -1,0 +1,26 @@
+.aside {
+  position: fixed;
+  top: 266px;
+  display: flex;
+  left: 10px;
+}
+
+.progressBarDiv {
+  height: calc(88vh - 40px);
+  max-height: 425px;
+  width: 2px;
+  background-color: var(--backgroundColor2_dark);
+  opacity: 0.6;
+}
+
+.progressBar {
+  transform-origin: center top;
+  width: 2px;
+  background-color: var(--accentColor2_dark);
+  height: 100%;
+  /* transform: scaleY(0.26) translateZ(0px); */
+}
+
+.hide {
+  display: none;
+}
