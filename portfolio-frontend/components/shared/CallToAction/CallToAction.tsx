@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { motion, Variants } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import cx from "classnames";
-import { isMobile } from "react-device-detect";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 
 import Heading from "../Heading/Heading";
@@ -26,38 +24,6 @@ const CallToAction = ({
   className,
   children,
 }: CallToActionProps) => {
-  const { theme } = useTheme();
-  const [arrowVariant, setArrowVariant] = useState<Variants | undefined>(
-    undefined
-  );
-
-  // useEffect(() => {
-  //   if (theme === "light") {
-  //     setArrowVariant({
-  //       initial: {
-  //         fill: "#0f0f1f",
-  //         backgroundColor: "#fff7b3",
-  //       },
-  //       hover: {
-  //         fill: "#fff7b3",
-  //         backgroundColor: "#0f0f1f",
-  //       },
-  //     });
-  //   } else {
-  //     setArrowVariant({
-  //       initial: {
-  //         fill: "#f5e23c",
-  //         backgroundColor: "#050520",
-  //       },
-  //       hover: {
-  //         fill: "#050520",
-  //         backgroundColor: "#f5e23c",
-  //       },
-  //     });
-  //   }
-  //   console.log(arrowVariant);
-  // });
-
   const containerVariant = {
     hover: {
       boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
@@ -83,20 +49,6 @@ const CallToAction = ({
     },
   };
 
-  // const arrowVariant = {
-  //   initial: {
-  //     fill: theme === "light" ? "#0f0f1f" : "#f5e23c",
-  //     backgroundColor: theme === "light" ? "#fff7b3" : "#050520",
-  //   },
-  //   hover: {
-  //     fill: theme === "light" ? "#fff7b3" : "#050520",
-  //     backgroundColor: theme === "light" ? "#0f0f1f" : "#f5e23c",
-  //   },
-  //   // exit: {
-  //   //   fill: theme === "light" ? "#0f0f1f" : "#f5e23c",
-  //   // },
-  // };
-
   const coverVariant = {
     hover: {
       opacity: 0,
@@ -105,13 +57,6 @@ const CallToAction = ({
         ease: "easeInOut",
       },
     },
-  };
-
-  const dragConstraints = {
-    top: -5,
-    left: -5,
-    right: 5,
-    bottom: 5,
   };
 
   return (
@@ -135,7 +80,7 @@ const CallToAction = ({
             {title}
           </Heading>
           <p className={styles.subtitle}>{subtitle}</p>
-          <Arrow variants={arrowVariant} />
+          <Arrow />
         </div>
         <motion.div
           className={styles.cover}
