@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import cx from "classnames";
+import Link from "next/link";
 
 import Heading from "../../shared/Heading/Heading";
 import Button from "../../shared/Button/Button";
@@ -42,6 +43,11 @@ const Intro = () => (
         <a href="#work">
           <Button isHollow>Work</Button>
         </a>
+        <Link href="/blog">
+          <a>
+            <Button>Blog</Button>
+          </a>
+        </Link>
       </div>
       <a href="https://twitter.com/jrloh7" className={styles.twitter}>
         @jrloh7{" "}

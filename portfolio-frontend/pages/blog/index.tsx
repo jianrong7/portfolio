@@ -1,47 +1,72 @@
 import type { NextPage } from "next";
+import fs from "fs";
+import path from "path";
 import Head from "next/head";
+import matter from "gray-matter";
 import { motion } from "framer-motion";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
 
 import NavBar from "../../components/shared/NavBar/NavBar";
+import Post from "../../components/blog/Post";
+import { sortByDate } from "../../utils";
 
 import styles from "../../styles/Blog.module.css";
+import Link from "next/link";
 
 const components = { NavBar };
 
-const Blog: NextPage = ({ source }) => {
+const Blog: NextPage = ({ posts }) => {
+  console.log(posts);
   return (
-    <motion.div
-      className={styles.container}
-      exit={{ opacity: 0, y: -300 }}
-      transition={{ duration: 5 }}
-    >
-      <Head>
-        <title>Loh Jian Rong | Personal Portfolio</title>
-        <meta
-          name="description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
       <NavBar />
-      <MDXRemote {...source} components={components} />
-      <main className={styles.main}>
-        Hello
-        {/* <Intro />
-        <About />
-        <Work />
-        <Contact /> */}
-      </main>
-    </motion.div>
+      <div>hello</div>
+      <div>
+        {posts.map((post) => (
+          <Post key={post.slug} post={post} />
+        ))}
+      </div>
+    </>
   );
 };
 
 export default Blog;
 
 export async function getStaticProps() {
-  const source = "some ndx text with a component <NavBar />";
-  const mdxSource = await serialize(source);
-  return { props: { source: mdxSource } };
+  try {
+    // get files from 'content' dir
+    const files = fs.readdirSync(path.join("content"));
+
+    // get slug and frontmatter from posts
+    const posts = files.map((file) => {
+      // create slug
+      const slug = file.replace(".mdx", "");
+
+      // get frontmatter
+      const markdownWithMeta = fs.readFileSync(
+        path.join("content", file),
+        "utf-8"
+      );
+
+      const { data: frontmatter } = matter(markdownWithMeta);
+
+      return {
+        slug,
+        frontmatter,
+      };
+    });
+
+    return {
+      props: {
+        posts: posts.sort(sortByDate),
+      },
+    };
+  } catch (e) {
+    console.error(e);
+  }
 }
+
+// export async function getStaticProps() {
+//   const source = "some ndx text with a component <NavBar />";
+//   const mdxSource = await serialize(source);
+//   return { props: { source: mdxSource } };
+// }
