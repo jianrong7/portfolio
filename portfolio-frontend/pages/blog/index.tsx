@@ -12,10 +12,16 @@ import { sortByDate } from "../../utils";
 import styles from "../../styles/Blog.module.css";
 import Link from "next/link";
 
-const components = { NavBar };
+import type { frontmatter } from "../../types/post";
 
-const Blog: NextPage = ({ posts }) => {
-  console.log(posts);
+interface BlogProps {
+  posts: Array<{
+    slug: string;
+    frontmatter: frontmatter;
+  }>;
+}
+
+const Blog: NextPage<BlogProps> = ({ posts }) => {
   return (
     <>
       <NavBar />
@@ -64,9 +70,3 @@ export async function getStaticProps() {
     console.error(e);
   }
 }
-
-// export async function getStaticProps() {
-//   const source = "some ndx text with a component <NavBar />";
-//   const mdxSource = await serialize(source);
-//   return { props: { source: mdxSource } };
-// }

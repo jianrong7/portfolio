@@ -2,17 +2,23 @@ import type { NextPage } from "next";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { MDXProvider } from "@mdx-js/react";
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 
-const PostPage: NextPage = ({
-  frontmatter: { title, date, cover_image },
+import type { frontmatter } from "../../types/post";
+
+interface PostPageProps {
+  frontmatter: frontmatter;
+  slug: string;
+  children: MDXRemoteSerializeResult;
+}
+
+const PostPage: NextPage<PostPageProps> = ({
+  frontmatter: { title, date },
   slug,
   children,
 }) => {
-  console.log(children);
   return (
     <>
       <Link href="/">
@@ -39,7 +45,13 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { slug } }) {
+interface getStaticPropsTypes {
+  params: { slug: string };
+}
+
+export async function getStaticProps({
+  params: { slug },
+}: getStaticPropsTypes) {
   const markdownWithMeta = fs.readFileSync(
     path.join("content", slug + ".mdx"),
     "utf-8"
