@@ -13,6 +13,10 @@ import styles from "../../styles/Blog.module.css";
 import Link from "next/link";
 
 import type { frontmatter } from "../../types/post";
+import Heading from "../../components/shared/Heading/Heading";
+import FeaturedPost from "../../components/blog/FeaturedPost";
+import FeaturedPosts from "../../components/blog/FeaturedPosts/FeaturedPosts";
+import AllArticles from "../../components/blog/AllArticles/AllArticles";
 
 interface BlogProps {
   posts: Array<{
@@ -23,15 +27,25 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = ({ posts }) => {
   return (
-    <>
+    <motion.div
+      className={styles.container}
+      exit={{ opacity: 0, y: -300 }}
+      transition={{ duration: 5 }}
+    >
+      <Head>
+        <title>Loh Jian Rong | Personal Portfolio</title>
+        <meta
+          name="description"
+          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NavBar />
-      <div>hello</div>
-      <div>
-        {posts.map((post) => (
-          <Post key={post.slug} post={post} />
-        ))}
-      </div>
-    </>
+      <main className={styles.main}>
+        <FeaturedPosts posts={posts} />
+        <AllArticles posts={posts} />
+      </main>
+    </motion.div>
   );
 };
 

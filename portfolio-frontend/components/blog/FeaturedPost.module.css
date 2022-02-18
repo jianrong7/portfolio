@@ -1,0 +1,14 @@
+.container {
+  border: 1px solid var(--accentColor2_dark);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+}
