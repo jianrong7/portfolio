@@ -7,8 +7,12 @@
   cursor: pointer;
 }
 
+.title {
+  font-size: calc(1rem + 0.4vw);
+}
+
 .subtitle {
-  font-size: 1rem;
+  font-size: calc(0.8rem + 0.2vw);
   font-weight: 400;
   margin: 0;
 }

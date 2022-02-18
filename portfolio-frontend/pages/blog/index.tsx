@@ -17,6 +17,7 @@ import Heading from "../../components/shared/Heading/Heading";
 import FeaturedPost from "../../components/blog/FeaturedPost";
 import FeaturedPosts from "../../components/blog/FeaturedPosts/FeaturedPosts";
 import AllArticles from "../../components/blog/AllArticles/AllArticles";
+import Breadcrumb from "../../components/shared/Breadcrumbs/Breadcrumb";
 
 interface BlogProps {
   posts: Array<{
@@ -41,7 +42,9 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
+
       <main className={styles.main}>
+        <Breadcrumb breadcrumbs={[{ url: "/", title: "Home" }]} />
         <FeaturedPosts posts={posts} />
         <AllArticles posts={posts} />
       </main>

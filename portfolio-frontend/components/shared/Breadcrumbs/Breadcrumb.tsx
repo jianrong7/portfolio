@@ -1,0 +1,45 @@
+import React from "react";
+
+const getSchema = (data) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: data.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@id": `https://99.co/${item.url}`,
+      name: item.title,
+    },
+    name: item.title,
+  })),
+});
+
+export default function Breadcrumb({ breadcrumbs }) {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getSchema(breadcrumbs)),
+        }}
+      />
+      <ol>
+        {breadcrumbs.map((breadcrumb, index) => {
+          return (
+            <li
+              key={`${breadcrumb.title}_${index}`}
+              data-tracking="Breadcrumb clicked"
+              data-tracking-crumb-title={breadcrumb.title}
+              data-tracking-crumb-href={breadcrumb.url}
+            >
+              <a href={breadcrumb.url} itemProp="item">
+                <span itemProp="name">{breadcrumb.title}</span>
+                <meta itemProp="position" content={index + 1} />
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </>
+  );
+}
