@@ -41,10 +41,10 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
 
+      <NavBar />
       <main className={styles.main}>
-        <Breadcrumb breadcrumbs={[{ url: "/", title: "Home" }]} />
+        <Breadcrumb breadcrumbs={[{ url: "/", title: "< Home" }]} />
         <FeaturedPosts posts={posts} />
         <AllArticles posts={posts} />
       </main>

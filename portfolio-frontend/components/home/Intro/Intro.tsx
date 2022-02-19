@@ -15,7 +15,7 @@ const Intro = () => (
       <motion.div
         animate={{ rotate: 20 }}
         transition={{
-          repeat: 12,
+          repeat: 13,
           repeatType: "reverse",
           duration: 0.2,
           ease: "easeInOut",

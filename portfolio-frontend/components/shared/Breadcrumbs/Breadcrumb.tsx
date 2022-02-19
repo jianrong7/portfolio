@@ -1,4 +1,7 @@
+import Link from "next/link";
 import React from "react";
+
+import styles from "./Breadcrumb.module.css";
 
 const getSchema = (data) => ({
   "@context": "https://schema.org",
@@ -23,19 +26,22 @@ export default function Breadcrumb({ breadcrumbs }) {
           __html: JSON.stringify(getSchema(breadcrumbs)),
         }}
       />
-      <ol>
+      <ol className={styles.breadcrumbs}>
         {breadcrumbs.map((breadcrumb, index) => {
           return (
             <li
+              className={styles.breadcrumb}
               key={`${breadcrumb.title}_${index}`}
               data-tracking="Breadcrumb clicked"
               data-tracking-crumb-title={breadcrumb.title}
               data-tracking-crumb-href={breadcrumb.url}
             >
-              <a href={breadcrumb.url} itemProp="item">
-                <span itemProp="name">{breadcrumb.title}</span>
-                <meta itemProp="position" content={index + 1} />
-              </a>
+              <Link href={breadcrumb.url}>
+                <a itemProp="item">
+                  <span itemProp="name">{breadcrumb.title}</span>
+                  <meta itemProp="position" content={index + 1} />
+                </a>
+              </Link>
             </li>
           );
         })}
