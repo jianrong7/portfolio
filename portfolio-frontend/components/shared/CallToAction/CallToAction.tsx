@@ -34,7 +34,7 @@ const CallToAction = ({
     },
     tap: {
       scale: 0.95,
-      transition: { duration: 0.2, ease: "easeInOut" },
+      transition: { duration: 0.4, ease: "easeInOut" },
     },
     initial: {
       opacity: 0,

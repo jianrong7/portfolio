@@ -11,32 +11,42 @@ export default function Post({ post }) {
   const date = new Date(post.frontmatter.date);
   const { theme } = useTheme();
 
+  const divVariants = {};
+
   const listVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
     hover: {
       backgroundColor: theme === "light" ? "#f5e23c" : "#050520",
+      transition: { duration: 0.4, ease: "easeOut" },
     },
     tap: {
       scale: 0.95,
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   };
 
   const keywordsVariants = {
-    initial: {
-      opacity: 0,
-    },
     hover: {
-      opacity: 1,
+      x: 0,
     },
   };
   return (
     <Link href={`/blog/${post.slug}`} passHref>
-      <div className={styles.mobileContainer}>
+      <motion.div className={styles.mobileContainer} variants={divVariants}>
         <div>
           <motion.li
             className={styles.container}
-            initial="initial"
+            initial="hidden"
+            whileInView="visible"
             whileHover="hover"
             whileTap="tap"
+            viewport={{ once: true }}
             variants={listVariants}
           >
             <div className={styles.dateTitle}>
@@ -54,6 +64,8 @@ export default function Post({ post }) {
                   <motion.li
                     key={`${keyword}_${index}`}
                     className={styles.keyword}
+                    initial={{ x: 600 }}
+                    whileInView={{ x: 600 }}
                     transition={{ duration: 0.3 + index / 10 }}
                     variants={keywordsVariants}
                   >
@@ -70,15 +82,18 @@ export default function Post({ post }) {
               <motion.li
                 key={`${keyword}_${index}`}
                 className={styles.keyword}
+                initial={{ x: 100 }}
+                whileInView={{ x: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.3 + index / 10 }}
-                variants={keywordsVariants}
+                // variants={keywordsVariants}
               >
                 {keyword}
               </motion.li>
             ) : null
           )}
         </motion.ul>
-      </div>
+      </motion.div>
     </Link>
   );
 }

@@ -10,13 +10,13 @@ const listVariants: Variants = {
     boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
     scale: 1.05,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: "easeInOut",
     },
   },
   tap: {
     scale: 0.95,
-    transition: { duration: 0.2, ease: "easeInOut" },
+    transition: { duration: 0.4, ease: "easeInOut" },
   },
 };
 

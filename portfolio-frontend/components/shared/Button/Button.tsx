@@ -25,10 +25,10 @@ const Button = ({
       })}
       whileHover={{
         scale: 1.05,
-        y: -5,
-        transition: { duration: 0.4, ease: "easeOut" },
+        y: -2,
+        transition: { duration: 0.4, ease: "easeInOut" },
       }}
-      whileTap={{ scale: 0.95, y: 5 }}
+      whileTap={{ scale: 0.95, y: 2 }}
       onClick={onClick}
     >
       {children}

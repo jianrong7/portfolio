@@ -1,6 +1,7 @@
 .container {
   background-color: var(--backgroundColor_dark);
   color: var(--fontColor_dark);
+  overflow: hidden;
 }
 
 .main {
