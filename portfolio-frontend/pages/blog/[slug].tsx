@@ -2,13 +2,11 @@ import type { NextPage } from "next";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Link from "next/link";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { readingTime } from "reading-time-estimator";
 
 import type { frontmatter } from "../../types/post";
-import StickyHeader from "../../components/shared/StickyHeader/StickyHeader";
 
 import styles from "../../styles/BlogPost.module.css";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
@@ -16,10 +14,17 @@ import Heading from "../../components/shared/Heading/Heading";
 import NavBar from "../../components/shared/NavBar/NavBar";
 import Head from "next/head";
 
+interface ReadingTime {
+  minutes: number;
+  words: number;
+  text: string;
+}
+
 interface PostPageProps {
   frontmatter: frontmatter;
   slug: string;
   children: MDXRemoteSerializeResult;
+  timeToRead: ReadingTime;
 }
 
 const PostPage: NextPage<PostPageProps> = ({

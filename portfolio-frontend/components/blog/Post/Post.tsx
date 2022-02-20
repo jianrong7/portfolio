@@ -3,11 +3,15 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
+import type { PostInterface } from "../../../types/post";
 import Heading from "../../shared/Heading/Heading";
 
 import styles from "./Post.module.css";
+interface PostProps {
+  post: PostInterface;
+}
 
-export default function Post({ post }) {
+export default function Post({ post }: PostProps) {
   const date = new Date(post.frontmatter.date);
   const { theme } = useTheme();
 
@@ -87,7 +91,6 @@ export default function Post({ post }) {
                 whileInView={{ x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3 + index / 10 }}
-                // variants={keywordsVariants}
               >
                 {keyword}
               </motion.li>

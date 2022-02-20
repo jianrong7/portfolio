@@ -6,8 +6,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import type { frontmatter } from "../../types/post";
-import { sortByDate } from "../../utils";
+import type { PostInterface } from "../../types/post";
 import FeaturedPosts from "../../components/blog/FeaturedPosts/FeaturedPosts";
 import AllArticles from "../../components/blog/AllArticles/AllArticles";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
@@ -17,10 +16,7 @@ import Intro from "../../components/blog/Intro/Intro";
 import styles from "../../styles/Blog.module.css";
 
 interface BlogProps {
-  posts: Array<{
-    slug: string;
-    frontmatter: frontmatter;
-  }>;
+  posts: PostInterface[];
 }
 
 const Blog: NextPage<BlogProps> = ({ posts }) => {
@@ -84,7 +80,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        posts: posts.sort(sortByDate),
+        posts: posts,
       },
     };
   } catch (e) {
