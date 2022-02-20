@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
+  grid-template-rows: none;
+  grid-auto-flow: row;
+}
+
+.container > * {
+  grid-column: 2;
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+
+.title {
+  line-height: 1.8;
+}
+
+.details > span {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.timeToRead {
+  display: inline-block;
+}
+
+.timeToRead::first-letter {
+  text-transform: uppercase;
+}

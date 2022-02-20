@@ -10,6 +10,7 @@
 .breadcrumbs {
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   grid-column: 2;
   margin: 0 0 1.5rem;
 }

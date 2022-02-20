@@ -5,8 +5,15 @@ import matter from "gray-matter";
 import Link from "next/link";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import { readingTime } from "reading-time-estimator";
 
 import type { frontmatter } from "../../types/post";
+import StickyHeader from "../../components/shared/StickyHeader/StickyHeader";
+
+import styles from "../../styles/BlogPost.module.css";
+import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
+import Heading from "../../components/shared/Heading/Heading";
+import NavBar from "../../components/shared/NavBar/NavBar";
 
 interface PostPageProps {
   frontmatter: frontmatter;
@@ -15,17 +22,36 @@ interface PostPageProps {
 }
 
 const PostPage: NextPage<PostPageProps> = ({
-  frontmatter: { title, date },
+  frontmatter: { title, date, updated },
   slug,
   children,
+  timeToRead,
 }) => {
+  console.log(new Date(updated).toISOString());
   return (
     <>
-      <Link href="/">
-        <a>Go Back</a>
-      </Link>
-      <div>{title}</div>
-      <MDXRemote {...children} />
+      <NavBar />
+      <Breadcrumbs
+        breadcrumbs={[
+          { url: "/", title: "Home" },
+          { url: "/blog", title: "Blog" },
+          { url: `/blog/${slug}`, title },
+        ]}
+      />
+      <main className={styles.container}>
+        <div className={styles.hero}>
+          <Heading level="h1" className={styles.title}>
+            {title}
+          </Heading>
+          <div className={styles.details}>
+            <span>{new Date(date).toDateString().slice(4)} • </span>
+            <span className={styles.timeToRead}>{timeToRead.text}</span>
+            <span> • {new Date(updated).toDateString().slice(4)}</span>
+          </div>
+        </div>
+
+        <MDXRemote {...children} />
+      </main>
     </>
   );
 };
@@ -59,6 +85,8 @@ export async function getStaticProps({
 
   const { data: frontmatter, content } = matter(markdownWithMeta);
 
+  const timeToRead = readingTime(content);
+
   const children = await serialize(content);
 
   return {
@@ -66,6 +94,7 @@ export async function getStaticProps({
       frontmatter,
       slug,
       children,
+      timeToRead,
     },
   };
 }
