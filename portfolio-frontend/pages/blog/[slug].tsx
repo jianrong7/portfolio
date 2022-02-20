@@ -14,6 +14,7 @@ import styles from "../../styles/BlogPost.module.css";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import Heading from "../../components/shared/Heading/Heading";
 import NavBar from "../../components/shared/NavBar/NavBar";
+import Head from "next/head";
 
 interface PostPageProps {
   frontmatter: frontmatter;
@@ -27,9 +28,16 @@ const PostPage: NextPage<PostPageProps> = ({
   children,
   timeToRead,
 }) => {
-  console.log(new Date(updated).toISOString());
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta
+          name="description"
+          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NavBar />
       <Breadcrumbs
         breadcrumbs={[
