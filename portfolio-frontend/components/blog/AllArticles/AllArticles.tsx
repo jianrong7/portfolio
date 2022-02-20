@@ -1,7 +1,7 @@
 import React from "react";
 
 import Heading from "../../shared/Heading/Heading";
-import Post from "../Post";
+import Post from "../Post/Post";
 
 import styles from "./AllArticles.module.css";
 

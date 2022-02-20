@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import Heading from "../shared/Heading/Heading";
+import Heading from "../../shared/Heading/Heading";
 
 import styles from "./FeaturedPost.module.css";
 

@@ -1,0 +1,76 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro > span {
+  font-size: 1.7rem;
+  line-height: 1.8;
+}
+
+.introHello {
+  font-size: 1.7rem;
+  color: var(--accentColor_dark);
+  display: inline-block;
+}
+
+.wave {
+  font-size: 1.7rem;
+  margin-bottom: -20px;
+  margin-right: -45px;
+  padding-bottom: 20px;
+  padding-right: 45px;
+  display: inline-block;
+}
+
+.twitter {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  font-size: 1rem;
+  white-space: nowrap;
+  display: flex;
+}
+
+.buttonText {
+  margin-right: 0.5rem;
+  color: var(--about);
+}
+
+.twitterLogo {
+  fill: var(--about);
+}
+
+.curlyArrow {
+  margin: 0 0 1rem 0.4rem;
+}
+
+.curlyArrowPath {
+  stroke: var(--accentColor2_dark);
+}
+
+.info {
+  margin: 0 0 1.5em 0.4rem;
+}
+
+.char {
+  display: inline-block;
+}
+@media screen and (min-width: 768px) {
+  .intro > span {
+    font-size: 2.2rem;
+    line-height: 1.8;
+  }
+
+  .introHello {
+    font-size: 2.2rem;
+    color: var(--accentColor_dark);
+    display: inline-block;
+  }
+
+  .wave {
+    font-size: 2.2rem;
+  }
+}

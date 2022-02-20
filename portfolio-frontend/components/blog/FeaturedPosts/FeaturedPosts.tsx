@@ -1,7 +1,7 @@
 import React from "react";
 
 import Heading from "../../shared/Heading/Heading";
-import FeaturedPost from "../FeaturedPost";
+import FeaturedPost from "../FeaturedPost/FeaturedPost";
 
 import styles from "./FeaturedPosts.module.css";
 

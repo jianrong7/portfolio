@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
-import Heading from "../shared/Heading/Heading";
+import Heading from "../../shared/Heading/Heading";
 
 import styles from "./Post.module.css";
 
@@ -34,6 +34,7 @@ export default function Post({ post }) {
   const keywordsVariants = {
     hover: {
       x: 0,
+      opacity: 1,
     },
   };
   return (
@@ -64,8 +65,8 @@ export default function Post({ post }) {
                   <motion.li
                     key={`${keyword}_${index}`}
                     className={styles.keyword}
-                    initial={{ x: 600 }}
-                    whileInView={{ x: 600 }}
+                    initial={{ x: 700, opacity: 0 }}
+                    whileInView={{ x: 700, opacity: 0 }}
                     transition={{ duration: 0.3 + index / 10 }}
                     variants={keywordsVariants}
                   >

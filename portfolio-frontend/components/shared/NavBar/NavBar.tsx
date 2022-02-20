@@ -24,8 +24,8 @@ const NavBar = () => {
           <Image
             src={theme === "light" ? "/sun.png" : "/moon.png"}
             alt="logo"
-            width={40}
-            height={40}
+            width={20}
+            height={20}
           />
         </Button>
       </div>

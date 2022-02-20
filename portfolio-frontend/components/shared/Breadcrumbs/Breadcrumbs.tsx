@@ -1,7 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
+import cx from "classnames";
+import { useTheme } from "next-themes";
 
-import styles from "./Breadcrumb.module.css";
+import styles from "./Breadcrumbs.module.css";
 
 const getSchema = (data) => ({
   "@context": "https://schema.org",
@@ -17,9 +20,11 @@ const getSchema = (data) => ({
   })),
 });
 
-export default function Breadcrumb({ breadcrumbs }) {
+export default function Breadcrumbs({ breadcrumbs }) {
+  const { theme } = useTheme();
+
   return (
-    <>
+    <div className={styles.container}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -36,9 +41,21 @@ export default function Breadcrumb({ breadcrumbs }) {
               data-tracking-crumb-title={breadcrumb.title}
               data-tracking-crumb-href={breadcrumb.url}
             >
+              {index !== 0 && (
+                <Image
+                  src={
+                    theme === "light" ? "/chevron_light.png" : "/chevron.png"
+                  }
+                  height={10}
+                  width={10}
+                  alt=""
+                />
+              )}
               <Link href={breadcrumb.url}>
                 <a itemProp="item">
-                  <span itemProp="name">{breadcrumb.title}</span>
+                  <span itemProp="name" className={styles.breadcrumbText}>
+                    {breadcrumb.title}
+                  </span>
                   <meta itemProp="position" content={index + 1} />
                 </a>
               </Link>
@@ -46,6 +63,6 @@ export default function Breadcrumb({ breadcrumbs }) {
           );
         })}
       </ol>
-    </>
+    </div>
   );
 }

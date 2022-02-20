@@ -3,21 +3,18 @@ import fs from "fs";
 import path from "path";
 import Head from "next/head";
 import matter from "gray-matter";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-import NavBar from "../../components/shared/NavBar/NavBar";
-import Post from "../../components/blog/Post";
-import { sortByDate } from "../../utils";
-
-import styles from "../../styles/Blog.module.css";
-import Link from "next/link";
-
 import type { frontmatter } from "../../types/post";
-import Heading from "../../components/shared/Heading/Heading";
-import FeaturedPost from "../../components/blog/FeaturedPost";
+import { sortByDate } from "../../utils";
 import FeaturedPosts from "../../components/blog/FeaturedPosts/FeaturedPosts";
 import AllArticles from "../../components/blog/AllArticles/AllArticles";
-import Breadcrumb from "../../components/shared/Breadcrumbs/Breadcrumb";
+import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
+import NavBar from "../../components/shared/NavBar/NavBar";
+import Intro from "../../components/blog/Intro/Intro";
+
+import styles from "../../styles/Blog.module.css";
 
 interface BlogProps {
   posts: Array<{
@@ -27,6 +24,7 @@ interface BlogProps {
 }
 
 const Blog: NextPage<BlogProps> = ({ posts }) => {
+  console.log(posts);
   return (
     <motion.div
       className={styles.container}
@@ -34,7 +32,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
       transition={{ duration: 5 }}
     >
       <Head>
-        <title>Loh Jian Rong | Personal Portfolio</title>
+        <title>Loh Jian Rong&#39;s Blog</title>
         <meta
           name="description"
           content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
@@ -43,8 +41,14 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
       </Head>
 
       <NavBar />
+      <Breadcrumbs
+        breadcrumbs={[
+          { url: "/", title: "Home" },
+          { url: "/blog", title: "Blog" },
+        ]}
+      />
       <main className={styles.main}>
-        <Breadcrumb breadcrumbs={[{ url: "/", title: "< Home" }]} />
+        <Intro />
         <FeaturedPosts posts={posts} />
         <AllArticles posts={posts} />
       </main>
