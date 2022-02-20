@@ -45,6 +45,8 @@ jobs:
       #     healthcheck: "https://pokedex-1234.herokuapp.com/health"
       #     checkstring: "ok"
       #     rollbackonhealthcheckfailed: true
+      - name: cd to ./portfolio-frontend
+        run: cd portfolio-frontend
       - name: deploy to vercel
         uses: amondnet/vercel-action@v20.0.0
         with:
@@ -52,7 +54,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.PROJECT_ID }}
-          working-directory: ./portfolio-frontend
+          vercel-args: "--prod"
       # - uses: actions/checkout@v2
       # - name: Bump version and push tag
       #   if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
