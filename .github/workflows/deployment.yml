@@ -11,6 +11,9 @@ on:
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: ./portfolio-frontend
     steps:
       - name: checkout
         uses: actions/checkout@v2.4.0
