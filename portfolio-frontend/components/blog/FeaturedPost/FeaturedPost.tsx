@@ -1,9 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import Heading from "../../shared/Heading/Heading";
 
+import type { PostInterface } from "../../../types/post";
+import Heading from "../../shared/Heading/Heading";
 import styles from "./FeaturedPost.module.css";
+
+interface FeaturedPostProps {
+  post: PostInterface;
+}
 
 const listVariants: Variants = {
   hover: {
@@ -20,7 +25,7 @@ const listVariants: Variants = {
   },
 };
 
-export default function FeaturedPost({ post }) {
+export default function FeaturedPost({ post }: FeaturedPostProps) {
   return (
     <Link href={`/blog/${post.slug}`} passHref>
       <motion.li
