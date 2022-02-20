@@ -6,10 +6,19 @@ import { useTheme } from "next-themes";
 
 import styles from "./Breadcrumbs.module.css";
 
-const getSchema = (data) => ({
+interface BreadcrumbType {
+  url: string;
+  title: string;
+}
+
+interface BreadcrumbsType {
+  breadcrumbs: BreadcrumbType[];
+}
+
+const getSchema = (breadcrumbs: BreadcrumbType[]) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  itemListElement: data.map((item, index) => ({
+  itemListElement: breadcrumbs.map((item, index) => ({
     "@type": "ListItem",
     position: index + 1,
     item: {
@@ -20,7 +29,7 @@ const getSchema = (data) => ({
   })),
 });
 
-export default function Breadcrumbs({ breadcrumbs }) {
+export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsType) {
   const { theme } = useTheme();
 
   return (
@@ -56,7 +65,7 @@ export default function Breadcrumbs({ breadcrumbs }) {
                   <span itemProp="name" className={styles.breadcrumbText}>
                     {breadcrumb.title}
                   </span>
-                  <meta itemProp="position" content={index + 1} />
+                  <meta itemProp="position" content={(index + 1).toString()} />
                 </a>
               </Link>
             </li>
