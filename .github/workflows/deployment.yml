@@ -10,7 +10,7 @@ on:
 
 jobs:
   simple_deployment_pipeline:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./portfolio-frontend
@@ -22,11 +22,13 @@ jobs:
         with:
           node-version: "16"
       - name: npm install
-        run: npm install
+        run: npm install && npm install -g @lhci/cli@0.8.x
       - name: lint
         run: npm run lint
       - name: build
         run: npm run build
+      - name: run lighthouse ci
+        run: lhci autorun
       # - name: test
       #   run: npm run test
       # - name: e2e tests
