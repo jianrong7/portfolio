@@ -45,7 +45,7 @@ const Intro = () => (
         </a>
         <Link href="/blog">
           <a>
-            <Button>Blog</Button>
+            <Button className={styles.about}>Blog</Button>
           </a>
         </Link>
       </div>
