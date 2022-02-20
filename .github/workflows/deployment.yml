@@ -45,8 +45,6 @@ jobs:
       #     healthcheck: "https://pokedex-1234.herokuapp.com/health"
       #     checkstring: "ok"
       #     rollbackonhealthcheckfailed: true
-      - name: cd to ./portfolio-frontend
-        run: cd portfolio-frontend
       - name: deploy to vercel
         uses: amondnet/vercel-action@v20.0.0
         with:
