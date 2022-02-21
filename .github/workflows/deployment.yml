@@ -27,8 +27,8 @@ jobs:
         run: npm run lint
       - name: build
         run: npm run build
-      - name: run lighthouse ci
-        run: lhci autorun
+      # - name: run lighthouse ci
+      #   run: lhci autorun
       # - name: test
       #   run: npm run test
       # - name: e2e tests
