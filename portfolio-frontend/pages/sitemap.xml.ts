@@ -1,7 +1,7 @@
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import fs from "fs";
 
-export default function Sitemap() {}
+const Sitemap = () => {};
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const baseUrl = "https://jianrong-portfolio.vercel.app";
@@ -73,3 +73,5 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     props: {},
   };
 };
+
+export default Sitemap;
