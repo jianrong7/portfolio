@@ -31,7 +31,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
         <title>Loh Jian Rong&#39;s Blog</title>
         <meta
           name="description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
+          content="Jian Rong shares his thoughts and learnings about tech in his blog here."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

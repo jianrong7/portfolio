@@ -14,7 +14,7 @@ const DriveSg: NextPage = () => {
         <title>DriveSG | Work</title>
         <meta
           name="description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
+          content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

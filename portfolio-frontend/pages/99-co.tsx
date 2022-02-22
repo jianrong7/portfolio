@@ -20,7 +20,7 @@ const NinetyNineCo: NextPage = () => {
         <title>99.co | Work</title>
         <meta
           name="description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
+          content="99.co is the fastest growing property portal in Southeast Asia."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

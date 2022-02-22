@@ -14,7 +14,7 @@ const WhereIsWaldo: NextPage = () => {
         <title>Where is Waldo | Work</title>
         <meta
           name="description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
+          content="Play the Where is Waldo game online."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

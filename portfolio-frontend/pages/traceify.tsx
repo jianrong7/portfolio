@@ -14,7 +14,7 @@ const Traceify: NextPage = () => {
         <title>Traceify | Work</title>
         <meta
           name="description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
+          content="View your Spotify history like a TraceTogether app using Traceify."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -28,7 +28,7 @@ interface PostPageProps {
 }
 
 const PostPage: NextPage<PostPageProps> = ({
-  frontmatter: { title, date, updated },
+  frontmatter: { title, subtitle, date, updated },
   slug,
   children,
   timeToRead,
@@ -37,10 +37,7 @@ const PostPage: NextPage<PostPageProps> = ({
     <>
       <Head>
         <title>{title}</title>
-        <meta
-          name="description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
-        />
+        <meta name="description" content={subtitle} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
