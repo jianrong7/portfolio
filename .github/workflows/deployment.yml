@@ -25,8 +25,8 @@ jobs:
         run: npm install && npm install -g @lhci/cli@0.8.x
       - name: lint
         run: npm run lint
-      - name: build
-        run: npm run build
+      # - name: build
+      #   run: npm run build
       # - name: run lighthouse ci
       #   run: lhci autorun
       # - name: test
