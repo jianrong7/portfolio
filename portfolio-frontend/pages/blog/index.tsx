@@ -12,6 +12,7 @@ import AllArticles from "../../components/blog/AllArticles/AllArticles";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import NavBar from "../../components/shared/NavBar/NavBar";
 import Intro from "../../components/blog/Intro/Intro";
+import generateRSSFeed from "../../lib/generateRSSFeed";
 
 import styles from "../../styles/Blog.module.css";
 
@@ -34,6 +35,24 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
           content="Jian Rong shares his thoughts and learnings about tech in his blog here."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:url"
+          content="https://jianrong-portfolio.vercel.app/blog/"
+        />
+        <meta property="og:type" content="profile" />
+        <meta
+          property="og:title"
+          content="Loh Jian Rong's Personal Portfolio"
+        />
+        <meta
+          property="og:description"
+          content="Jian Rong shares his thoughts and learnings about tech in his blog here."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jrloh7" />
+        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
 
       <NavBar />
@@ -75,8 +94,10 @@ export async function getStaticProps() {
       return {
         slug,
         frontmatter,
-      };
+      } as PostInterface;
     });
+
+    generateRSSFeed(posts);
 
     return {
       props: {

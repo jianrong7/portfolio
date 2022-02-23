@@ -17,6 +17,21 @@ const WhereIsWaldo: NextPage = () => {
           content="Play the Where is Waldo game online."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:url"
+          content="https://jianrong-portfolio.vercel.app/where-is-waldo"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Where is Waldo | Work" />
+        <meta
+          property="og:description"
+          content="Play the Where is Waldo game online."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jrloh7" />
+        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <StickyHeader title="Where is Waldo" />
       <main className={styles.main}>

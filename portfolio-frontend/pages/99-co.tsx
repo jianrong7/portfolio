@@ -23,6 +23,21 @@ const NinetyNineCo: NextPage = () => {
           content="99.co is the fastest growing property portal in Southeast Asia."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:url"
+          content="https://jianrong-portfolio.vercel.app/99-co"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="99.co | Work" />
+        <meta
+          property="og:description"
+          content="99.co is the fastest growing property portal in Southeast Asia."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jrloh7" />
+        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <StickyHeader title="99.co" />
 

@@ -7,6 +7,7 @@
   display: inline-block;
   position: relative;
   padding-bottom: 0.3rem;
+  color: var(--fontColor_dark);
 }
 
 .email::after {
@@ -17,7 +18,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--accentColor2_dark);
+  background-color: var(--fontColor_dark);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }

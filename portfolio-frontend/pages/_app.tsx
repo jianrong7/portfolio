@@ -41,6 +41,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           `,
             }}
           />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="format-detection" content="telephone=no" />
         </Head>
         <Component {...pageProps} key={router.route} />
         <Footer />

@@ -17,6 +17,21 @@ const Traceify: NextPage = () => {
           content="View your Spotify history like a TraceTogether app using Traceify."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:url"
+          content="https://jianrong-portfolio.vercel.app/traceify"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Traceify | Work" />
+        <meta
+          property="og:description"
+          content="View your Spotify history like a TraceTogether app using Traceify."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jrloh7" />
+        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <StickyHeader title="Traceify" />
       <main className={styles.main}>

@@ -17,6 +17,21 @@ const DriveSg: NextPage = () => {
           content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:url"
+          content="https://jianrong-portfolio.vercel.app/drivesg"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="DriveSG | Work" />
+        <meta
+          property="og:description"
+          content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jrloh7" />
+        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <StickyHeader title="DriveSG" />
       <main className={styles.main}>

@@ -39,6 +39,18 @@ const PostPage: NextPage<PostPageProps> = ({
         <title>{title}</title>
         <meta name="description" content={subtitle} />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:url"
+          content={`https://jianrong-portfolio.vercel.app/blog/${slug}`}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={subtitle} />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jrloh7" />
+        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <NavBar />
       <Breadcrumbs

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
@@ -29,7 +30,7 @@ const About = () => {
               reading about all kinds of things.
             </p>
           </div>
-          <a href="/resume.pdf" target="_blank">
+          <Link href="/resume.pdf">
             <Button className={styles.resumeButton}>
               <span>Resume.pdf</span>
               <Image
@@ -41,7 +42,7 @@ const About = () => {
                 alt="download"
               />
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ const nextConfig = {
   compiler: {
     removeConsole: true,
   },
-  swcMinify: true,
+  // swcMinify: true,
   async redirects() {
     return [
       {

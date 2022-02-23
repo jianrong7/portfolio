@@ -24,6 +24,24 @@ const Home: NextPage = () => {
           content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:url"
+          content="https://jianrong-portfolio.vercel.app/"
+        />
+        <meta property="og:type" content="profile" />
+        <meta
+          property="og:title"
+          content="Loh Jian Rong | Personal Portfolio"
+        />
+        <meta
+          property="og:description"
+          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jrloh7" />
+        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <NavBar />
       <main className={styles.main}>

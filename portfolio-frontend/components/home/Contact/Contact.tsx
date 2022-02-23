@@ -12,14 +12,9 @@ const Contact = () => {
       <p className={styles.text}>Want to get in touch?</p>
       <p className={styles.text}>
         Write me at{" "}
-        <motion.a
-          href="mailto:lohjianrong7@gmail.com"
-          className={styles.email}
-          whileHover={{ color: "#f5e23c" }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
-        >
+        <a href="mailto:lohjianrong7@gmail.com" className={styles.email}>
           lohjianrong7@gmail.com
-        </motion.a>
+        </a>
         .
       </p>
     </section>

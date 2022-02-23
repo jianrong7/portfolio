@@ -11,7 +11,13 @@ import styles from "./Intro.module.css";
 const Intro = () => (
   <div className={styles.header}>
     <Heading level="h1" className={styles.intro}>
-      <span className={styles.introHello}>Hello! 你好!</span>
+      <span className={styles.introHello}>
+        Hello!{" "}
+        <span lang="zh" className={styles.introHello}>
+          你好
+        </span>
+        !
+      </span>
       <motion.div
         animate={{ rotate: 20 }}
         transition={{
