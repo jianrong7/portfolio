@@ -4,11 +4,19 @@
         <title>Articles by Loh Jian Rong</title>
         <link>https://jianrong-portfolio.vercel.app</link>
         <description>You can find me talking about my thoughts and learnings related to technology.</description>
-        <lastBuildDate>Wed, 23 Feb 2022 13:38:48 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 25 Feb 2022 14:25:44 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All rights reserved 2022, Loh Jian Rong</copyright>
+        <item>
+            <title><![CDATA[hello]]></title>
+            <link>https://jianrong-portfolio.vercel.app/blog/hello</link>
+            <guid>https://jianrong-portfolio.vercel.app/blog/hello</guid>
+            <pubDate>Tue, 20 Apr 2021 08:00:00 GMT</pubDate>
+            <description><![CDATA[how are you]]></description>
+            <author>ipwnjianrong@gmail.com (Loh Jian Rong)</author>
+        </item>
         <item>
             <title><![CDATA[Reading Hacker News for 30 days]]></title>
             <link>https://jianrong-portfolio.vercel.app/blog/reading-hacker-news-for-30-days</link>

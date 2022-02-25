@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import useSWR from "swr";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { readingTime } from "reading-time-estimator";
@@ -13,6 +14,7 @@ import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import Heading from "../../components/shared/Heading/Heading";
 import NavBar from "../../components/shared/NavBar/NavBar";
 import Head from "next/head";
+import redis from "../../lib/redis";
 
 interface ReadingTime {
   minutes: number;
@@ -25,6 +27,7 @@ interface PostPageProps {
   slug: string;
   children: MDXRemoteSerializeResult;
   timeToRead: ReadingTime;
+  likes: string;
 }
 
 const PostPage: NextPage<PostPageProps> = ({
@@ -32,7 +35,23 @@ const PostPage: NextPage<PostPageProps> = ({
   slug,
   children,
   timeToRead,
+  likes,
 }) => {
+  const { data } = useSWR("/api/getLike");
+  console.log(data);
+  const addLike = async () => {
+    const res = await fetch("/api/addLike", {
+      method: "POST",
+      body: JSON.stringify({ title }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+  };
   return (
     <>
       <Head>
@@ -70,6 +89,8 @@ const PostPage: NextPage<PostPageProps> = ({
             <span className={styles.timeToRead}>{timeToRead.text}</span>
             <span> • {new Date(updated).toDateString().slice(4)}</span>
           </div>
+          <div>{likes === null ? 0 : likes}</div>
+          <button onClick={() => addLike()}>add like</button>
         </div>
 
         <MDXRemote {...children} />
@@ -111,12 +132,16 @@ export async function getStaticProps({
 
   const children = await serialize(content);
 
+  const likes = await redis.get(frontmatter.title);
+  // console.log(frontmatter.title, likes);
+
   return {
     props: {
       frontmatter,
       slug,
       children,
       timeToRead,
+      likes,
     },
   };
 }
