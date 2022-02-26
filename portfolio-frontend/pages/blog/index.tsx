@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import fs from "fs";
 import path from "path";
 import Head from "next/head";
@@ -16,12 +16,9 @@ import generateRSSFeed from "../../lib/generateRSSFeed";
 
 import styles from "../../styles/Blog.module.css";
 
-interface BlogProps {
-  posts: PostInterface[];
-}
-
-const Blog: NextPage<BlogProps> = ({ posts }) => {
-  console.log(posts);
+export default function Blog({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <motion.div
       className={styles.container}
@@ -69,9 +66,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
       </main>
     </motion.div>
   );
-};
-
-export default Blog;
+}
 
 export async function getStaticProps() {
   try {
@@ -101,7 +96,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        posts: posts,
+        posts,
       },
     };
   } catch (e) {

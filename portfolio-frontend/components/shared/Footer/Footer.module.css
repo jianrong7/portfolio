@@ -20,8 +20,13 @@
 .footer > div {
   line-height: 1.7rem;
   font-weight: 400;
+  display: flex;
+}
+
+.crawler > a {
+  margin-right: 1rem;
 }
 
 .copyright {
-  margin-right: 1rem;
+  margin-right: 3rem;
 }

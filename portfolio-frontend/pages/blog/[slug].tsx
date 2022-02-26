@@ -1,57 +1,50 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import useSWR from "swr";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import useSWR, { Fetcher, mutate } from "swr";
+import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { readingTime } from "reading-time-estimator";
-
-import type { frontmatter } from "../../types/post";
 
 import styles from "../../styles/BlogPost.module.css";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import Heading from "../../components/shared/Heading/Heading";
 import NavBar from "../../components/shared/NavBar/NavBar";
 import Head from "next/head";
-import redis from "../../lib/redis";
+import { useState } from "react";
+import ProgressBar from "../../components/shared/ProgressBar/ProgressBar";
 
-interface ReadingTime {
-  minutes: number;
-  words: number;
-  text: string;
-}
+const fetcher = (input: RequestInfo, init: RequestInit) =>
+  fetch(input, init).then((res) => res.json());
 
-interface PostPageProps {
-  frontmatter: frontmatter;
-  slug: string;
-  children: MDXRemoteSerializeResult;
-  timeToRead: ReadingTime;
-  likes: string;
-}
-
-const PostPage: NextPage<PostPageProps> = ({
+export default function PostPage({
   frontmatter: { title, subtitle, date, updated },
   slug,
   children,
   timeToRead,
-  likes,
-}) => {
-  const { data } = useSWR("/api/getLike");
-  console.log(data);
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [liked, setLiked] = useState<boolean>(false);
+  const { data } = useSWR(`/api/likes?title=${title}`, fetcher, {
+    revalidateOnFocus: false,
+  });
+
   const addLike = async () => {
-    const res = await fetch("/api/addLike", {
-      method: "POST",
-      body: JSON.stringify({ title }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    if (liked) {
+      await fetcher(`/api/likes?title=${title}`, {
+        method: "PUT",
+      });
+      setLiked(false);
+    } else {
+      await fetcher(`/api/likes?title=${title}&liked=${liked}`, {
+        method: "PUT",
+      });
+      setLiked(true);
+    }
 
-    const data = await res.json();
-
-    console.log(data);
+    mutate(`/api/likes?title=${title}`);
   };
+
   return (
     <>
       <Head>
@@ -87,42 +80,29 @@ const PostPage: NextPage<PostPageProps> = ({
           <div className={styles.details}>
             <span>{new Date(date).toDateString().slice(4)} • </span>
             <span className={styles.timeToRead}>{timeToRead.text}</span>
-            <span> • {new Date(updated).toDateString().slice(4)}</span>
+            <span> • {new Date(updated).toDateString().slice(4)} • </span>
+            <span>
+              {data?.likes ? JSON.stringify(data.likes).slice(1, -1) : "0"}{" "}
+              likes
+            </span>
           </div>
-          <div>{likes === null ? 0 : likes}</div>
-          <button onClick={() => addLike()}>add like</button>
+          <button onClick={async () => await addLike()}>
+            {liked ? "remove like" : "add like"}
+          </button>
         </div>
-
+        <ProgressBar />
         <MDXRemote {...children} />
       </main>
     </>
   );
-};
-
-export default PostPage;
-
-export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("content"));
-
-  const paths = files.map((file) => ({
-    params: { slug: file.replace(".mdx", "") },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
 }
 
-interface getStaticPropsTypes {
-  params: { slug: string };
-}
-
-export async function getStaticProps({
-  params: { slug },
-}: getStaticPropsTypes) {
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  req,
+}) => {
   const markdownWithMeta = fs.readFileSync(
-    path.join("content", slug + ".mdx"),
+    path.join("content", params?.slug + ".mdx"),
     "utf-8"
   );
 
@@ -132,16 +112,15 @@ export async function getStaticProps({
 
   const children = await serialize(content);
 
-  const likes = await redis.get(frontmatter.title);
-  // console.log(frontmatter.title, likes);
+  const ipAddress = req.headers["x-real-ip"] || req.connection.remoteAddress;
 
   return {
     props: {
       frontmatter,
-      slug,
+      slug: params?.slug,
       children,
       timeToRead,
-      likes,
+      ipAddress,
     },
   };
-}
+};

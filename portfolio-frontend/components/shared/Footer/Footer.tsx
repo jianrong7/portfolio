@@ -15,12 +15,12 @@ const Footer = () => {
           <span className={styles.copyright}>
             &#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬
           </span>
-          {router.pathname.includes("/blog") ? (
-            <div>
+          {router.pathname.includes("/blog") && (
+            <div className={styles.crawler}>
               <Link href="/rss.xml">RSS Link</Link>
               <Link href="/sitemap.xml">Sitemap Link</Link>
             </div>
-          ) : null}
+          )}
         </div>
         <div>
           <Image src="/icon.svg" alt="logo" width={40} height={40} />
