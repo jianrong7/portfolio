@@ -30,7 +30,7 @@ const About = () => {
               reading about all kinds of things.
             </p>
           </div>
-          <Link href="/resume.pdf">
+          <Link href="/resume.pdf" passHref>
             <Button className={styles.resumeButton}>
               <span>Resume.pdf</span>
               <Image
