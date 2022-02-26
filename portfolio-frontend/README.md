@@ -1,8 +1,5 @@
-- create transition animation to another page for all pages
-- styling for pages
-
-- create blog
-- create blog system for MDX
+- schema for blog articles
+- custom components for MDX
 
 - add three.js animation
 - arrow animations (done before but was very buggy so removed)

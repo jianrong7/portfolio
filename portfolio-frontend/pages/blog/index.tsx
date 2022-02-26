@@ -77,7 +77,6 @@ export async function getStaticProps() {
     const posts = files.map((file) => {
       // create slug
       const slug = file.replace(".mdx", "");
-
       // get frontmatter
       const markdownWithMeta = fs.readFileSync(
         path.join("content", file),
