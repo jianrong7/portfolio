@@ -11,19 +11,26 @@ const Footer = () => {
   return (
     <footer className={styles.container}>
       <div className={styles.footer}>
-        <div>
-          <span className={styles.copyright}>
-            &#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬
-          </span>
-          {router.pathname.includes("/blog") && (
-            <div className={styles.crawler}>
-              <Link href="/rss.xml">RSS Link</Link>
-              <Link href="/sitemap.xml">Sitemap Link</Link>
-            </div>
-          )}
+        <div className={styles.crawler}>
+          <div>
+            <Link href="/twitter">Twitter</Link>
+            <Link href="/github">Github</Link>
+            <Link href="/">Portfolio</Link>
+          </div>
+          <div>
+            <Link href="/rss.xml">RSS Link</Link>
+            <Link href="/sitemap.xml">Sitemap Link</Link>
+          </div>
         </div>
-        <div>
-          <Image src="/icon.svg" alt="logo" width={40} height={40} />
+        <div className={styles.details}>
+          <div>
+            <span className={styles.copyright}>
+              &#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬
+            </span>
+          </div>
+          <div>
+            <Image src="/icon.svg" alt="logo" width={40} height={40} />
+          </div>
         </div>
       </div>
     </footer>

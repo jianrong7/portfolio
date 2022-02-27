@@ -12,6 +12,11 @@ const nextConfig = {
         destination: "https://github.com/jianrong7",
         permanent: true,
       },
+      {
+        source: "/twitter",
+        destination: "https://twitter.com/jrloh7",
+        permanent: true,
+      },
     ];
   },
 };
