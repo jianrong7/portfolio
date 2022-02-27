@@ -7,7 +7,6 @@
   grid-auto-flow: row;
   padding: 2rem 0 1rem;
   background-color: var(--backgroundColor_dark);
-  box-shadow: 0 0px 20px -6px rgba(0, 0, 0, 0.7);
 }
 
 .navBar {
@@ -25,11 +24,11 @@
 
 .title {
   margin: 0 0 0 2rem;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
   .title {
-    font-size: 2rem;
+    /* font-size: 2rem; */
   }
 }

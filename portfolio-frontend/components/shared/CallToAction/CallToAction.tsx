@@ -44,9 +44,6 @@ const CallToAction = ({
       opacity: 1,
       y: 0,
     },
-    exit: {
-      y: 200,
-    },
   };
 
   const coverVariant = {

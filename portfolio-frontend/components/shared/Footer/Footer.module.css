@@ -45,6 +45,7 @@
 
 .crawler > div > a {
   font-size: 0.9rem;
+  color: var(--fontColor_dark);
 }
 
 .copyright {

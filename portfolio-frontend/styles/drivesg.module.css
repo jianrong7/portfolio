@@ -16,10 +16,40 @@
 
 .main > * {
   grid-column: 2;
+  line-height: 2;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accentColor2_dark);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 @media screen and (min-width: 768px) {
   .main {
-    row-gap: 100px;
+    /* row-gap: 100px; */
   }
 }
