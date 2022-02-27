@@ -3,8 +3,9 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 import NavBar from "../components/shared/NavBar/NavBar";
-import About from "../components/home/About/About";
 import Intro from "../components/home/Intro/Intro";
+import About from "../components/home/About/About";
+import Experience from "../components/home/Experience/Experience";
 import Work from "../components/home/Work/Work";
 import Contact from "../components/home/Contact/Contact";
 
@@ -47,6 +48,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Intro />
         <About />
+        <Experience />
         <Work />
         <Contact />
       </main>

@@ -1,0 +1,83 @@
+.title {
+  font-size: 1.1rem;
+}
+
+.company {
+  font-size: 1.1rem;
+  color: var(--accentColor2_dark);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.company::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accentColor2_dark);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.company:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.tab {
+  list-style-type: none;
+  position: relative;
+  cursor: pointer;
+  padding: 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.list {
+  margin-bottom: 2rem;
+}
+
+.list > li {
+  margin-bottom: 1rem;
+}
+
+.underline {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--accentColor2_dark);
+}
+
+.techTitle {
+  font-size: 1.1rem;
+}
+
+.iconsDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.iconDescription {
+  display: inline-block;
+  margin-top: 1rem;
+}
