@@ -8,13 +8,14 @@ export default async function handler(
   const { title } = req.query;
   // handle add like
   if (req.method === "PUT") {
-    const { liked } = req.query;
-    let likes;
-    if (liked) {
-      likes = await redis.incr(title as KeyType);
-    } else {
-      likes = await redis.decr(title as KeyType);
-    }
+    const likes = await redis.incr(title as KeyType);
+    // const { liked } = req.query;
+    // let likes;
+    // if (liked) {
+    //   likes = await redis.incr(title as KeyType);
+    // } else {
+    //   likes = await redis.decr(title as KeyType);
+    // }
     res.status(200).json({ likes });
     // handle get like
   } else if (req.method === "GET") {

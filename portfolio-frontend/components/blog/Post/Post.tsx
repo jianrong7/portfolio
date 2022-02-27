@@ -15,8 +15,6 @@ export default function Post({ post }: PostProps) {
   const date = new Date(post.frontmatter.date);
   const { theme } = useTheme();
 
-  const divVariants = {};
-
   const listVariants = {
     hidden: {
       opacity: 0,
@@ -43,7 +41,7 @@ export default function Post({ post }: PostProps) {
   };
   return (
     <Link href={`/blog/${post.slug}`} passHref>
-      <motion.div className={styles.mobileContainer} variants={divVariants}>
+      <div className={styles.mobileContainer}>
         <div>
           <motion.li
             className={styles.container}
@@ -64,40 +62,42 @@ export default function Post({ post }: PostProps) {
             </div>
 
             <motion.ul className={styles.keywordsDesktop}>
-              {post.frontmatter.keywords.map((keyword, index) =>
-                index < 3 ? (
-                  <motion.li
-                    key={`${keyword}_${index}`}
-                    className={styles.keyword}
-                    initial={{ x: 700, opacity: 0 }}
-                    whileInView={{ x: 700, opacity: 0 }}
-                    transition={{ duration: 0.3 + index / 10 }}
-                    variants={keywordsVariants}
-                  >
-                    {keyword}
-                  </motion.li>
-                ) : null
+              {post.frontmatter.keywords.map(
+                (keyword, index) =>
+                  index < 3 && (
+                    <motion.li
+                      key={`${keyword}_${index}`}
+                      className={styles.keyword}
+                      initial={{ x: 700, opacity: 0 }}
+                      whileInView={{ x: 700, opacity: 0 }}
+                      transition={{ duration: 0.3 + index / 10 }}
+                      variants={keywordsVariants}
+                    >
+                      {keyword}
+                    </motion.li>
+                  )
               )}
             </motion.ul>
           </motion.li>
         </div>
         <motion.ul className={styles.keywordsMobile}>
-          {post.frontmatter.keywords.map((keyword, index) =>
-            index < 3 ? (
-              <motion.li
-                key={`${keyword}_${index}`}
-                className={styles.keyword}
-                initial={{ x: 100 }}
-                whileInView={{ x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3 + index / 10 }}
-              >
-                {keyword}
-              </motion.li>
-            ) : null
+          {post.frontmatter.keywords.map(
+            (keyword, index) =>
+              index < 3 && (
+                <motion.li
+                  key={`${keyword}_${index}`}
+                  className={styles.keyword}
+                  initial={{ x: 100 }}
+                  whileInView={{ x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3 + index / 10 }}
+                >
+                  {keyword}
+                </motion.li>
+              )
           )}
         </motion.ul>
-      </motion.div>
+      </div>
     </Link>
   );
 }

@@ -1,48 +1,81 @@
-import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import type {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+} from "next";
 import fs from "fs";
 import path from "path";
+import Image from "next/image";
 import matter from "gray-matter";
-import useSWR, { Fetcher, mutate } from "swr";
+import useSWR, { mutate } from "swr";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { readingTime } from "reading-time-estimator";
+import Head from "next/head";
+import { motion } from "framer-motion";
 
-import styles from "../../styles/BlogPost.module.css";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import Heading from "../../components/shared/Heading/Heading";
 import NavBar from "../../components/shared/NavBar/NavBar";
-import Head from "next/head";
-import { useState } from "react";
 import ProgressBar from "../../components/shared/ProgressBar/ProgressBar";
+
+import styles from "../../styles/BlogPost.module.css";
 
 const fetcher = (input: RequestInfo, init: RequestInit) =>
   fetch(input, init).then((res) => res.json());
 
+const floatingLike = {
+  initial: {
+    opacity: 0,
+  },
+  click: {
+    opacity: 1,
+    scale: 1.3,
+    y: 0,
+    transition: {
+      duration: 0.01,
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.2,
+    y: -150,
+    transition: {
+      duration: 3,
+      type: "tween",
+      ease: "easeInOut",
+    },
+  },
+};
+
 export default function PostPage({
-  frontmatter: { title, subtitle, date, updated },
+  frontmatter: { title, subtitle, date, updated, keywords },
   slug,
   children,
   timeToRead,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const [liked, setLiked] = useState<boolean>(false);
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { data } = useSWR(`/api/likes?title=${title}`, fetcher, {
     revalidateOnFocus: false,
   });
 
   const addLike = async () => {
-    if (liked) {
-      await fetcher(`/api/likes?title=${title}`, {
-        method: "PUT",
-      });
-      setLiked(false);
-    } else {
-      await fetcher(`/api/likes?title=${title}&liked=${liked}`, {
-        method: "PUT",
-      });
-      setLiked(true);
-    }
+    await fetcher(`/api/likes?title=${title}`, {
+      method: "PUT",
+    });
+    // await fetcher(`/api/likes?title=${title}&liked=${liked}`, {
+    //   method: "PUT",
+    // });
 
     mutate(`/api/likes?title=${title}`);
+  };
+
+  const tweetPost = () => {
+    window.open(
+      `https://twitter.com/intent/tweet?url=https://jianrong-portfolio.vercel.app/blog/${slug}&text=${title}%20by%20@jrloh7&hashtags=${keywords[0]},${keywords[1]}`,
+      "targetWindow",
+      "toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=700,height=500"
+    );
+    return false;
   };
 
   return (
@@ -80,27 +113,53 @@ export default function PostPage({
           <div className={styles.details}>
             <span>{new Date(date).toDateString().slice(4)} • </span>
             <span className={styles.timeToRead}>{timeToRead.text}</span>
-            <span> • {new Date(updated).toDateString().slice(4)} • </span>
-            <span>
+            <span> • {new Date(updated).toDateString().slice(4)}</span>
+            <div>
               {data?.likes ? JSON.stringify(data.likes).slice(1, -1) : "0"}{" "}
               likes
-            </span>
+            </div>
           </div>
-          <button onClick={async () => await addLike()}>
-            {liked ? "remove like" : "add like"}
-          </button>
         </div>
         <ProgressBar />
-        <MDXRemote {...children} />
+        <article>
+          <MDXRemote {...children} />
+        </article>
+        <div className={styles.buttons}>
+          <motion.button
+            onClick={async () => await addLike()}
+            className={styles.likeButton}
+            initial="initial"
+            whileTap="click"
+            animate="exit"
+          >
+            <motion.div variants={floatingLike} className={styles.floatingLike}>
+              <Image src="/like.png" alt="like" width={16} height={16} />
+            </motion.div>
+            <Image src="/like.png" alt="like" width={16} height={16} />
+          </motion.button>
+          <button onClick={tweetPost}>
+            <Image src="/twitter.svg" alt="twitter" width={16} height={16} />
+          </button>
+        </div>
       </main>
     </>
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({
-  params,
-  req,
-}) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const files = fs.readdirSync(path.join("content"));
+
+  const paths = files.map((file) => ({
+    params: { slug: file.replace(".mdx", "") },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const markdownWithMeta = fs.readFileSync(
     path.join("content", params?.slug + ".mdx"),
     "utf-8"
@@ -112,15 +171,12 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   const children = await serialize(content);
 
-  const ipAddress = req.headers["x-real-ip"] || req.connection.remoteAddress;
-
   return {
     props: {
       frontmatter,
       slug: params?.slug,
       children,
       timeToRead,
-      ipAddress,
     },
   };
 };
