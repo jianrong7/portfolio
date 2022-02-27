@@ -28,11 +28,23 @@ const DriveSg: NextPage = () => {
           property="og:description"
           content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
         />
+        <meta
+          property="og:image"
+          content="https://jianrong-portfolio.vercel.app/drivesg/drivesg_banner.png"
+        />
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@jrloh7" />
         <meta name="twitter:creator" content="@jrloh7" />
+        <meta
+          property="twitter:description"
+          content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
+        />
+        <meta
+          property="twitter:image"
+          content="https://jianrong-portfolio.vercel.app/drivesg/drivesg_banner.png"
+        />
       </Head>
       <StickyHeader title="DriveSG" />
       <main className={styles.main}>

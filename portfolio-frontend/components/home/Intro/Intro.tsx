@@ -60,8 +60,8 @@ const Intro = () => (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 50 50"
-          width="20px"
-          height="20px"
+          width="16"
+          height="16"
         >
           <path
             className={styles.twitterLogo}
