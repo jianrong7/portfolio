@@ -29,7 +29,7 @@ const DriveSg: NextPage = () => {
           content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
         />
         <meta
-          property="og:image"
+          property="og:image:secure_url"
           content="https://jianrong-portfolio.vercel.app/drivesg/drivesg_banner.png"
         />
         <meta name="robots" content="index,follow" />
