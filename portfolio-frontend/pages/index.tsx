@@ -46,6 +46,7 @@ const Home: NextPage = () => {
       </Head>
       <NavBar />
       <main className={styles.main}>
+        wassup bye
         <Intro />
         <About />
         <Experience />
