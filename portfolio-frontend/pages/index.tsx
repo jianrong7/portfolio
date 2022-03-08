@@ -48,6 +48,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         Hello222 Hello again
         <Intro />
+        Goodbye lol jk hello
         <About />
         <Experience />
         <Work />
