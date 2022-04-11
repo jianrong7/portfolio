@@ -115,18 +115,18 @@ export default function PostPage({
           <div className={styles.details}>
             <span>{new Date(date).toDateString().slice(4)} • </span>
             <span className={styles.timeToRead}>{timeToRead.text}</span>
-            <span> • {new Date(updated).toDateString().slice(4)}</span>
-            <div>
+            {/* <span> • {new Date(updated).toDateString().slice(4)}</span> */}
+            {/* <div>
               {data?.likes ? JSON.stringify(data.likes).slice(1, -1) : "0"}{" "}
               likes
-            </div>
+            </div> */}
           </div>
         </div>
         <ProgressBar />
         <article>
           <MDXRemote {...children} />
         </article>
-        <div className={styles.buttons}>
+        {/* <div className={styles.buttons}>
           <motion.button
             onClick={async () => await addLike()}
             className={styles.likeButton}
@@ -163,7 +163,7 @@ export default function PostPage({
               />
             </svg>
           </button>
-        </div>
+        </div> */}
       </main>
     </>
   );
