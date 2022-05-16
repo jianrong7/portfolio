@@ -13,9 +13,9 @@ const NavBar = () => {
   const themeChangeHandler = () =>
     theme === "light" ? setTheme("dark") : setTheme("light");
   return (
-    <div className={styles.container}>
+    <nav className={styles.container}>
       <div className={styles.navBar}>
-        <Link href={"/"} passHref>
+        <Link href="/" passHref>
           <a>
             <Image src="/icon.svg" alt="logo" width={40} height={40} />
           </a>
@@ -24,12 +24,12 @@ const NavBar = () => {
           <Image
             src={theme === "light" ? "/sun.png" : "/moon.png"}
             alt="logo"
-            width={20}
-            height={20}
+            width={24}
+            height={24}
           />
         </Button>
       </div>
-    </div>
+    </nav>
   );
 };
 

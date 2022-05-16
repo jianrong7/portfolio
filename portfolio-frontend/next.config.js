@@ -14,7 +14,7 @@ const nextConfig = {
       },
       {
         source: "/twitter",
-        destination: "https://twitter.com/jrloh7",
+        destination: "https://twitter.com/jianrong7_",
         permanent: true,
       },
     ];

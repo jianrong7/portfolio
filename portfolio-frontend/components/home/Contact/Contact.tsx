@@ -1,7 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 import Heading from "../../shared/Heading/Heading";
+import UnderlinedLink from "../../shared/UnderlinedLink/UnderlinedLink";
 
 import styles from "./Contact.module.css";
 
@@ -12,9 +12,9 @@ const Contact = () => {
       <p className={styles.text}>Want to get in touch?</p>
       <p className={styles.text}>
         Write me at{" "}
-        <a href="mailto:lohjianrong7@gmail.com" className={styles.email}>
+        <UnderlinedLink href="mailto:lohjianrong7@gmail.com">
           lohjianrong7@gmail.com
-        </a>
+        </UnderlinedLink>
         .
       </p>
     </section>
