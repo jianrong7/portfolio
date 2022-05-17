@@ -7,7 +7,7 @@
   height: inherit;
   display: grid;
   column-gap: var(--space-5);
-  row-gap: var(--space-7);
+  row-gap: var(--space-8);
   grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
   grid-template-rows: none;
   grid-auto-flow: row;

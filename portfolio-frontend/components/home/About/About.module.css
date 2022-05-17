@@ -1,18 +1,4 @@
 .about {
-  background-color: var(--backgroundColor2_dark);
-  border-radius: var(--border-radius-1);
-  padding: var(--space-6) 0;
-
-  display: grid;
-  column-gap: var(--space-5);
-  row-gap: var(--space-7);
-  grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
-  grid-template-rows: none;
-  grid-auto-flow: row;
-}
-
-.aboutDiv {
-  grid-column: 2/3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -22,7 +8,7 @@
 .description {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-6);
 }
 
 .description > p {
@@ -44,14 +30,10 @@
 }
 
 @media screen and (min-width: 768px) {
-  .about {
-    border-radius: var(--border-radius-2);
-  }
-
   .description {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: none;
-    grid-column-gap: var(--space-10);
+    gap: var(--space-10);
   }
 }
