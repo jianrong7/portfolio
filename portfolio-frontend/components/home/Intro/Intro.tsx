@@ -9,16 +9,22 @@ import UnderlinedLink from "../../shared/UnderlinedLink/UnderlinedLink";
 
 import styles from "./Intro.module.css";
 
-const Intro = () => (
+interface IntroProps {
+  page: string;
+}
+
+const Intro = ({ page }: IntroProps) => (
   <section className={styles.header}>
     <Heading level="h1" className={styles.intro}>
-      <span className={styles.introHello}>
-        Hello!{" "}
-        <span lang="zh" className={styles.introHello}>
-          你好
+      {page !== "blog" && (
+        <span className={styles.introHello}>
+          Hello!{" "}
+          <span lang="zh" className={styles.introHello}>
+            你好
+          </span>
+          !
         </span>
-        !
-      </span>
+      )}
       <motion.div
         animate={{ rotate: 20 }}
         transition={{
@@ -31,15 +37,26 @@ const Intro = () => (
         className={styles.wave}
       >
         👋
-      </motion.div>
-      <span> I&#39;m Jian Rong.</span>
+      </motion.div>{" "}
+      {page !== "blog" ? (
+        <span>I&#39;m Jian Rong.</span>
+      ) : (
+        <span>Ideas to spread around.</span>
+      )}
     </Heading>
     <Heading level="h2" className={styles.description}>
-      A Singapore <span className={cx(styles.singapore, styles.emoji)}>🇸🇬</span>{" "}
-      based tech enthusiast{" "}
-      <span className={cx(styles.computer, styles.emoji)}>💻</span> and frontend
-      engineer working with React{" "}
-      <span className={cx(styles.react, styles.emoji)}>⚛️</span>.
+      {page !== "blog" ? (
+        <>
+          A Singapore{" "}
+          <span className={cx(styles.singapore, styles.emoji)}>🇸🇬</span> based
+          tech enthusiast{" "}
+          <span className={cx(styles.computer, styles.emoji)}>💻</span> and
+          frontend engineer working with React{" "}
+          <span className={cx(styles.react, styles.emoji)}>⚛️</span>.
+        </>
+      ) : (
+        <span>Find the latest of my writing here.</span>
+      )}
     </Heading>
     <div className={styles.headerDetails}>
       <div className={styles.headerDetailsButtons}>

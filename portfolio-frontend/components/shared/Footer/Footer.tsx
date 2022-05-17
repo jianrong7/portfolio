@@ -26,12 +26,10 @@ const Footer = () => {
         </div>
         <div className={styles.details}>
           <div>
-            <span className={styles.copyright}>
-              &#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬
-            </span>
+            <span>&#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬</span>
           </div>
           <div>
-            <Image src="/icon.svg" alt="logo" width={40} height={40} />
+            <Image src="/icon.svg" alt="logo" width={36} height={36} />
           </div>
         </div>
       </div>

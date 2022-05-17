@@ -8,7 +8,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: var(--space-3);
+  width: var(--space-2);
 }
 
 body::-webkit-scrollbar-track {

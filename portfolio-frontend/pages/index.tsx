@@ -48,7 +48,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Intro />
         <About />
-        <Experience />
+        {/* <Experience /> to insert when I have more than 1 internship, right now it looks too pathetic*/}
         <Work />
         <Contact />
       </main>
