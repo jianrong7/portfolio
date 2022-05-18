@@ -6,6 +6,7 @@ import Link from "next/link";
 import Heading from "../../shared/Heading/Heading";
 import Button from "../../shared/Button/Button";
 import UnderlinedLink from "../../shared/UnderlinedLink/UnderlinedLink";
+import RssIcon from "../../shared/icons/Rss";
 
 import styles from "./Intro.module.css";
 
@@ -25,6 +26,9 @@ const Intro = () => (
         💡
       </motion.div>{" "}
       <span>Ideas to spread around.</span>
+      <UnderlinedLink href="/rss.xml" className={styles.rss}>
+        <RssIcon />
+      </UnderlinedLink>
     </Heading>
     <Heading level="h2" className={styles.description}>
       <span>

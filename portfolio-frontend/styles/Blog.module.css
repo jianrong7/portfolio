@@ -1,15 +1,14 @@
 .container {
-  background-color: var(--backgroundColor_dark);
-  color: var(--fontColor_dark);
+  background-color: var(--background);
+  color: var(--font-primary);
   overflow: hidden;
 }
 
 .main {
-  min-height: 100vh;
   height: inherit;
   display: grid;
-  column-gap: 20px;
-  row-gap: 40px;
+  column-gap: var(--space-5);
+  row-gap: var(--space-8);
   grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
   grid-template-rows: none;
   grid-auto-flow: row;
@@ -21,6 +20,6 @@
 
 @media screen and (min-width: 768px) {
   .main {
-    row-gap: 100px;
+    row-gap: var(--space-12);
   }
 }
