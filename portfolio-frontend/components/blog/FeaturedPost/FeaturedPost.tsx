@@ -10,37 +10,37 @@ interface FeaturedPostProps {
   post: PostInterface;
 }
 
-const listVariants: Variants = {
-  hover: {
-    boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-    scale: 1.05,
-    transition: {
-      duration: 0.4,
-      ease: "easeInOut",
-    },
-  },
-  tap: {
-    scale: 0.95,
-    transition: { duration: 0.4, ease: "easeInOut" },
-  },
-};
+// const listVariants: Variants = {
+//   hover: {
+//     boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+//     scale: 1.05,
+//     transition: {
+//       duration: 0.4,
+//       ease: "easeInOut",
+//     },
+//   },
+//   tap: {
+//     scale: 0.95,
+//     transition: { duration: 0.4, ease: "easeInOut" },
+//   },
+// };
 
 export default function FeaturedPost({ post }: FeaturedPostProps) {
+  const date = new Date(post.frontmatter.date);
   return (
     <Link href={`/blog/${post.slug}`} passHref>
-      <motion.li
-        className={styles.container}
-        whileHover="hover"
-        whileTap="tap"
-        variants={listVariants}
-      >
-        <Heading level="h3" className={styles.title}>
-          {post.frontmatter.title}
-        </Heading>
-        <Heading level="h3" className={styles.subtitle}>
-          {post.frontmatter.subtitle}
-        </Heading>
-      </motion.li>
+      <>
+        <li className={styles.container}>
+          <Heading level="h3" className={styles.title}>
+            {post.frontmatter.title}
+          </Heading>
+          <p className={styles.subtitle}>{post.frontmatter.subtitle}</p>
+          <p>
+            {date.toDateString().slice(4)} — {post.frontmatter.readTime}
+          </p>
+        </li>
+        <div className={styles.ring} />
+      </>
     </Link>
   );
 }

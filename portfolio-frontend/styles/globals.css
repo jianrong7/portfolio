@@ -32,7 +32,7 @@ a {
 
 *::selection {
   /* Change highlight background color to black */
-  background: var(--backgroundColor2_dark);
+  background: var(--foreground);
   /* Change highlight text color to red */
   color: var(--font-secondary);
 }
@@ -43,6 +43,7 @@ a {
   --foreground: #fff7b3;
   --font-primary: #0f0f1f;
   --font-secondary: #050520;
+  --font-tertiary: #0f0f1fba;
   --brand-primary: #0f0f1f;
   --brand-secondary: #c7b830;
 
@@ -91,6 +92,7 @@ a {
   --foreground: #050520;
   --font-primary: #ffffff;
   --font-secondary: #d1d1bef1;
+  --font-tertiary: #ffffff99;
   --brand-primary: #f5e23c;
   --brand-secondary: #c7b830;
 
