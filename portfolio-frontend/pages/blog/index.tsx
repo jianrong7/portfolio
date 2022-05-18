@@ -11,7 +11,7 @@ import FeaturedPosts from "../../components/blog/FeaturedPosts/FeaturedPosts";
 import AllArticles from "../../components/blog/AllArticles/AllArticles";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import NavBar from "../../components/shared/NavBar/NavBar";
-import Intro from "../../components/home/Intro/Intro";
+import Intro from "../../components/blog/Intro/Intro";
 import generateRSSFeed from "../../lib/generateRSSFeed";
 
 import styles from "../../styles/Blog.module.css";
@@ -60,7 +60,7 @@ export default function Blog({
         ]}
       />
       <main className={styles.main}>
-        <Intro page="blog" />
+        <Intro />
         <FeaturedPosts posts={posts} />
         <AllArticles posts={posts} />
       </main>

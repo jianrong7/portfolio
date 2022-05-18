@@ -1,21 +1,25 @@
 .header {
   display: flex;
   flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-8);
+}
+
+.intro {
+  margin: 0;
 }
 
 .intro > span {
-  font-size: 1.7rem;
-  line-height: 1.8;
+  font-size: var(--font-size-6);
 }
 
 .introHello {
-  font-size: 1.7rem;
-  color: var(--accentColor_dark);
-  display: inline-block;
+  font-size: var(--font-size-6);
+  color: var(--font-secondary);
 }
 
 .wave {
-  font-size: 1.7rem;
+  font-size: var(--font-size-6);
   margin-bottom: -20px;
   margin-right: -45px;
   padding-bottom: 20px;
@@ -23,54 +27,48 @@
   display: inline-block;
 }
 
-.twitter {
-  display: flex;
-  align-items: center;
+.description {
+  font-size: var(--font-size-4);
+  font-weight: 400;
+  margin: 0;
 }
 
-.button {
-  font-size: 1rem;
-  white-space: nowrap;
-  display: flex;
+.emoji {
+  display: inline-block;
+  font-size: var(--font-size-4);
 }
 
-.buttonText {
-  margin-right: 0.5rem;
+.headerDetails {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.headerDetailsButtons {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.about {
   color: var(--about);
 }
 
-.twitterLogo {
-  fill: var(--about);
-}
-
-.curlyArrow {
-  margin: 0 0 1rem 0.4rem;
-}
-
-.curlyArrowPath {
-  stroke: var(--accentColor2_dark);
-}
-
-.info {
-  margin: 0 0 1.5em 0.4rem;
-}
-
-.char {
-  display: inline-block;
-}
 @media screen and (min-width: 768px) {
-  .intro > span {
-    font-size: 2.2rem;
-    line-height: 1.8;
-  }
-
-  .introHello {
-    font-size: 2.2rem;
-    color: var(--accentColor_dark);
-    display: inline-block;
-  }
-
+  .intro > span,
+  .introHello,
   .wave {
-    font-size: 2.2rem;
+    font-size: var(--font-size-8);
+  }
+
+  .description {
+    font-size: var(--font-size-6);
+  }
+
+  .headerDetails {
+    flex-direction: row;
+    align-items: center;
   }
 }

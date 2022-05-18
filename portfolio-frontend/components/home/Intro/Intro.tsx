@@ -9,22 +9,16 @@ import UnderlinedLink from "../../shared/UnderlinedLink/UnderlinedLink";
 
 import styles from "./Intro.module.css";
 
-interface IntroProps {
-  page: string;
-}
-
-const Intro = ({ page }: IntroProps) => (
+const Intro = () => (
   <section className={styles.header}>
     <Heading level="h1" className={styles.intro}>
-      {page !== "blog" && (
-        <span className={styles.introHello}>
-          Hello!{" "}
-          <span lang="zh" className={styles.introHello}>
-            你好
-          </span>
-          !
+      <span className={styles.introHello}>
+        Hello!{" "}
+        <span lang="zh" className={styles.introHello}>
+          你好
         </span>
-      )}
+        !
+      </span>
       <motion.div
         animate={{ rotate: 20 }}
         transition={{
@@ -38,25 +32,14 @@ const Intro = ({ page }: IntroProps) => (
       >
         👋
       </motion.div>{" "}
-      {page !== "blog" ? (
-        <span>I&#39;m Jian Rong.</span>
-      ) : (
-        <span>Ideas to spread around.</span>
-      )}
+      <span>I&#39;m Jian Rong.</span>
     </Heading>
     <Heading level="h2" className={styles.description}>
-      {page !== "blog" ? (
-        <>
-          A Singapore{" "}
-          <span className={cx(styles.singapore, styles.emoji)}>🇸🇬</span> based
-          tech enthusiast{" "}
-          <span className={cx(styles.computer, styles.emoji)}>💻</span> and
-          frontend engineer working with React{" "}
-          <span className={cx(styles.react, styles.emoji)}>⚛️</span>.
-        </>
-      ) : (
-        <span>Find the latest of my writing here.</span>
-      )}
+      A Singapore <span className={cx(styles.singapore, styles.emoji)}>🇸🇬</span>{" "}
+      based tech enthusiast{" "}
+      <span className={cx(styles.computer, styles.emoji)}>💻</span> and frontend
+      engineer working with React{" "}
+      <span className={cx(styles.react, styles.emoji)}>⚛️</span>.
     </Heading>
     <div className={styles.headerDetails}>
       <div className={styles.headerDetailsButtons}>
