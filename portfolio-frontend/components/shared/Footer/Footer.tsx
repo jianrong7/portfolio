@@ -29,7 +29,7 @@ const Footer = () => {
             <span>&#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬</span>
           </div>
           <div>
-            <Image src="/icon.svg" alt="logo" width={36} height={36} />
+            <Image src="/icon.svg" alt="logo" width={32} height={32} />
           </div>
         </div>
       </div>

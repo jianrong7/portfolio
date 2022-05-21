@@ -18,7 +18,7 @@ import NavBar from "../../components/shared/NavBar/NavBar";
 import ProgressBar from "../../components/shared/ProgressBar/ProgressBar";
 
 import styles from "../../styles/BlogPost.module.css";
-import BlogPost from "../../components/blog/BlogPost/BlogPost";
+import BlogPost from "../../components/mdx/BlogPost/BlogPost";
 
 export default function PostPage({
   frontmatter: { title, subtitle, date, updated, keywords },

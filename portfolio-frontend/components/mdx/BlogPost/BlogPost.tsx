@@ -1,6 +1,6 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
-import UnderlinedLink from "../../mdx/UnderlinedLink/UnderlinedLink";
+import UnderlinedLink from "../UnderlinedLink/UnderlinedLink";
 
 import styles from "./BlogPost.module.css";
 
