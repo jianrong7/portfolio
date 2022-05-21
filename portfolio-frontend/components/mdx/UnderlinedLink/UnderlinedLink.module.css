@@ -1,0 +1,9 @@
+.underlinedLink {
+  color: var(--brand-primary);
+}
+
+@media screen and (min-width: 768px) {
+  .underlinedLink::after {
+    background-color: var(--brand-primary);
+  }
+}
