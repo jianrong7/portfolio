@@ -23,7 +23,7 @@
 }
 
 .resumeButton > span {
-  color: var(--backgroundColor2_dark);
+  color: var(--background);
   font-weight: 500;
   font-size: var(--font-size-5);
   margin-right: var(--space-2);

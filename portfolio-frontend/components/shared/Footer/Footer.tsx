@@ -17,7 +17,7 @@ const Footer = () => {
           <div>
             <UnderlinedLink href="/twitter">Twitter</UnderlinedLink>
             <UnderlinedLink href="/github">Github</UnderlinedLink>
-            <UnderlinedLink href="/">Portfolio</UnderlinedLink>
+            <UnderlinedLink href="/linkedin">LinkedIn</UnderlinedLink>
           </div>
           <div>
             <UnderlinedLink href="/rss.xml">RSS Link</UnderlinedLink>

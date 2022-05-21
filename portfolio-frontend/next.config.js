@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  compiler: {
-    removeConsole: true,
-  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -23,6 +20,11 @@ const nextConfig = {
       {
         source: "/twitter",
         destination: "https://twitter.com/jianrong7_",
+        permanent: true,
+      },
+      {
+        source: "/linkedin",
+        destination: "https://www.linkedin.com/in/jianrong7/",
         permanent: true,
       },
     ];

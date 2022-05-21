@@ -92,6 +92,8 @@ export async function getStaticProps() {
       } as PostInterface;
     });
 
+    posts.sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1));
+
     generateRSSFeed(posts);
 
     return {

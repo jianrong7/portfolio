@@ -15,9 +15,12 @@ export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
     <section>
       <Heading level="h2">Featured</Heading>
       <ul className={styles.list}>
-        {posts.map((post) => (
-          <FeaturedPost key={post.slug} post={post} />
-        ))}
+        {posts.map(
+          (post) =>
+            post.frontmatter.featured && (
+              <FeaturedPost key={post.slug} post={post} />
+            )
+        )}
       </ul>
     </section>
   );

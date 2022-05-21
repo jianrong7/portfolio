@@ -4,7 +4,7 @@
         <title>Articles by Loh Jian Rong</title>
         <link>https://jianrong-portfolio.vercel.app</link>
         <description>You can find me talking about my thoughts and learnings related to technology.</description>
-        <lastBuildDate>Sat, 21 May 2022 04:44:12 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 21 May 2022 06:36:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -15,6 +15,14 @@
             <guid>https://jianrong-portfolio.vercel.app/blog/reading-hacker-news-for-30-days</guid>
             <pubDate>Mon, 11 Apr 2022 08:00:00 GMT</pubDate>
             <description><![CDATA[After hearing my company's Director of Engineering tell us that reading Hacker News daily will make us better, I decided to try it for 30 days.]]></description>
+            <author>ipwnjianrong@gmail.com (Loh Jian Rong)</author>
+        </item>
+        <item>
+            <title><![CDATA[DriveSG - Reflections]]></title>
+            <link>https://jianrong-portfolio.vercel.app/blog/drivesg-reflections</link>
+            <guid>https://jianrong-portfolio.vercel.app/blog/drivesg-reflections</guid>
+            <pubDate>Mon, 30 Aug 2021 08:00:00 GMT</pubDate>
+            <description><![CDATA[Follow along as I reflect on my journey building a native application using React Native.]]></description>
             <author>ipwnjianrong@gmail.com (Loh Jian Rong)</author>
         </item>
         <item>
