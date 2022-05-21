@@ -4,6 +4,14 @@ const nextConfig = {
   compiler: {
     removeConsole: true,
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: { and: [/\.(js|ts)x?$/] },
+      use: ["@svgr/webpack"],
+    });
+    return config;
+  },
   // swcMinify: true,
   async redirects() {
     return [
@@ -14,7 +22,7 @@ const nextConfig = {
       },
       {
         source: "/twitter",
-        destination: "https://twitter.com/jrloh7",
+        destination: "https://twitter.com/jianrong7_",
         permanent: true,
       },
     ];

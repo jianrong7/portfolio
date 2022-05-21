@@ -1,20 +1,25 @@
 .header {
   display: flex;
   flex-direction: column;
-  padding-top: 4rem;
+  gap: var(--space-4);
+  padding-top: var(--space-8);
+}
+
+.intro {
+  margin: 0;
 }
 
 .intro > span {
-  font-size: 2.6rem;
+  font-size: var(--font-size-6);
 }
 
 .introHello {
-  font-size: 2.6rem;
-  color: var(--accentColor_dark);
+  font-size: var(--font-size-6);
+  color: var(--font-secondary);
 }
 
 .wave {
-  font-size: 2.6rem;
+  font-size: var(--font-size-6);
   margin-bottom: -20px;
   margin-right: -45px;
   padding-bottom: 20px;
@@ -23,20 +28,14 @@
 }
 
 .description {
-  font-size: 1.3rem;
-  font-weight: 300;
+  font-size: var(--font-size-4);
+  font-weight: 400;
+  margin: 0;
 }
 
 .emoji {
   display: inline-block;
-  font-size: 1.3rem;
-}
-
-.singapore {
-  /* margin-bottom: -20px;
-  margin-right: -45px;
-  padding-bottom: 20px;
-  padding-right: 45px; */
+  font-size: var(--font-size-4);
 }
 
 .headerDetails {
@@ -45,85 +44,31 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 1rem;
+  gap: var(--space-4);
 }
 
 .headerDetailsButtons {
   display: flex;
-}
-
-.headerDetailsButtons > a {
-  margin-right: 16px;
+  gap: var(--space-4);
 }
 
 .about {
   color: var(--about);
 }
 
-.twitter {
-  margin-top: 1rem;
-  color: var(--fontColor_dark);
-  font-weight: 600;
-
-  display: inline-block;
-  position: relative;
-  padding-bottom: 0.3rem;
-}
-
-.twitter::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--fontColor_dark);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.twitter:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.twitterLogo {
-  fill: var(--fontColor_dark);
-}
-
-.twitter > div {
-  border: 1px solid var(--accentColor2_dark);
-}
-
 @media screen and (min-width: 768px) {
-  .intro > span {
-    font-size: 3rem;
-  }
-
-  .introHello {
-    font-size: 3rem;
-  }
-
+  .intro > span,
+  .introHello,
   .wave {
-    font-size: 3rem;
+    font-size: var(--font-size-8);
   }
 
   .description {
-    font-size: 1.5rem;
-    font-weight: 400;
-  }
-
-  .emoji {
-    font-size: 1.5rem;
+    font-size: var(--font-size-6);
   }
 
   .headerDetails {
     flex-direction: row;
     align-items: center;
-  }
-
-  .twitter {
-    margin: 0;
   }
 }

@@ -1,3 +1,4 @@
 .list {
   padding: 0;
+  margin: var(--space-4) 0;
 }

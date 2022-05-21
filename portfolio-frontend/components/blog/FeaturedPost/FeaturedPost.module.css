@@ -1,18 +1,40 @@
 .container {
-  border: 1px solid var(--accentColor2_dark);
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
+  border-radius: var(--border-radius-2);
+  background-color: var(--foreground);
+  padding: var(--space-8) var(--space-5);
   list-style-type: none;
-  margin-bottom: 2rem;
   cursor: pointer;
+  transition: all ease 0.3s;
 }
 
 .title {
-  font-size: calc(1rem + 0.4vw);
+  font-weight: 500;
+  font-size: var(--font-size-5);
+  margin-bottom: var(--space-4);
 }
 
 .subtitle {
-  font-size: calc(0.8rem + 0.2vw);
-  font-weight: 400;
+  font-size: var(--font-size-2);
   margin: 0;
+  color: var(--font-tertiary);
+}
+
+.time {
+  font-size: var(--font-size-2);
+}
+
+@media (min-width: 768px) {
+  .container:hover {
+    box-shadow: 0 0 0 var(--space-1) var(--background),
+      0 0 0 var(--space-2) var(--font-primary);
+  }
+
+  .title {
+    font-size: var(--font-size-6);
+  }
+
+  .subtitle,
+  .time {
+    font-size: var(--font-size-3);
+  }
 }

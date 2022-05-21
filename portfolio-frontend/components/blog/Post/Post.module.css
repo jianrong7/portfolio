@@ -1,5 +1,5 @@
 .mobileContainer {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .container {
@@ -8,10 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  margin: 0;
+  padding: var(--space-4);
+  border-radius: var(--space-4);
+  margin-bottom: var(--space-2);
 }
 
 .date {
@@ -25,8 +24,8 @@
 
 .title {
   margin: 0;
-  margin-left: 1rem;
-  font-size: calc(1rem + 0.4vw);
+  margin-left: var(--space-4);
+  font-size: var(--font-size-4);
 }
 
 .keywordsDesktop {
@@ -36,25 +35,25 @@
 .keywordsMobile {
   display: flex;
   padding: 0;
-  margin-left: 1rem;
+  gap: var(--space-4);
+  margin-left: var(--space-4);
   overflow: scroll;
-  width: 80vw;
 }
 
 .keywordsMobile {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }
+
 .keywordsMobile::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
 
 .keyword {
-  margin-left: 0.7rem;
   list-style-type: none;
   color: var(--accentColor2_dark);
   white-space: nowrap;
-  font-size: 0.7rem;
+  font-size: var(--font-size-2);
 }
 
 .keyword:first-of-type {
@@ -62,17 +61,24 @@
 }
 
 @media screen and (min-width: 768px) {
+  .title {
+    font-size: var(--font-size-5);
+  }
+}
+
+@media screen and (min-width: 992px) {
   .mobileContainer {
     margin: 0;
   }
 
   .container {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
   }
 
   .keywordsDesktop {
     display: flex;
     width: auto;
+    gap: var(--space-4);
   }
 
   .keywordsMobile {
@@ -80,6 +86,6 @@
   }
 
   .keyword {
-    font-size: clamp(0.7rem, 0.7rem + 5px, 1.5rem);
+    font-size: var(--font-size-3);
   }
 }

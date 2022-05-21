@@ -1,7 +1,8 @@
 .container {
   display: grid;
-  column-gap: 20px;
-  grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
+  column-gap: var(--space-5);
+  row-gap: var(--space-8);
+  grid-template-columns: 1fr minmax(auto, 992px) 1fr;
   grid-template-rows: none;
   grid-auto-flow: row;
 }
@@ -10,50 +11,17 @@
   grid-column: 2;
 }
 
-.hero {
-  margin-bottom: 2rem;
-}
-
 .title {
-  line-height: 1.8;
+  font-size: var(--font-size-5);
+  line-height: 3;
 }
 
 .details > span {
-  font-size: 0.8rem;
-  font-weight: 300;
+  font-size: var(--font-size-2);
 }
 
-.details > div {
-  margin-top: 0.2rem;
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: var(--fontColor2_dark);
-}
-
-.timeToRead {
-  display: inline-block;
-}
-
-.timeToRead::first-letter {
-  text-transform: uppercase;
-}
-
-.buttons > button {
-  cursor: pointer;
-  margin-right: 1rem;
-  background-color: transparent;
-  border: none;
-}
-
-.likeButton {
-  position: relative;
-}
-
-.floatingLike {
-  position: absolute;
-  top: -30px;
-}
-
-.twitterLogo {
-  fill: var(--accentColor2_dark);
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: var(--font-size-6);
+  }
 }

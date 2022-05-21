@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+import UnderlinedLink from "../UnderlinedLink/UnderlinedLink";
+
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -13,23 +15,21 @@ const Footer = () => {
       <div className={styles.footer}>
         <div className={styles.crawler}>
           <div>
-            <Link href="/twitter">Twitter</Link>
-            <Link href="/github">Github</Link>
-            <Link href="/">Portfolio</Link>
+            <UnderlinedLink href="/twitter">Twitter</UnderlinedLink>
+            <UnderlinedLink href="/github">Github</UnderlinedLink>
+            <UnderlinedLink href="/">Portfolio</UnderlinedLink>
           </div>
           <div>
-            <Link href="/rss.xml">RSS Link</Link>
-            <Link href="/sitemap.xml">Sitemap Link</Link>
+            <UnderlinedLink href="/rss.xml">RSS Link</UnderlinedLink>
+            <UnderlinedLink href="/sitemap.xml">Sitemap Link</UnderlinedLink>
           </div>
         </div>
         <div className={styles.details}>
           <div>
-            <span className={styles.copyright}>
-              &#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬
-            </span>
+            <span>&#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬</span>
           </div>
           <div>
-            <Image src="/icon.svg" alt="logo" width={40} height={40} />
+            <Image src="/icon.svg" alt="logo" width={32} height={32} />
           </div>
         </div>
       </div>
