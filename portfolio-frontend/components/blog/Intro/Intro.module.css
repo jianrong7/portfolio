@@ -62,6 +62,10 @@
   fill: var(--brand-primary);
 }
 
+.rss svg g path {
+  fill: var(--font-primary);
+}
+
 @media screen and (min-width: 768px) {
   .intro > span,
   .introHello,

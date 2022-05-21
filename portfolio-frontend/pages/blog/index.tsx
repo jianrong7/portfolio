@@ -12,7 +12,9 @@ import AllArticles from "../../components/blog/AllArticles/AllArticles";
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import NavBar from "../../components/shared/NavBar/NavBar";
 import Intro from "../../components/blog/Intro/Intro";
+
 import generateRSSFeed from "../../lib/generateRSSFeed";
+import { blogMetaTags } from "../../lib/meta";
 
 import styles from "../../styles/Blog.module.css";
 
@@ -26,30 +28,29 @@ export default function Blog({
       transition={{ duration: 5 }}
     >
       <Head>
-        <title>Loh Jian Rong&#39;s Blog</title>
-        <meta
-          name="description"
-          content="Jian Rong shares his thoughts and learnings about tech in his blog here."
-        />
+        <title>{blogMetaTags.title}</title>
+        <meta name="description" content={blogMetaTags.description} />
+        <meta name="keywords" content={blogMetaTags.keywords} />
+        <meta name="image" content={blogMetaTags.image} />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:url"
-          content="https://jianrong-portfolio.vercel.app/blog/"
-        />
+        <link rel="canonical" href={blogMetaTags.url} />
+
         <meta property="og:type" content="profile" />
-        <meta
-          property="og:title"
-          content="Loh Jian Rong's Personal Portfolio"
-        />
-        <meta
-          property="og:description"
-          content="Jian Rong shares his thoughts and learnings about tech in his blog here."
-        />
+        <meta property="og:title" content={blogMetaTags.title} />
+        <meta property="og:description" content={blogMetaTags.description} />
+        <meta property="og:url" content={blogMetaTags.url} />
+        <meta property="og:image" content={blogMetaTags.image} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jianrong7_" />
+        <meta name="twitter:creator" content="@jianrong7_" />
+        <meta name="twitter:title" content={blogMetaTags.title} />
+        <meta name="twitter:description" content={blogMetaTags.description} />
+        <meta name="twitter:image" content={blogMetaTags.image} />
+        <meta name="twitter:alt" content={blogMetaTags.title} />
+
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@jrloh7" />
-        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
 
       <NavBar />

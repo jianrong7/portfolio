@@ -1,5 +1,4 @@
 .container {
-  /* border: 1px solid var(--brand-primary); */
   border-radius: var(--border-radius-2);
   background-color: var(--foreground);
   padding: var(--space-8) var(--space-5);
@@ -10,18 +9,32 @@
 
 .title {
   font-weight: 500;
+  font-size: var(--font-size-5);
   margin-bottom: var(--space-4);
 }
 
 .subtitle {
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-2);
   margin: 0;
   color: var(--font-tertiary);
+}
+
+.time {
+  font-size: var(--font-size-2);
 }
 
 @media (min-width: 768px) {
   .container:hover {
     box-shadow: 0 0 0 var(--space-1) var(--background),
       0 0 0 var(--space-2) var(--font-primary);
+  }
+
+  .title {
+    font-size: var(--font-size-6);
+  }
+
+  .subtitle,
+  .time {
+    font-size: var(--font-size-3);
   }
 }

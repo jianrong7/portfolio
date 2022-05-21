@@ -1,5 +1,5 @@
 .link {
-  color: var(--fontColor_dark);
+  color: var(--font-primary);
   font-weight: 600;
   display: inline-block;
   position: relative;

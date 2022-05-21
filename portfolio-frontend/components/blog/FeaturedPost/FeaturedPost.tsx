@@ -29,18 +29,15 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
   const date = new Date(post.frontmatter.date);
   return (
     <Link href={`/blog/${post.slug}`} passHref>
-      <>
-        <li className={styles.container}>
-          <Heading level="h3" className={styles.title}>
-            {post.frontmatter.title}
-          </Heading>
-          <p className={styles.subtitle}>{post.frontmatter.subtitle}</p>
-          <p>
-            {date.toDateString().slice(4)} — {post.frontmatter.readTime}
-          </p>
-        </li>
-        <div className={styles.ring} />
-      </>
+      <li className={styles.container}>
+        <Heading level="h3" className={styles.title}>
+          {post.frontmatter.title}
+        </Heading>
+        <p className={styles.subtitle}>{post.frontmatter.subtitle}</p>
+        <p className={styles.time}>
+          {date.toDateString().slice(4)} — {post.frontmatter.readTime}
+        </p>
+      </li>
     </Link>
   );
 }

@@ -9,6 +9,8 @@ import Experience from "../components/home/Experience/Experience";
 import Work from "../components/home/Work/Work";
 import Contact from "../components/home/Contact/Contact";
 
+import { homeMetaTags } from "../lib/meta";
+
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -19,30 +21,29 @@ const Home: NextPage = () => {
       transition={{ duration: 5 }}
     >
       <Head>
-        <title>Loh Jian Rong | Personal Portfolio</title>
-        <meta
-          name="description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
-        />
+        <title>{homeMetaTags.title}</title>
+        <meta name="description" content={homeMetaTags.description} />
+        <meta name="keywords" content={homeMetaTags.keywords} />
+        <meta name="image" content={homeMetaTags.image} />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:url"
-          content="https://jianrong-portfolio.vercel.app/"
-        />
+        <link rel="canonical" href={homeMetaTags.url} />
+
         <meta property="og:type" content="profile" />
-        <meta
-          property="og:title"
-          content="Loh Jian Rong | Personal Portfolio"
-        />
-        <meta
-          property="og:description"
-          content="Loh Jian Rong is a software engineer currently based in Singapore working with React and Express."
-        />
+        <meta property="og:title" content={homeMetaTags.title} />
+        <meta property="og:description" content={homeMetaTags.description} />
+        <meta property="og:url" content={homeMetaTags.url} />
+        <meta property="og:image" content={homeMetaTags.image} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jianrong7_" />
+        <meta name="twitter:creator" content="@jianrong7_" />
+        <meta name="twitter:title" content={homeMetaTags.title} />
+        <meta name="twitter:description" content={homeMetaTags.description} />
+        <meta name="twitter:image" content={homeMetaTags.image} />
+        <meta name="twitter:alt" content={homeMetaTags.title} />
+
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@jrloh7" />
-        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <NavBar />
       <main className={styles.main}>
