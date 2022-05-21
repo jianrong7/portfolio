@@ -12,8 +12,8 @@ const Contact = () => {
       <p className={styles.text}>Want to get in touch?</p>
       <p className={styles.text}>
         Write me at{" "}
-        <UnderlinedLink href="mailto:lohjianrong7@gmail.com">
-          lohjianrong7@gmail.com
+        <UnderlinedLink href="mailto:hello@jianrong.dev">
+          hello@jianrong.dev
         </UnderlinedLink>
         .
       </p>
