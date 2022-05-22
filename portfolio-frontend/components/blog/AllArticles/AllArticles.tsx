@@ -1,5 +1,3 @@
-import React from "react";
-
 import type { PostInterface } from "../../../types/post";
 import Heading from "../../shared/Heading/Heading";
 import Post from "../Post/Post";

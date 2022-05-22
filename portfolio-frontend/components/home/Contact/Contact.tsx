@@ -1,5 +1,3 @@
-import React from "react";
-
 import Heading from "../../shared/Heading/Heading";
 import UnderlinedLink from "../../shared/UnderlinedLink/UnderlinedLink";
 

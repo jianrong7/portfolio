@@ -18,4 +18,14 @@ const blogMetaTags = {
   image: "/profile.jpg",
 };
 
-export { homeMetaTags, blogMetaTags };
+const ninetyNineCoMetaTags = {
+  title: "99.co | Work",
+  description: "Read about Jian Rong's work at 99.co in detail.",
+  url: "https://jianrong.dev/99co",
+  keywords:
+    "Frontend Development, 99.co, Singapore's Fastest Growing Property Marketplace",
+  image:
+    "https://yt3.ggpht.com/ytc/AKedOLTDhrtaDgYv5BNYjZ6AZLVbTvH7a7AYzV32GjGZ=s900-c-k-c0x00ffffff-no-rj",
+};
+
+export { homeMetaTags, blogMetaTags, ninetyNineCoMetaTags };

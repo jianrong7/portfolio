@@ -6,6 +6,8 @@ import Heading from "../components/shared/Heading/Heading";
 import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
 
+import { ninetyNineCoMetaTags } from "../lib/meta";
+
 import styles from "../styles/99-co.module.css";
 
 const NinetyNineCo: NextPage = () => {
@@ -17,27 +19,35 @@ const NinetyNineCo: NextPage = () => {
       exit={{ opacity: 0, y: -100 }}
     >
       <Head>
-        <title>99.co | Work</title>
-        <meta
-          name="description"
-          content="99.co is the fastest growing property portal in Southeast Asia."
-        />
+        <title>{ninetyNineCoMetaTags.title}</title>
+        <meta name="description" content={ninetyNineCoMetaTags.description} />
+        <meta name="keywords" content={ninetyNineCoMetaTags.keywords} />
+        <meta name="image" content={ninetyNineCoMetaTags.image} />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:url"
-          content="https://jianrong-portfolio.vercel.app/99-co"
-        />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="99.co | Work" />
+        <link rel="canonical" href={ninetyNineCoMetaTags.url} />
+
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content={ninetyNineCoMetaTags.title} />
         <meta
           property="og:description"
-          content="99.co is the fastest growing property portal in Southeast Asia."
+          content={ninetyNineCoMetaTags.description}
         />
+        <meta property="og:url" content={ninetyNineCoMetaTags.url} />
+        <meta property="og:image" content={ninetyNineCoMetaTags.image} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jianrong7_" />
+        <meta name="twitter:creator" content="@jianrong7_" />
+        <meta name="twitter:title" content={ninetyNineCoMetaTags.title} />
+        <meta
+          name="twitter:description"
+          content={ninetyNineCoMetaTags.description}
+        />
+        <meta name="twitter:image" content={ninetyNineCoMetaTags.image} />
+        <meta name="twitter:alt" content={ninetyNineCoMetaTags.title} />
+
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@jrloh7" />
-        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <StickyHeader title="99.co" />
 

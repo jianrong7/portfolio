@@ -17,7 +17,7 @@ const Work = () => {
           <CallToAction
             title="99.co"
             subtitle="Helping the 99% find their way home."
-            link="99-co"
+            link="99co"
             background={theme === "light" ? "/99-co_light.png" : "/99-co.png"}
           />
           <CallToAction

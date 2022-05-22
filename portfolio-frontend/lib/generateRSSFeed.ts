@@ -3,7 +3,7 @@ import fs from "fs";
 import type { PostInterface } from "../types/post";
 
 const generateRSSFeed = (posts: PostInterface[]) => {
-  const baseUrl = "https://jianrong-portfolio.vercel.app";
+  const baseUrl = "https://jianrong.dev";
   const author = {
     name: "Loh Jian Rong",
     email: "ipwnjianrong@gmail.com",

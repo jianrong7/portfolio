@@ -2,33 +2,33 @@
 <rss version="2.0">
     <channel>
         <title>Articles by Loh Jian Rong</title>
-        <link>https://jianrong-portfolio.vercel.app</link>
+        <link>https://jianrong.dev</link>
         <description>You can find me talking about my thoughts and learnings related to technology.</description>
-        <lastBuildDate>Sat, 21 May 2022 06:36:09 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 22 May 2022 13:08:08 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All rights reserved 2022, Loh Jian Rong</copyright>
         <item>
             <title><![CDATA[Reading Hacker News for 30 days]]></title>
-            <link>https://jianrong-portfolio.vercel.app/blog/reading-hacker-news-for-30-days</link>
-            <guid>https://jianrong-portfolio.vercel.app/blog/reading-hacker-news-for-30-days</guid>
+            <link>https://jianrong.dev/blog/reading-hacker-news-for-30-days</link>
+            <guid>https://jianrong.dev/blog/reading-hacker-news-for-30-days</guid>
             <pubDate>Mon, 11 Apr 2022 08:00:00 GMT</pubDate>
             <description><![CDATA[After hearing my company's Director of Engineering tell us that reading Hacker News daily will make us better, I decided to try it for 30 days.]]></description>
             <author>ipwnjianrong@gmail.com (Loh Jian Rong)</author>
         </item>
         <item>
             <title><![CDATA[DriveSG - Reflections]]></title>
-            <link>https://jianrong-portfolio.vercel.app/blog/drivesg-reflections</link>
-            <guid>https://jianrong-portfolio.vercel.app/blog/drivesg-reflections</guid>
+            <link>https://jianrong.dev/blog/drivesg-reflections</link>
+            <guid>https://jianrong.dev/blog/drivesg-reflections</guid>
             <pubDate>Mon, 30 Aug 2021 08:00:00 GMT</pubDate>
             <description><![CDATA[Follow along as I reflect on my journey building a native application using React Native.]]></description>
             <author>ipwnjianrong@gmail.com (Loh Jian Rong)</author>
         </item>
         <item>
             <title><![CDATA[The Odin Project]]></title>
-            <link>https://jianrong-portfolio.vercel.app/blog/the-odin-project</link>
-            <guid>https://jianrong-portfolio.vercel.app/blog/the-odin-project</guid>
+            <link>https://jianrong.dev/blog/the-odin-project</link>
+            <guid>https://jianrong.dev/blog/the-odin-project</guid>
             <pubDate>Wed, 25 Aug 2021 08:00:00 GMT</pubDate>
             <description><![CDATA[Learning JavaScript and Web Development from scratch using the Odin Project.]]></description>
             <author>ipwnjianrong@gmail.com (Loh Jian Rong)</author>

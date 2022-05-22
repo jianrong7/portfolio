@@ -1,9 +1,8 @@
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import type { InferGetStaticPropsType } from "next";
 import fs from "fs";
 import path from "path";
 import Head from "next/head";
 import matter from "gray-matter";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 import type { PostInterface } from "../../types/post";
