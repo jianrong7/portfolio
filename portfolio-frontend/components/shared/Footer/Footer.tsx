@@ -22,6 +22,7 @@ const Footer = () => {
           <div>
             <UnderlinedLink href="/rss.xml">RSS Link</UnderlinedLink>
             <UnderlinedLink href="/sitemap.xml">Sitemap Link</UnderlinedLink>
+            <UnderlinedLink href="/now">Now</UnderlinedLink>
           </div>
         </div>
         <div className={styles.details}>

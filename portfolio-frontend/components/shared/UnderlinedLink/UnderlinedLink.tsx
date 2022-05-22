@@ -16,8 +16,10 @@ export default function UnderlinedLink({
   children,
 }: UnderlinedLinkProps) {
   return (
-    <Link href={href} passHref>
-      <span className={cx(styles.link, className)}>{children}</span>
+    <Link href={href}>
+      <a>
+        <span className={cx(styles.link, className)}>{children}</span>
+      </a>
     </Link>
   );
 }

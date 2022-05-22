@@ -6,45 +6,37 @@ import Heading from "../components/shared/Heading/Heading";
 import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
 import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
+import { driveSgMetaTags } from "../lib/meta";
+
 import styles from "../styles/drivesg.module.css";
 
 const DriveSg: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>DriveSG | Work</title>
-        <meta
-          name="description"
-          content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
-        />
+        <title>{driveSgMetaTags.title}</title>
+        <meta name="description" content={driveSgMetaTags.description} />
+        <meta name="keywords" content={driveSgMetaTags.keywords} />
+        <meta name="image" content={driveSgMetaTags.image} />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={driveSgMetaTags.url} />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content={driveSgMetaTags.title} />
+        <meta property="og:description" content={driveSgMetaTags.description} />
+        <meta property="og:url" content={driveSgMetaTags.url} />
+        <meta property="og:image" content={driveSgMetaTags.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jianrong7_" />
+        <meta name="twitter:creator" content="@jianrong7_" />
+        <meta name="twitter:title" content={driveSgMetaTags.title} />
         <meta
-          property="og:url"
-          content="https://jianrong-portfolio.vercel.app/drivesg"
+          name="twitter:description"
+          content={driveSgMetaTags.description}
         />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="DriveSG | Work" />
-        <meta
-          property="og:description"
-          content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
-        />
-        <meta
-          property="og:image:secure_url"
-          content="https://jianrong-portfolio.vercel.app/drivesg/drivesg_banner.png"
-        />
+        <meta name="twitter:image" content={driveSgMetaTags.image} />
+        <meta name="twitter:alt" content={driveSgMetaTags.title} />
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@jrloh7" />
-        <meta name="twitter:creator" content="@jrloh7" />
-        <meta
-          property="twitter:description"
-          content="DriveSG is a mobile application aimed to help Singaporeans with their driving theory test."
-        />
-        <meta
-          property="twitter:image"
-          content="https://jianrong-portfolio.vercel.app/drivesg/drivesg_banner.png"
-        />
       </Head>
       <StickyHeader title="DriveSG" />
       <main className={styles.main}>

@@ -5,33 +5,40 @@ import Heading from "../components/shared/Heading/Heading";
 import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
 import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
+import { traceifyMetaTags } from "../lib/meta";
+
 import styles from "../styles/traceify.module.css";
 
 const Traceify: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Traceify | Work</title>
-        <meta
-          name="description"
-          content="View your Spotify history like a TraceTogether app using Traceify."
-        />
+        <title>{traceifyMetaTags.title}</title>
+        <meta name="description" content={traceifyMetaTags.description} />
+        <meta name="keywords" content={traceifyMetaTags.keywords} />
+        <meta name="image" content={traceifyMetaTags.image} />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:url"
-          content="https://jianrong-portfolio.vercel.app/traceify"
-        />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="Traceify | Work" />
+        <link rel="canonical" href={traceifyMetaTags.url} />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content={traceifyMetaTags.title} />
         <meta
           property="og:description"
-          content="View your Spotify history like a TraceTogether app using Traceify."
+          content={traceifyMetaTags.description}
         />
+        <meta property="og:url" content={traceifyMetaTags.url} />
+        <meta property="og:image" content={traceifyMetaTags.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@jianrong7_" />
+        <meta name="twitter:creator" content="@jianrong7_" />
+        <meta name="twitter:title" content={traceifyMetaTags.title} />
+        <meta
+          name="twitter:description"
+          content={traceifyMetaTags.description}
+        />
+        <meta name="twitter:image" content={traceifyMetaTags.image} />
+        <meta name="twitter:alt" content={traceifyMetaTags.title} />
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@jrloh7" />
-        <meta name="twitter:creator" content="@jrloh7" />
       </Head>
       <StickyHeader title="Traceify" />
       <main className={styles.main}>
