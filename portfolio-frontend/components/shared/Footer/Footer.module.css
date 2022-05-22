@@ -43,3 +43,25 @@
   display: flex;
   flex-direction: column;
 }
+
+.buttonWithLogo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.backToTop {
+  border-radius: 50%;
+  border: 1px solid var(--font-primary);
+  width: var(--space-5);
+  height: var(--space-5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 992px) {
+  .backToTop {
+    display: none;
+  }
+}

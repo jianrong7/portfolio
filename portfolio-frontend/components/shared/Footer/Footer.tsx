@@ -1,14 +1,15 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 import UnderlinedLink from "../UnderlinedLink/UnderlinedLink";
 
 import styles from "./Footer.module.css";
 
 const Footer = () => {
-  const router = useRouter();
+  const topFunction = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  };
 
   return (
     <footer className={styles.container}>
@@ -29,7 +30,10 @@ const Footer = () => {
           <div>
             <span>&#169; {new Date().getFullYear()} Jian Rong —— 🇸🇬</span>
           </div>
-          <div>
+          <div className={styles.buttonWithLogo}>
+            <span className={styles.backToTop} onClick={topFunction}>
+              ^
+            </span>
             <Image src="/icon.svg" alt="logo" width={32} height={32} />
           </div>
         </div>

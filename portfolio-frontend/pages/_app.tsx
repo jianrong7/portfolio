@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 
-import NavBar from "../components/shared/NavBar/NavBar";
 import Footer from "../components/shared/Footer/Footer";
 
 import "../styles/globals.css";

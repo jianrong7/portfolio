@@ -1,4 +1,6 @@
 - schema for blog articles
+- edit TOP and DriveSG articles
+- publish Coding Career Handbook article
 - custom components for MDX
 
 - add three.js animation
