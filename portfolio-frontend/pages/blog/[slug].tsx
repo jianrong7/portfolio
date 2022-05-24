@@ -26,6 +26,7 @@ export default function PostPage({
   children,
   timeToRead,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(title, subtitle, date, updated, keywords, image, imageAlt);
   const { theme } = useTheme();
 
   const tweetPost = () => {
@@ -41,6 +42,7 @@ export default function PostPage({
     <>
       <Head>
         <title>{title}</title>
+        <meta name="title" content={title} />
         <meta name="description" content={subtitle} />
         <meta name="keywords" content={keywords.join(",")} />
         {image && <meta name="image" content={image} />}
@@ -58,21 +60,21 @@ export default function PostPage({
           </>
         )}
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@jianrong7_" />
-        <meta name="twitter:creator" content="@jianrong7_" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={subtitle} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={`https://jianrong.dev/${slug}`} />
+        <meta property="twitter:site" content="@jianrong7_" />
+        <meta property="twitter:creator" content="@jianrong7_" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={subtitle} />
         {image && (
           <>
-            <meta name="twitter:image" content={image} />
-            <meta name="twitter:image:alt" content={imageAlt} />
+            <meta property="twitter:image" content={image} />
+            <meta property="twitter:image:alt" content={imageAlt} />
           </>
         )}
-        <meta name="twitter:alt" content={title} />
 
-        <meta name="robots" content="index,follow" />
-        <meta name="googlebot" content="index,follow" />
+        <meta name="robots" content="all" />
+        <meta name="googlebot" content="all" />
       </Head>
       <NavBar />
       <Breadcrumbs
