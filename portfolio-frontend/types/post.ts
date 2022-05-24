@@ -8,6 +8,8 @@ export interface frontmatter {
   featured: boolean;
   readTime: string;
   ringColor?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface PostInterface {

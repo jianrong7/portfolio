@@ -21,7 +21,7 @@ import styles from "../../styles/BlogPost.module.css";
 import BlogPost from "../../components/mdx/BlogPost/BlogPost";
 
 export default function PostPage({
-  frontmatter: { title, subtitle, date, updated, keywords },
+  frontmatter: { title, subtitle, date, updated, keywords, image, imageAlt },
   slug,
   children,
   timeToRead,
@@ -43,22 +43,32 @@ export default function PostPage({
         <title>{title}</title>
         <meta name="description" content={subtitle} />
         <meta name="keywords" content={keywords.join(",")} />
-        {/* <meta name="image" content={image} /> */}
+        {image && <meta name="image" content={image} />}
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={`https://jianrong.dev/${slug}`} />
 
-        <meta property="og:type" content="profile" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={subtitle} />
         <meta property="og:url" content={`https://jianrong.dev/${slug}`} />
-        {/* <meta property="og:image" content={image} /> */}
+        {image && (
+          <>
+            <meta property="og:image" content={image} />
+            <meta property="og:image:alt" content={imageAlt} />
+          </>
+        )}
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@jianrong7_" />
         <meta name="twitter:creator" content="@jianrong7_" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={subtitle} />
-        {/* <meta name="twitter:image" content={image} /> */}
+        {image && (
+          <>
+            <meta name="twitter:image" content={image} />
+            <meta name="twitter:image:alt" content={imageAlt} />
+          </>
+        )}
         <meta name="twitter:alt" content={title} />
 
         <meta name="robots" content="index,follow" />
