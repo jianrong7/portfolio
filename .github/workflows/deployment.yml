@@ -17,6 +17,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2.4.0
+        # add caching here https://nextjs.org/docs/messages/no-cache
       - name: setup node env
         uses: actions/setup-node@v2.5.1
         with:
@@ -24,17 +25,15 @@ jobs:
       - name: npm install
         run: |
           npm install
-          npm run build
-      - name: run lighthouse CI
-        run: |
           npm install -g @lhci/cli@0.8.x
-          lhci autorun
-      # - name: lint
-      #   run: npm run lint
-      # - name: build
-      #   run: npm run build
-      # - name: run lighthouse ci
-      #   run: lhci autorun
+      - name: lint
+        run: npm run lint
+      - name: build
+        run: npm run build
+      - name: run lighthouse ci
+        run: |
+          ${GITHUB_WORKSPACE} 
+          lhci autorun --collect.staticDistDir=.next
       # - name: test
       #   run: npm run test
       # - name: e2e tests
