@@ -21,8 +21,14 @@ jobs:
         uses: actions/setup-node@v2.5.1
         with:
           node-version: "16"
-      # - name: npm install
-      #   run: npm install && npm install -g @lhci/cli@0.8.x
+      - name: npm install
+        run: |
+          npm install
+          npm run build
+      - name: run lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.8.x
+          lhci autorun
       # - name: lint
       #   run: npm run lint
       # - name: build
