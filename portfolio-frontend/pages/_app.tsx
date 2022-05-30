@@ -7,6 +7,7 @@ import Footer from "../components/shared/Footer/Footer";
 
 import "../styles/globals.css";
 import Head from "next/head";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [mounted, setMounted] = useState(false);
@@ -17,29 +18,23 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AnimatePresence exitBeforeEnter>
       <ThemeProvider defaultTheme="system">
-        <Head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta
-            name="google-site-verification"
-            content="42JqgY9JufdfzPi39TUgMEw4LcW6QhXvR27AOQxRerI"
-          />
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+        <Script id="gtag-analytics" strategy="lazyOnload">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
+            page_path: window.location.pathname,
             });
-          `,
-            }}
-          />
+          `}
+        </Script>
+        <Head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="format-detection" content="telephone=no" />
         </Head>

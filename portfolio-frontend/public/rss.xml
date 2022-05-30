@@ -4,11 +4,19 @@
         <title>Articles by Loh Jian Rong</title>
         <link>https://jianrong.dev</link>
         <description>You can find me talking about my thoughts and learnings related to technology.</description>
-        <lastBuildDate>Sun, 22 May 2022 14:05:33 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 May 2022 14:02:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All rights reserved 2022, Loh Jian Rong</copyright>
+        <item>
+            <title><![CDATA[The Coding Career Handbook - My Thoughts]]></title>
+            <link>https://jianrong.dev/blog/the-coding-career-handbook</link>
+            <guid>https://jianrong.dev/blog/the-coding-career-handbook</guid>
+            <pubDate>Tue, 24 May 2022 08:00:00 GMT</pubDate>
+            <description><![CDATA[The advice from this book has helped me become a better software engineer during my internship at 99.co.]]></description>
+            <author>ipwnjianrong@gmail.com (Loh Jian Rong)</author>
+        </item>
         <item>
             <title><![CDATA[Reading Hacker News for 30 days]]></title>
             <link>https://jianrong.dev/blog/reading-hacker-news-for-30-days</link>
