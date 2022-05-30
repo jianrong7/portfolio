@@ -18,15 +18,7 @@
 }
 
 .resumeButton {
-  display: flex;
-  justify-content: center;
-}
-
-.resumeButton > span {
-  color: var(--background);
-  font-weight: 500;
-  font-size: var(--font-size-5);
-  margin-right: var(--space-2);
+  color: var(--about);
 }
 
 @media screen and (min-width: 768px) {

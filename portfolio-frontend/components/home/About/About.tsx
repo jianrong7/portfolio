@@ -28,15 +28,7 @@ const About = () => {
         </p>
       </div>
       <Link href="/resume.pdf" passHref>
-        <Button className={styles.resumeButton}>
-          <span>Resume.pdf</span>
-          <Image
-            src={theme === "light" ? "/download_light.png" : "/download.png"}
-            width={24}
-            height={24}
-            alt="download"
-          />
-        </Button>
+        <Button className={styles.resumeButton}>Resume.pdf</Button>
       </Link>
     </section>
   );
