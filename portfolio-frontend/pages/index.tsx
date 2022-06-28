@@ -26,7 +26,6 @@ const Home: NextPage = () => {
         <meta name="description" content={homeMetaTags.description} />
         <meta name="keywords" content={homeMetaTags.keywords} />
         <meta name="image" content={homeMetaTags.image} />
-        <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={homeMetaTags.url} />
 
         <meta property="og:type" content="profile" />

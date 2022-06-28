@@ -37,6 +37,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="format-detection" content="telephone=no" />
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon-precomposed" href="/favicon.ico" />
         </Head>
         <Component {...pageProps} key={router.route} />
         <Footer />
