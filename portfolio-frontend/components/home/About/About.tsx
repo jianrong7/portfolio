@@ -1,7 +1,4 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { useTheme } from "next-themes";
 
 import Heading from "../../shared/Heading/Heading";
 import Button from "../../shared/Button/Button";
@@ -9,7 +6,6 @@ import Button from "../../shared/Button/Button";
 import styles from "./About.module.css";
 
 const About = () => {
-  const { theme } = useTheme();
   return (
     <section id="about" className={styles.about}>
       <Heading level="h2">About me</Heading>
@@ -27,9 +23,9 @@ const About = () => {
           about all kinds of things.
         </p>
       </div>
-      <Link href="/resume.pdf" passHref>
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
         <Button className={styles.resumeButton}>Resume.pdf</Button>
-      </Link>
+      </a>
     </section>
   );
 };

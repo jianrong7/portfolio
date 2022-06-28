@@ -2,12 +2,12 @@ import { ThemeProvider } from "next-themes";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
+import Head from "next/head";
+import Script from "next/script";
 
 import Footer from "../components/shared/Footer/Footer";
 
 import "../styles/globals.css";
-import Head from "next/head";
-import Script from "next/script";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [mounted, setMounted] = useState(false);

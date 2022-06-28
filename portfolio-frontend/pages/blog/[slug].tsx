@@ -10,7 +10,6 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { readingTime } from "reading-time-estimator";
 import Head from "next/head";
-import { useTheme } from "next-themes";
 
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import Heading from "../../components/shared/Heading/Heading";
@@ -26,9 +25,6 @@ export default function PostPage({
   children,
   timeToRead,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(title, subtitle, date, updated, keywords, image, imageAlt);
-  const { theme } = useTheme();
-
   const tweetPost = () => {
     window.open(
       `https://twitter.com/intent/tweet?url=https://jianrong-portfolio.vercel.app/blog/${slug}&text=${title}%20by%20@jrloh7&hashtags=${keywords[0]},${keywords[1]}`,

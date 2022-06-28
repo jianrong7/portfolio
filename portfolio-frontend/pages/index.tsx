@@ -10,6 +10,7 @@ import Work from "../components/home/Work/Work";
 import Contact from "../components/home/Contact/Contact";
 
 import { homeMetaTags } from "../lib/meta";
+import { personSchema } from "../lib/schema";
 
 import styles from "../styles/Home.module.css";
 
@@ -44,6 +45,10 @@ const Home: NextPage = () => {
 
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
       </Head>
       <NavBar />
       <main className={styles.main}>

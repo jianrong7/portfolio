@@ -14,6 +14,7 @@ import Intro from "../../components/blog/Intro/Intro";
 
 import generateRSSFeed from "../../lib/generateRSSFeed";
 import { blogMetaTags } from "../../lib/meta";
+import { blogSchema } from "../../lib/schema";
 
 import styles from "../../styles/Blog.module.css";
 
@@ -50,6 +51,10 @@ export default function Blog({
 
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+        />
       </Head>
 
       <NavBar />

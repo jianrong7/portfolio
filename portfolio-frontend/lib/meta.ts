@@ -1,11 +1,10 @@
 const homeMetaTags = {
-  title: "Loh Jian Rong",
+  title: "Loh Jian Rong | Personal Portfolio",
   description:
-    "The official site of Loh Jian Rong (@jianrong7_), a technology enthusiast based in Singapore.",
+    "Loh Jian Rong (@jianrong7_) is a Singapore based technology enthusiast and frontend engineer working with React.",
   url: "https://jianrong.dev",
-  keywords:
-    "Frontend Development, Backend Development, Learn React, NUS Student",
-  image: "/profile.jpg",
+  keywords: "Frontend Development, Backend Development, React, NUS Student",
+  image: "https://jianrong.dev/profile.jpg",
 };
 
 const blogMetaTags = {
@@ -15,11 +14,11 @@ const blogMetaTags = {
   url: "https://jianrong.dev/blog",
   keywords:
     "Frontend Development, Backend Development, Learn React, NUS Student",
-  image: "/profile.jpg",
+  image: "https://jianrong.dev/profile.jpg",
 };
 
 const ninetyNineCoMetaTags = {
-  title: "99.co | Work",
+  title: "99.co | Loh Jian Rong - Work",
   description: "Read about Jian Rong's work at 99.co in detail.",
   url: "https://jianrong.dev/99co",
   keywords:
@@ -29,7 +28,7 @@ const ninetyNineCoMetaTags = {
 };
 
 const traceifyMetaTags = {
-  title: "Traceify | Work",
+  title: "Traceify | Loh Jian Rong - Work",
   description:
     "Read about Jian Rong's personal project, Traceify, which combines elements of Spotify and Singapore's contact tracing application, TraceTogether.",
   url: "https://jianrong.dev/traceify",
@@ -39,12 +38,12 @@ const traceifyMetaTags = {
 };
 
 const driveSgMetaTags = {
-  title: "DriveSG | Work",
+  title: "DriveSG | Loh Jian Rong - Work",
   description:
     "Read about Jian Rong's personal project, DriveSG, which helps Singaporean drivers pass their theory test.",
   url: "https://jianrong.dev/drivesg",
   keywords: "Frontend Development, DriveSG, React Native",
-  image: "https://jianrong-portfolio.vercel.app/drivesg/drivesg_banner.png",
+  image: "https://jianrong.dev/drivesg/drivesg_banner.png",
 };
 
 export {
