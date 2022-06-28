@@ -25,15 +25,6 @@ export default function PostPage({
   children,
   timeToRead,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const tweetPost = () => {
-    window.open(
-      `https://twitter.com/intent/tweet?url=https://jianrong-portfolio.vercel.app/blog/${slug}&text=${title}%20by%20@jrloh7&hashtags=${keywords[0]},${keywords[1]}`,
-      "targetWindow",
-      "toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=700,height=500"
-    );
-    return false;
-  };
-
   return (
     <>
       <Head>
