@@ -43,8 +43,8 @@ const StickyHeader = ({ title }: StickyHeaderProps) => {
 
           <Button isToggle isHollow onClick={themeChangeHandler}>
             <Image
-              src={theme === "light" ? "/sun.png" : "/moon.png"}
-              alt="logo"
+              src={theme === "light" ? "/moon.png" : "/sun.png"}
+              alt={theme === "light" ? "toggle dark mode" : "toggle light mode"}
               width={24}
               height={24}
               priority

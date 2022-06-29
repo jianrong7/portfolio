@@ -24,7 +24,9 @@ const About = () => {
         </p>
       </div>
       <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-        <Button className={styles.resumeButton}>Resume.pdf</Button>
+        <Button className={styles.resumeButton} title="Loh Jian Rong's Resume">
+          Resume.pdf
+        </Button>
       </a>
     </section>
   );

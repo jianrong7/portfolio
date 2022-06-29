@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "next/future/image";
 
 import UnderlinedLink from "../UnderlinedLink/UnderlinedLink";
 
@@ -44,7 +44,12 @@ const Footer = () => {
             <span className={styles.backToTop} onClick={topFunction}>
               ^
             </span>
-            <Image src="/icon.svg" alt="logo" width={32} height={32} />
+            <Image
+              src="/icon.svg"
+              alt="Loh Jian Rong's Logo"
+              width={32}
+              height={32}
+            />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
@@ -17,13 +17,24 @@ const NavBar = () => {
       <div className={styles.navBar}>
         <Link href="/" passHref>
           <a>
-            <Image src="/icon.svg" alt="logo" width={32} height={32} priority />
+            <Image
+              src="/icon.svg"
+              alt="Loh Jian Rong's Logo"
+              width={32}
+              height={32}
+              priority
+            />
           </a>
         </Link>
-        <Button isToggle isHollow onClick={themeChangeHandler}>
+        <Button
+          isToggle
+          isHollow
+          onClick={themeChangeHandler}
+          title="Theme toggle"
+        >
           <Image
-            src={theme === "light" ? "/sun.png" : "/moon.png"}
-            alt="logo"
+            src={theme === "light" ? "/moon.png" : "/sun.png"}
+            alt={theme === "light" ? "toggle dark mode" : "toggle light mode"}
             width={24}
             height={24}
             priority

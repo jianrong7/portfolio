@@ -56,7 +56,9 @@ const Intro = () => (
           </a>
         </Link>
       </div>
-      <UnderlinedLink href="/twitter">@jianrong7_</UnderlinedLink>
+      <UnderlinedLink openInNewTab href="/twitter">
+        @jianrong7_
+      </UnderlinedLink>
     </div>
   </section>
 );

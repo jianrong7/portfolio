@@ -8,6 +8,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLHeadingElement> {
   isHollow?: boolean;
   isToggle?: boolean;
   onClick?: React.MouseEventHandler;
+  title?: string;
 }
 
 const Button = ({
@@ -16,6 +17,7 @@ const Button = ({
   onClick,
   className,
   children,
+  title,
 }: ButtonProps) => {
   return (
     <motion.button
@@ -25,6 +27,7 @@ const Button = ({
       })}
       whileTap={{ scale: 0.98, y: 2 }}
       onClick={onClick}
+      title={title}
     >
       {children}
     </motion.button>
