@@ -17,7 +17,7 @@ const NavBar = () => {
       <div className={styles.navBar}>
         <Link href="/" passHref>
           <a>
-            <Image src="/icon.svg" alt="logo" width={32} height={32} />
+            <Image src="/icon.svg" alt="logo" width={32} height={32} priority />
           </a>
         </Link>
         <Button isToggle isHollow onClick={themeChangeHandler}>
@@ -26,6 +26,7 @@ const NavBar = () => {
             alt="logo"
             width={24}
             height={24}
+            priority
           />
         </Button>
       </div>

@@ -27,7 +27,13 @@ const StickyHeader = ({ title }: StickyHeaderProps) => {
           <div className={styles.logoDiv}>
             <Link href={"/"} passHref>
               <a>
-                <Image src="/icon.svg" alt="logo" width={32} height={32} />
+                <Image
+                  src="/icon.svg"
+                  alt="logo"
+                  width={32}
+                  height={32}
+                  priority
+                />
               </a>
             </Link>
             <Heading level="h1" className={styles.title}>
@@ -41,6 +47,7 @@ const StickyHeader = ({ title }: StickyHeaderProps) => {
               alt="logo"
               width={24}
               height={24}
+              priority
             />
           </Button>
         </div>
