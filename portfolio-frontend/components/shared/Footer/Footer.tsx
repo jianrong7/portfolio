@@ -16,13 +16,23 @@ const Footer = () => {
       <div className={styles.footer}>
         <div className={styles.crawler}>
           <div>
-            <UnderlinedLink href="/twitter">Twitter</UnderlinedLink>
-            <UnderlinedLink href="/github">Github</UnderlinedLink>
-            <UnderlinedLink href="/linkedin">LinkedIn</UnderlinedLink>
+            <UnderlinedLink openInNewTab href="/twitter">
+              Twitter
+            </UnderlinedLink>
+            <UnderlinedLink openInNewTab href="/github">
+              Github
+            </UnderlinedLink>
+            <UnderlinedLink openInNewTab href="/linkedin">
+              LinkedIn
+            </UnderlinedLink>
           </div>
           <div>
-            <UnderlinedLink href="/rss.xml">RSS</UnderlinedLink>
-            <UnderlinedLink href="/sitemap.xml">Sitemap</UnderlinedLink>
+            <UnderlinedLink openInNewTab href="/rss.xml">
+              RSS
+            </UnderlinedLink>
+            <UnderlinedLink openInNewTab href="/sitemap.xml">
+              Sitemap
+            </UnderlinedLink>
             <UnderlinedLink href="/now">Now</UnderlinedLink>
           </div>
         </div>
