@@ -5,7 +5,6 @@ import type {
 } from "next";
 import fs from "fs";
 import path from "path";
-import Image from "next/image";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { readingTime } from "reading-time-estimator";
@@ -15,16 +14,41 @@ import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import Heading from "../../components/shared/Heading/Heading";
 import NavBar from "../../components/shared/NavBar/NavBar";
 import ProgressBar from "../../components/shared/ProgressBar/ProgressBar";
+import BlogPost from "../../components/mdx/BlogPost/BlogPost";
+import { personSchema } from "../../lib/schema";
+import { frontmatter } from "../../types/post";
 
 import styles from "../../styles/BlogPost.module.css";
-import BlogPost from "../../components/mdx/BlogPost/BlogPost";
+
+const blogPostingSchema = ({
+  slug,
+  subtitle,
+  title,
+  image,
+  keywords,
+}: frontmatter) => ({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://jianrong.dev/blog/${slug}`,
+  },
+  author: personSchema,
+  description: subtitle,
+  image,
+  headline: title,
+  url: `https://jianrong.dev/blog/${slug}`,
+  keywords,
+});
 
 export default function PostPage({
-  frontmatter: { title, subtitle, date, updated, keywords, image, imageAlt },
+  frontmatter,
   slug,
   children,
   timeToRead,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { title, subtitle, date, updated, keywords, image, imageAlt } =
+    frontmatter;
   return (
     <>
       <Head>
@@ -62,6 +86,12 @@ export default function PostPage({
 
         <meta name="robots" content="all" />
         <meta name="googlebot" content="all" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(blogPostingSchema(frontmatter)),
+          }}
+        />
       </Head>
       <NavBar />
       <Breadcrumbs

@@ -1,4 +1,4 @@
-import { homeMetaTags } from "./meta";
+import { homeMetaTags, blogMetaTags } from "./meta";
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -19,7 +19,7 @@ const websiteSchema = {
   description: homeMetaTags.description,
   image: homeMetaTags.image,
   name: homeMetaTags.title,
-  url: "https://jianrong.dev",
+  url: homeMetaTags.url,
   keywords: ["react", "frontend", "backend", "software engineering"],
   author: personSchema,
 };
@@ -29,9 +29,9 @@ const blogSchema = {
   "@type": "Blog",
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://jianrong.dev/blog",
+    "@id": blogMetaTags.url,
   },
-  headline: "Jian Rong's Blog",
+  headline: "Loh Jian Rong's Blog",
   image: "https://jianrong.dev/profile.jpg",
   author: personSchema,
   description:
