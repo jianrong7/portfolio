@@ -6,7 +6,6 @@ export interface frontmatter {
   keywords: string[];
   slug: string;
   featured: boolean;
-  readTime: string;
   ringColor?: string;
   image?: string;
   imageAlt?: string;
