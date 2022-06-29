@@ -21,8 +21,8 @@ const Footer = () => {
             <UnderlinedLink href="/linkedin">LinkedIn</UnderlinedLink>
           </div>
           <div>
-            <UnderlinedLink href="/rss.xml">RSS Link</UnderlinedLink>
-            <UnderlinedLink href="/sitemap.xml">Sitemap Link</UnderlinedLink>
+            <UnderlinedLink href="/rss.xml">RSS</UnderlinedLink>
+            <UnderlinedLink href="/sitemap.xml">Sitemap</UnderlinedLink>
             <UnderlinedLink href="/now">Now</UnderlinedLink>
           </div>
         </div>

@@ -22,7 +22,7 @@ const getSchema = (breadcrumbs: BreadcrumbType[]) => ({
     "@type": "ListItem",
     position: index + 1,
     item: {
-      "@id": `https://99.co/${item.url}`,
+      "@id": `https://jianrong.dev${item.url}`,
       name: item.title,
     },
     name: item.title,
