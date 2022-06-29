@@ -6,6 +6,7 @@ import Head from "next/head";
 import Script from "next/script";
 
 import Footer from "../components/shared/Footer/Footer";
+import { websiteSchema } from "../lib/schema";
 
 import "../styles/globals.css";
 
@@ -41,6 +42,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/favicon.ico" />
           <link rel="apple-touch-icon-precomposed" href="/favicon.ico" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          />
         </Head>
         <Component {...pageProps} key={router.route} />
         <Footer />
