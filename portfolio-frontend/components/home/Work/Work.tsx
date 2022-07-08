@@ -35,7 +35,6 @@ const Work = () => {
             title="Traceify"
             subtitle="A Spotify clone using the TraceTogether theme"
             isSmall
-            link="traceify"
             background={
               theme === "light" ? "/traceify_light.png" : "/traceify.png"
             }
@@ -44,7 +43,6 @@ const Work = () => {
             title="Where&#39;s Waldo"
             subtitle="Spot Waldo game"
             className={styles.lastItem}
-            link="where-is-waldo"
             background={
               theme === "light"
                 ? "/where-is-waldo_light.png"

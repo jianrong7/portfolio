@@ -8,7 +8,7 @@ import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
 
 import { ninetyNineCoMetaTags } from "../lib/meta";
 
-import styles from "../styles/99-co.module.css";
+import styles from "../styles/WorkPage.module.css";
 
 const NinetyNineCo: NextPage = () => {
   return (

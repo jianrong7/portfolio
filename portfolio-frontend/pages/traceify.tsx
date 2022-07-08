@@ -7,7 +7,7 @@ import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
 import { traceifyMetaTags } from "../lib/meta";
 
-import styles from "../styles/traceify.module.css";
+import styles from "../styles/WorkPage.module.css";
 
 const Traceify: NextPage = () => {
   return (

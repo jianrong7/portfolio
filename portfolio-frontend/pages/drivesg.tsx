@@ -8,7 +8,7 @@ import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
 import { driveSgMetaTags } from "../lib/meta";
 
-import styles from "../styles/drivesg.module.css";
+import styles from "../styles/WorkPage.module.css";
 
 const DriveSg: NextPage = () => {
   return (

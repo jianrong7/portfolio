@@ -5,7 +5,7 @@ import Heading from "../components/shared/Heading/Heading";
 import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
 import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
 
-import styles from "../styles/where-is-waldo.module.css";
+import styles from "../styles/WorkPage.module.css";
 
 const WhereIsWaldo: NextPage = () => {
   return (
