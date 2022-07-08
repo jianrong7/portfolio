@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.image {
+  display: none;
+  position: relative;
+  grid-column: 1 / -1;
+  grid-area: 1 / 6 / -1 / -1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  grid-column: 1 / -1;
+  position: relative;
+  grid-area: 1 / 1 / -1 / 7;
+}

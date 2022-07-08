@@ -12,7 +12,8 @@ import Head from "next/head";
 
 import Breadcrumbs from "../../components/shared/Breadcrumbs/Breadcrumbs";
 import Heading from "../../components/shared/Heading/Heading";
-import NavBar from "../../components/shared/NavBar/NavBar";
+import StickyHeader from "../../components/shared/StickyHeader/StickyHeader";
+// import NavBar from "../../components/shared/NavBar/NavBar";
 import ProgressBar from "../../components/shared/ProgressBar/ProgressBar";
 import BlogPost from "../../components/mdx/BlogPost/BlogPost";
 import { personSchema } from "../../lib/schema";
@@ -93,7 +94,8 @@ export default function PostPage({
           }}
         />
       </Head>
-      <NavBar />
+      {/* <NavBar /> */}
+      <StickyHeader title={title} />
       <Breadcrumbs
         breadcrumbs={[
           { url: "/", title: "Home" },
