@@ -44,7 +44,7 @@ const Intro = () => (
     <div className={styles.headerDetails}>
       <div className={styles.headerDetailsButtons}>
         <a href="#about">
-          <Button className={styles.about}>About me</Button>
+          <Button isHollow>About me</Button>
         </a>
 
         <a href="#work">
@@ -52,7 +52,7 @@ const Intro = () => (
         </a>
         <Link href="/blog">
           <a>
-            <Button className={styles.about}>Blog</Button>
+            <Button>Blog</Button>
           </a>
         </Link>
       </div>

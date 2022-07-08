@@ -6,6 +6,7 @@
   padding: var(--space-5) 0;
   backdrop-filter: blur(10px);
   background-color: var(--background-80);
+  box-shadow: 0 10px 30px -10px var(--foreground);
 }
 
 .navBar {

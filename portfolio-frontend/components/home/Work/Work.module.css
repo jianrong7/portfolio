@@ -11,6 +11,12 @@
   margin-bottom: 0;
 }
 
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
 @media screen and (min-width: 990px) {
   .work {
     grid-template-columns: 1fr 1fr;

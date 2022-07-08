@@ -17,10 +17,6 @@
   margin: 0;
 }
 
-.resumeButton {
-  color: var(--about);
-}
-
 @media screen and (min-width: 768px) {
   .description {
     display: grid;

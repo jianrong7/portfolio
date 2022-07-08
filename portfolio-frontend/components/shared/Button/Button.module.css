@@ -6,9 +6,9 @@
   font-size: var(--font-size-4);
   padding: var(--space-2) var(--space-3);
   background-color: var(--brand-primary);
-  border-radius: var(--border-radius-1);
+  border-radius: var(--border-radius-0);
   border: 2px solid var(--brand-primary);
-  color: var(--foreground);
+  color: var(--background);
 }
 
 .isHollow {

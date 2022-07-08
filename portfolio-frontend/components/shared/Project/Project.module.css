@@ -5,6 +5,9 @@
   grid-template-columns: repeat(12, 1fr);
   -webkit-box-align: center;
   align-items: center;
+  background-color: var(--foreground);
+  border-radius: var(--border-radius-0);
+  box-shadow: 0 20px 30px -15px var(--background);
 }
 
 .image {
@@ -16,10 +19,37 @@
 
 .content {
   display: flex;
+  gap: var(--space-5);
   flex-direction: column;
   justify-content: center;
   height: 100%;
   grid-column: 1 / -1;
   position: relative;
-  grid-area: 1 / 1 / -1 / 7;
+  grid-area: 1 / 1 / -1 / -1;
+  padding: var(--space-6) var(--space-5);
+}
+
+.title {
+  font-size: var(--font-size-5);
+}
+
+.description {
+  opacity: 0.8;
+  margin: 0;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.keyword {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+}
+
+.ctas {
+  display: flex;
+  gap: var(--space-3);
 }

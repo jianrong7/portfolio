@@ -9,6 +9,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLHeadingElement> {
   isToggle?: boolean;
   onClick?: React.MouseEventHandler;
   title?: string;
+  href?: string;
 }
 
 const Button = ({
@@ -33,5 +34,42 @@ const Button = ({
     </motion.button>
   );
 };
+const LinkWrapper = ({
+  isHollow,
+  isToggle,
+  onClick,
+  className,
+  children,
+  title,
+  href,
+}: ButtonProps) => {
+  return (
+    <>
+      {href ? (
+        <a target="_blank" href={href} rel="noopener noreferrer">
+          <Button
+            isHollow={isHollow}
+            isToggle={isToggle}
+            onClick={onClick}
+            className={className}
+            title={title}
+          >
+            {children}
+          </Button>
+        </a>
+      ) : (
+        <Button
+          isHollow={isHollow}
+          isToggle={isToggle}
+          onClick={onClick}
+          className={className}
+          title={title}
+        >
+          {children}
+        </Button>
+      )}
+    </>
+  );
+};
 
-export default Button;
+export default LinkWrapper;
