@@ -2,11 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
-import Heading from "../components/shared/Heading/Heading";
-import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
-import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
+import Heading from "../shared/Heading/Heading";
+import ProgressBar from "../shared/ProgressBar/ProgressBar";
+import StickyHeader from "../shared/StickyHeader/StickyHeader";
 
-import { driveSgMetaTags } from "../lib/meta";
+import { driveSgMetaTags } from "../../lib/meta";
 
 import styles from "../styles/WorkPage.module.css";
 

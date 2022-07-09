@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import Heading from "../components/shared/Heading/Heading";
-import StickyHeader from "../components/shared/StickyHeader/StickyHeader";
-import ProgressBar from "../components/shared/ProgressBar/ProgressBar";
+import Heading from "../shared/Heading/Heading";
+import StickyHeader from "../shared/StickyHeader/StickyHeader";
+import ProgressBar from "../shared/ProgressBar/ProgressBar";
 
-import { ninetyNineCoMetaTags } from "../lib/meta";
+import { ninetyNineCoMetaTags } from "../../lib/meta";
 
 import styles from "../styles/WorkPage.module.css";
 
