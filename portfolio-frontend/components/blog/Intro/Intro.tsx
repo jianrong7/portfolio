@@ -25,9 +25,9 @@ const Intro = () => (
       >
         💡
       </motion.div>{" "}
-      <span>Ideas to spread around.</span>
+      <span>Ideas to be shared.</span>
       <UnderlinedLink href="/rss.xml" className={styles.rss}>
-        <RssIcon />
+        <RssIcon className={styles.rssIcon} />
       </UnderlinedLink>
     </Heading>
     <Heading level="h2" className={styles.description}>

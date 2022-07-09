@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
 
 import type { PostInterface } from "../../../types/post";
 import Heading from "../../shared/Heading/Heading";
@@ -35,7 +34,8 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
         </Heading>
         <p className={styles.subtitle}>{post.frontmatter.subtitle}</p>
         <p className={styles.time}>
-          {date.toDateString().slice(4)} — {post.frontmatter.readTime}
+          {date.toDateString().slice(4)}
+          {/* — {post.frontmatter.readTime} */}
         </p>
       </li>
     </Link>
