@@ -26,6 +26,7 @@
 .fourOFourButtons {
   margin-top: var(--space-4);
   display: flex;
+  gap: var(--space-4);
 }
 
 .fourOFourButtons > button {

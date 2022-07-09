@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { useTheme } from "next-themes";
 
 import Heading from "../../shared/Heading/Heading";
@@ -12,9 +13,13 @@ const Work = () => {
     <section id="work">
       <Heading level="h2">Featured Works</Heading>
       <ul className={styles.projects}>
-        <Project data={driveSg} />
-        <Project data={traceify} />
         <Project data={cryptoWatchlist} />
+        <Link href="/blog/drivesg-reflections">
+          <a>
+            <Project data={driveSg} />
+          </a>
+        </Link>
+        <Project data={traceify} />
       </ul>
     </section>
   );

@@ -1,43 +1,36 @@
 import React from "react";
-import { motion } from "framer-motion";
-import cx from "classnames";
-import Link from "next/link";
+import Image from "next/future/image";
 
 import Heading from "../Heading/Heading";
-import Arrow from "../Arrow/Arrow";
-
-import styles from "./Project.module.css";
-import UnderlinedLink from "../UnderlinedLink/UnderlinedLink";
 import Button from "../Button/Button";
 import { WorkContentInterface } from "../../home/Work/workContent";
 
-const keywords = ["React Native", "Tesseract.js", "Firebase"];
+import styles from "./Project.module.css";
 
-interface ProjectProps extends React.HTMLAttributes<HTMLHeadingElement> {
+interface ProjectProps extends React.HTMLAttributes<HTMLLinkElement> {
   data: WorkContentInterface;
 }
 
 const Project = ({ data }: ProjectProps) => {
-  const { title, description, technologies, githubLink, appLink } = data;
+  const { title, description, technologies, githubLink, appLink, image } = data;
   return (
     <li className={styles.container}>
-      <div className={styles.image}>picture</div>
+      {image && (
+        <div className={styles.imageContainer}>
+          <Image
+            src={image.src}
+            height={image.height}
+            width={image.width}
+            alt={image.alt}
+            className={styles.image}
+          />
+        </div>
+      )}
       <div className={styles.content}>
         <Heading level="h3" className={styles.title}>
           {title}
         </Heading>
-        <p className={styles.description}>
-          {description}
-          {/* Mobile quiz application for drivers-to-be to ace their theory tests.
-          Available on{" "}
-          <UnderlinedLink
-            openInNewTab
-            href="https://play.google.com/store/apps/details?id=com.jianrong7.drivesg"
-          >
-            Google Play Store
-          </UnderlinedLink>
-          . */}
-        </p>
+        <p className={styles.description}>{description}</p>
         <ul className={styles.keywords}>
           {technologies.map((technology, i) => (
             <li key={`${technology}_${i}`} className={styles.keyword}>
@@ -61,5 +54,4 @@ const Project = ({ data }: ProjectProps) => {
     </li>
   );
 };
-
 export default Project;

@@ -17,6 +17,14 @@ const blogMetaTags = {
   image: "https://jianrong.dev/profile.jpg",
 };
 
+const archiveMetaTags = {
+  title: "Project Archive | Loh Jian Rong",
+  description: "All the notable projects that Jian Rong has published.",
+  url: "https://jianrong.dev/archive",
+  keywords: "Archive, Software Engineering",
+  image: "https://jianrong.dev/profile.jpg",
+};
+
 const ninetyNineCoMetaTags = {
   title: "99.co | Loh Jian Rong - Work",
   description: "Read about Jian Rong's work at 99.co in detail.",
@@ -49,6 +57,7 @@ const driveSgMetaTags = {
 export {
   homeMetaTags,
   blogMetaTags,
+  archiveMetaTags,
   ninetyNineCoMetaTags,
   traceifyMetaTags,
   driveSgMetaTags,

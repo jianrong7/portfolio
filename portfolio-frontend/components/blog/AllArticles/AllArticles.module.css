@@ -1,5 +1,6 @@
 .list {
   padding: 0;
+  margin-top: var(--space-5);
 }
 
 .list > h3 {
