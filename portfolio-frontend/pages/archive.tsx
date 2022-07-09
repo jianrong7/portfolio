@@ -3,19 +3,35 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 import NavBar from "../components/shared/NavBar/NavBar";
-import Intro from "../components/home/Intro/Intro";
-import About from "../components/home/About/About";
-import Experience from "../components/home/Experience/Experience";
-import Work from "../components/home/Work/Work";
-import Contact from "../components/home/Contact/Contact";
 
 import { archiveMetaTags } from "../lib/meta";
 import { personSchema } from "../lib/schema";
 
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Archive.module.css";
 import Breadcrumbs from "../components/shared/Breadcrumbs/Breadcrumbs";
+import Heading from "../components/shared/Heading/Heading";
+import AllArticles from "../components/blog/AllArticles/AllArticles";
 
-const Home: NextPage = () => {
+const projects = [
+  {
+    title: "project1",
+    subtitle: "project1 subtitle",
+    date: "Sat Jul 09 2022 14:09:11 GMT+0800 (Singapore Standard Time)",
+    updated: "Sat Jul 09 2022 14:09:11 GMT+0800 (Singapore Standard Time)",
+    keywords: ["project", "1"],
+    featured: false,
+  },
+  {
+    title: "project2",
+    subtitle: "project2 subtitle",
+    date: "Sat Jul 09 2022 14:09:11 GMT+0800 (Singapore Standard Time)",
+    updated: "Sat Jul 09 2022 14:09:11 GMT+0800 (Singapore Standard Time)",
+    keywords: ["project", "2"],
+    featured: false,
+  },
+];
+
+const Archive: NextPage = () => {
   return (
     <motion.div
       className={styles.container}
@@ -61,10 +77,14 @@ const Home: NextPage = () => {
         ]}
       />
       <main className={styles.main}>
-        <p>hello</p>
+        <section>
+          <Heading level="h1">Archive</Heading>
+          <Heading level="h2">A big list of things I&#39;ve worked on</Heading>
+        </section>
+        <section>{/* <AllArticles posts={projects} /> */}</section>
       </main>
     </motion.div>
   );
 };
 
-export default Home;
+export default Archive;

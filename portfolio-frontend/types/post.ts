@@ -12,6 +12,6 @@ export interface frontmatter {
 }
 
 export interface PostInterface {
-  slug: string;
+  slug?: string;
   frontmatter: frontmatter;
 }
