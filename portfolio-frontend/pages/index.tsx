@@ -51,7 +51,9 @@ const Home: NextPage = () => {
       </Head>
       <NavBar />
       <main className={styles.main}>
+        Hello222 Hello again wassup bye
         <Intro />
+        Goodbye lol jk hello
         <About />
         {/* <Experience /> to insert when I have more than 1 internship, right now it looks too pathetic*/}
         <Work />
