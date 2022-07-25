@@ -1,0 +1,124 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \usepackage{xcolor}
+    \usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+    \usepackage[left=0.6in,right=0.6in,bottom=0.6in,top=0.6in]{geometry}
+    \usepackage[sfdefault,light]{roboto}
+    \usepackage[T1]{fontenc}
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-12pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-12pt}\vspace*{6pt} \large\textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\vspace*{-40pt}
+
+%==== Profile ====%
+\begin{center}
+	{\huge \scshape {Loh Jian Rong}}\\
+	\href{mailto:hello@jianrong.dev}{hello@jianrong.dev} $\cdot$ 9113 8851 $\cdot$ \href{https://jianrong.dev}{https://jianrong.dev} $\cdot$ \href{https://github.com/}{GitHub} $\cdot$ \href{https://www.linkedin.com/in/jianrong7/}{LinkedIn}\\
+\end{center}
+
+%==== Education ====%
+\header{Education}
+\vspace{1mm}
+\textbf{National University of Singapore}\hfill Singapore\\
+Bachelor of Computing in Computer Science \hfill Aug 2022 - Present\\
+\vspace{-2mm}
+\begin{itemize} \itemsep 1pt
+	\item NUS Merit Scholarship Recipient
+\end{itemize}
+
+%==== Experience ====%
+\header{Experience}
+\vspace{1mm}
+
+\textbf{99 Group} \hfill Singapore\\
+\textit{Junior Software Engineer (Part-time Consultant)} \hfill Aug 2022 - Present\\
+\vspace{-2mm}
+\begin{itemize} \itemsep 1pt
+	\item Offered position for accomplishing tasks at a high quality and speed
+\end{itemize}
+
+\textbf{99 Group} \hfill Singapore\\
+\textit{Frontend Engineer Intern} \hfill Jan 2022 - Jul 2022\\
+\vspace{-2mm}
+\begin{itemize} \itemsep 1pt
+	\item Created a reusable React Hook from scratch to convert legacy adaptive components to a modern responsive web layout (\textbf{JavaScript, React, Redux})
+	\item Reduced Mobile Usability Issues by 100\%, from \textbf{1.5k invalid links to 0 in 3 months}
+	\item Eliminated Core Web Vitals issues, from over \textbf{10,400 to 0}
+	\item Boosted organic performance by up to 9\% week-on-week and up to \textbf{145\% year-on-year}
+	\item Presented technical proposal to VP \& engineering team and received positive feedback from mentor
+	\item Documentation is currently open sourced on \href{https://medium.com/99dotco/adaptive-to-responsive-in-1-react-hook-4d1ce93e1488}{company’s tech blog}
+	\item Developed \href{https://www.99.co/singapore/new-launches}{New Launch Directory}, \href{https://www.99.co/singapore/condos-apartments/reviews/liv-mb}{New Launch Showflat Reviews}, \href{https://www.99.co/singapore/condos-apartments/reviews}{New Launch Reviews Directory}, \href{https://www.99.co/singapore/tools/tdsr-calculator}{Calculators}
+	\item Organic search result for ‘new launches’ improved from \textbf{6th spot to 1st spot}
+	\item Adopted Test-Driven Development for new features to ensure no regressions in user experience (\textbf{Jest, TDD})
+	\item Implemented automated process to ensure that Pull Requests are semantic and follows company’s convention (\textbf{GitHub Actions, YAML})
+    \item Crafted concise internal documentation for niche engineering practices to streamline the onboarding process
+\end{itemize}
+
+%==== Projects ====%
+\header{Projects}
+\vspace{1mm}
+
+\textbf{Electron.js Documentation Contributor} \hfill Apr 2022\\
+\textit{Documentation for JavaScript framework used by Visual Studio Code and Figma} \hfill \href{https://github.com/electron/electronjs.org-new/pull/211}{GitHub Repository}\\
+\vspace{-2mm}
+\begin{itemize} \itemsep 1pt
+    \item Improved user interface of documentation for developers using JavaScript
+\end{itemize}
+
+\textbf{\href{https://crypto-docker-nypoewfveq-uc.a.run.app/}{Crypto/NFT Watchlist}} \hfill Apr 2022\\
+\textit{Watchlist for crypto and NFT enthusiasts to monitor their assets} \hfill \href{https://github.com/jianrong7/crypto-ts}{GitHub Repository}\\
+\vspace{-2mm}
+\begin{itemize} \itemsep 1pt
+    \item Used Server-Side Rendering technique to improve Search Engine Optimization (\textbf{Next.js, TypeScript})
+    \item Connected application to CoinGecko's Crypto API
+    \item Stored user data on Redis for quick retrieval (\textbf{Upstash})
+    \item Deployed containerized application on Google Cloud Run (\textbf{Docker, Google Cloud Platform})
+\end{itemize}
+
+\textbf{\href{https://traceify-client.netlify.app/}{Traceify}} \hfill Sep 2021\\
+\textit{Web application for music lovers to monitor their music taste, TraceTogether-style} \hfill \href{https://github.com/jianrong7/traceify-client}{GitHub Repository}\\
+\vspace{-2mm}
+\begin{itemize} \itemsep 1pt
+    \item Replicated components in TraceTogether application (\textbf{React, TailwindCSS})
+    \item Connected server with Spotify Web API using OAuth2.0 protocol (\textbf{Express.js})
+\end{itemize}
+
+\textbf{\href{https://play.google.com/store/apps/details?id=com.jianrong7.drivesg}{DriveSG}} \hfill Aug 2021\\
+\textit{Mobile quiz application for drivers-to-be to ace their theory tests} \hfill \href{https://github.com/jianrong7/drivesg}{GitHub Repository}\\
+\vspace{-2mm}
+\begin{itemize} \itemsep 1pt
+    \item Extracted text from over 800 images using Optical Character Recognition to create JSON data for questions (\textbf{React Native, Tesseract.js})
+    \item Managed backend on Firebase for easy retrieval and reusability for future extensibility (\textbf{Firebase})
+\end{itemize}
+
+%==== Skills ====%
+\header{Skills}
+\vspace{1mm}
+\begin{tabular}{ l l }
+	Frameworks: & React (Next.js), Express.js, React Native, Jest, FastAPI, Django              \\
+	Languages:  & JavsScript, TypeScript, Python, Golang, Bash, YAML, SQL                                \\
+	Others:     & PostgreSQL, MongoDB, Git, Docker, Google Cloud Platform, Postman, Redis, CI/CD Tools   \\
+\end{tabular}
+
+\end{document}
