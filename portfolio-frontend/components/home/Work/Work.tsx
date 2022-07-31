@@ -14,12 +14,12 @@ const Work = () => {
       <Heading level="h2">Featured Works</Heading>
       <ul className={styles.projects}>
         <Project data={cryptoWatchlist} />
+        <Project data={traceify} />
         <Link href="/blog/drivesg-reflections">
           <a>
             <Project data={driveSg} />
           </a>
         </Link>
-        <Project data={traceify} />
       </ul>
     </section>
   );
